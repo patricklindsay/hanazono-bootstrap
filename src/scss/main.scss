@@ -1,0 +1,33 @@
+// 1. Include functions first
+@import "../../node_modules/bootstrap/scss/functions";
+
+// 2. Include the default variable changes
+@import "./abstracts/custom-variables";
+
+
+// 3. Include remainder of required Bootstrap styles
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+
+
+// 4. Include bootstrap library
+@import "../../node_modules/bootstrap/scss/root";
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap/scss/images";
+@import "../../node_modules/bootstrap/scss/containers";
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/bootstrap-utilities";
+@import "../../node_modules/bootstrap/scss/forms";
+@import "../../node_modules/bootstrap/scss/transitions";
+
+
+
+
+/*BLOCKS*/
+@import "./blocks/accordion";
+@import "./blocks/alert";
+@import "./blocks/button";
+@import "./blocks/card";
+@import "./blocks/cover";

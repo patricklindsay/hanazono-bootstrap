@@ -1,0 +1,116 @@
+!!!
+%html
+  %head
+    %link{:rel => :stylesheet, :type => :"text/css", :href => "css/main.css"}
+    %title blocks
+  %body
+    .container
+      %h3 Trying with halm
+      .row
+        .col-md-12.mt-5 
+          %h3 Accordion Example
+          #accordionExample.accordion
+          .accordion-item
+            %h2#headingOne.accordion-header
+              %button.accordion-button{"aria-controls" => "collapseOne", "aria-expanded" => "true", "data-bs-target" => "#collapseOne", "data-bs-toggle" => "collapse", :type => "button"}
+                Accordion Item #1
+            #collapseOne.accordion-collapse.collapse.show{"aria-labelledby" => "headingOne", "data-bs-parent" => "#accordionExample"}
+              .accordion-body
+                %strong This is the first item's accordion body.
+                It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+                = succeed "," do
+                  %code .accordion-body
+          .accordion-item
+            %h2#headingTwo.accordion-header
+              %button.accordion-button.collapsed{"aria-controls" => "collapseTwo", "aria-expanded" => "false", "data-bs-target" => "#collapseTwo", "data-bs-toggle" => "collapse", :type => "button"}
+                Accordion Item #2
+            #collapseTwo.accordion-collapse.collapse{"aria-labelledby" => "headingTwo", "data-bs-parent" => "#accordionExample"}
+              .accordion-body
+                %strong This is the second item's accordion body.
+                It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+                = succeed "," do
+                  %code .accordion-body
+          .accordion-item
+            %h2#headingThree.accordion-header
+              %button.accordion-button.collapsed{"aria-controls" => "collapseThree", "aria-expanded" => "false", "data-bs-target" => "#collapseThree", "data-bs-toggle" => "collapse", :type => "button"}
+                Accordion Item #3
+            #collapseThree.accordion-collapse.collapse{"aria-labelledby" => "headingThree", "data-bs-parent" => "#accordionExample"}
+              .accordion-body
+                %strong This is the third item's accordion body.
+                It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+                = succeed "," do
+                  %code .accordion-body
+        .col-md-12.mt-5 
+          %h3 Card Example
+          .card
+            %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
+            .card-body
+              %h5.card-title Card title
+              %p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+              %a.btn.btn-primary{:href => "#"} Go somewhere
+        .col-md-12.mt-5
+          %h3 Alert Example
+          .alert.alert-primary{:role => "alert"}
+            A simple primary alert—check it out!
+          .alert.alert-secondary{:role => "alert"}
+            A simple secondary alert—check it out!
+          .alert.alert-warning{:role => "alert"}
+            A simple warning alert—check it out!
+          .alert.alert-danger{:role => "alert"}
+            A simple danger alert—check it out!
+        .col-md-12.mt-5
+          %h3 Button Examples
+          %button.btn.btn-primary{:type => "button"} Primary
+          %button.btn.btn-secondary{:type => "button"} Secondary
+          %button.btn.btn-outline-primary{:type => "button"} Success
+          .mt-3
+            %button.btn.btn-secondary.btn-lg{:type => "button"} This is a bigger button
+        .col-md-12.mt-5 
+          %h3 Cover Examples
+          .cover.full-width
+            %img.cover-img(src="images/random-image.jpg" alt="")/
+            .cover-body
+              %h3 This is the cover full-width
+              %ul
+                %li Cover Item
+                %li Cover Item
+                %li Cover Item
+                %li Cover Item
+          .cover.is-right.mt-5.mb-5
+            %img.cover-img(src="images/random-image.jpg" alt="")/
+            .cover-body
+              %h3 This is the cover right
+              %ul
+                %li Cover Item
+                %li Cover Item
+                %li Cover Item
+                %li Cover Item
+        .col-md-12.mt-5
+          %h3 Recent Posts Block
+          .row
+            .col-md-4 
+              .card
+                %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
+                .card-body
+                  %h5.card-title Copy Integral CMS - Demo Post
+                  %p.card-text Integral CMS demo post. Integral is a rails content management system (CMS) which gives developers the ability to create a modern website with all the bells and whistles without the hassle.
+                  .card-footer
+                    %small.text-muted Last updated 3 mins ago
+            .col-md-4 
+              .card
+                %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
+                .card-body
+                  %h5.card-title Copy Integral CMS - Demo Post
+                  %p.card-text Integral CMS demo post. Integral is a rails content management system (CMS) which gives developers the ability to create a modern website with all the bells and whistles without the hassle.
+                  .card-footer
+                    %small.text-muted Last updated 3 mins ago
+            .col-md-4 
+              .card
+                %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
+                .card-body
+                  %h5.card-title Copy Integral CMS - Demo Post
+                  %p.card-text Integral CMS demo post. Integral is a rails content management system (CMS) which gives developers the ability to create a modern website with all the bells and whistles without the hassle.
+                  .card-footer
+                    %small.text-muted Last updated 3 mins ago
+
+  %script{:src => "js/bootstrap.min.js"}

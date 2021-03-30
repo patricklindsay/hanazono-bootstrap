@@ -2,6 +2,7 @@
 %html
   %head
     %link{:rel => :stylesheet, :type => :"text/css", :href => "css/main.css"}
+    %link{:rel => :stylesheet, :type => :"text/css", :href => "css/bootstrap-icons.css"}
     %title blocks
   %body
     .container
@@ -95,7 +96,9 @@
                   %h5.card-title Copy Integral CMS - Demo Post
                   %p.card-text Integral CMS demo post. Integral is a rails content management system (CMS) which gives developers the ability to create a modern website with all the bells and whistles without the hassle.
                   .card-footer
-                    %small.text-muted Last updated 3 mins ago
+                    %ul.list-group.list-group-horizontal.list-group-piped
+                      %li.list-group-item.text-muted March 25,2021
+                      %li.list-group-item.text-muted Uncategorised 
             .col-md-4 
               .card
                 %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
@@ -103,7 +106,9 @@
                   %h5.card-title Copy Integral CMS - Demo Post
                   %p.card-text Integral CMS demo post. Integral is a rails content management system (CMS) which gives developers the ability to create a modern website with all the bells and whistles without the hassle.
                   .card-footer
-                    %small.text-muted Last updated 3 mins ago
+                    %ul.list-group.list-group-horizontal.list-group-piped
+                      %li.list-group-item.text-muted March 25,2021
+                      %li.list-group-item.text-muted Uncategorised 
             .col-md-4 
               .card
                 %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
@@ -111,6 +116,181 @@
                   %h5.card-title Copy Integral CMS - Demo Post
                   %p.card-text Integral CMS demo post. Integral is a rails content management system (CMS) which gives developers the ability to create a modern website with all the bells and whistles without the hassle.
                   .card-footer
-                    %small.text-muted Last updated 3 mins ago
-
+                    %ul.list-group.list-group-horizontal.list-group-piped
+                      %li.list-group-item.text-muted March 25,2021
+                      %li.list-group-item.text-muted Uncategorised 
+        .col-md-12.mt-5 
+          %h3 Review Example 
+          .card.card__review
+            .card-body
+              %h5.card-title
+                Patrick Lindsay
+              .card__review-rating
+                %i.bi.bi-star-fill
+                %i.bi.bi-star-fill
+                %i.bi.bi-star-fill
+                %i.bi.bi-star-fill
+              %p This is a review example
+        .col-md-12.mt-5.mb-5
+          %h3 Book Now Block
+          .book-now.bg-secondary 
+            %h2.text-center.text-white BOOK NOW 
+            %p.text-center.text-white Please select a season
+            %nav
+              #nav-tab.nav.nav-tabs{:role => "tablist"}
+                %button.nav-link.active{"aria-controls" => "nav-summer", "aria-selected" => "true", "data-bs-target" => "#nav-summer", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} SUMMER MENU
+                %button.nav-link{"aria-controls" => "nav-profile", "aria-selected" => "false", "data-bs-target" => "#nav-winter", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} WINTER MENU
+              #nav-tabContent.tab-content
+                #nav-summer.tab-pane.fade.show.active{"aria-labelledby" => "nav-summer-tab", :role => "tabpanel"} 
+                  #myTab.nav.nav-tabs{:role => "tablist"}                    
+                    %button.nav-list-link.active{"aria-controls" => "summer-lodging", "aria-selected" => "true", "data-bs-target" => "#summer-lodging", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Lodging                    
+                    %button.nav-list-link{"aria-controls" => "summer-water", "aria-selected" => "false", "data-bs-target" => "#summer-water", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Water Activities                    
+                    %button.nav-list-link{"aria-controls" => "summer-tree", "aria-selected" => "false", "data-bs-target" => "#summer-tree", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Tree Trekking
+                    %button.nav-list-link{"aria-controls" => "summer-golf", "aria-selected" => "true", "data-bs-target" => "#summer-golf", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Golf                    
+                    %button.nav-list-link{"aria-controls" => "summer-other", "aria-selected" => "false", "data-bs-target" => "#summer-other", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Other Activites       
+                  #myTabContent.tab-content
+                    #summer-lodging.tab-pane.fade.show.active{"aria-labelledby" => "summer-lodging-tab", :role => "tabpanel"} 
+                      %ul.tab-list
+                        %li 
+                          %label.form-label{:for => "custom-select"} Ticket Type
+                          %select#custom-select.form-select{"aria-label" => "Default select example"}
+                            %option{:selected => "selected"} Open this select menu
+                            %option{:value => "1"} One
+                            %option{:value => "2"} Two
+                            %option{:value => "3"} Three
+                        %li 
+                          %label.form-label{:for => "date"} Date
+                          %input#formFile.form-control{:type => "date"}/
+                        %li 
+                          %button.btn.btn-warning.btn-black BOOK NOW
+                        %li 
+                          %a.btn.btn-arrow.text-primary{:href => "#"} More Information
+                    #summer-water.tab-pane.fade{"aria-labelledby" => "summer-water-tab", :role => "tabpanel"} 
+                      %ul.tab-list
+                        %li 
+                          %a.btn.btn-arrow.text-primary.btn-lg{:href => "#"} More Information
+                    #summer-tree.tab-pane.fade{"aria-labelledby" => "summer-tree-tab", :role => "tabpanel"} 
+                      %ul.tab-list
+                        %li 
+                          %label.form-label{:for => "custom-select"} Ticket Type
+                          %select#custom-select.form-select{"aria-label" => "Default select example"}
+                            %option{:selected => "selected"} Open this select menu
+                            %option{:value => "1"} One
+                            %option{:value => "2"} Two
+                            %option{:value => "3"} Three
+                        %li 
+                          %label.form-label{:for => "date"} Date
+                          %input#formFile.form-control{:type => "date"}/
+                        %li 
+                          %button.btn.btn-warning.btn-black BOOK NOW
+                        %li 
+                          %a.btn.btn-arrow.text-primary{:href => "#"} More Information 
+                    #summer-golf.tab-pane.fade{"aria-labelledby" => "summer-golf-tab", :role => "tabpanel"} 
+                      %ul.tab-list                       
+                        %li
+                          %label.form-label{:for => "date"} Date
+                          %input#formFile.form-control{:type => "date"}/
+                        %li 
+                          %button.btn.btn-warning.btn-black BOOK NOW
+                        %li 
+                          %a.btn.btn-arrow.text-primary{:href => "#"} More Information
+                    #summer-other.tab-pane.fade{"aria-labelledby" => "summer-other-tab", :role => "tabpanel"} 
+                      %ul.tab-list
+                        %li 
+                          %label.form-label{:for => "custom-select"} Ticket Type
+                          %select#custom-select.form-select{"aria-label" => "Default select example"}
+                            %option{:selected => "selected"} Open this select menu
+                            %option{:value => "1"} One
+                            %option{:value => "2"} Two
+                            %option{:value => "3"} Three
+                        %li 
+                          %button.btn.btn-warning.btn-black BOOK NOW
+                #nav-winter.tab-pane.fade{"aria-labelledby" => "nav-winter-tab", :role => "tabpanel"} 
+                  .nav.nav-tabs{:role => "tablist"}                    
+                    %button.nav-list-link.active{"aria-controls" => "winter-lodging", "aria-selected" => "true", "data-bs-target" => "#winter-lodging", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Lodging                    
+                    %button.nav-list-link{"aria-controls" => "winter-ski", "aria-selected" => "false", "data-bs-target" => "#winter-ski", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Ski Lessons                    
+                    %button.nav-list-link{"aria-controls" => "winter-lift", "aria-selected" => "false", "data-bs-target" => "#winter-lift", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Lift Tickets
+                    %button.nav-list-link{"aria-controls" => "winter-rental", "aria-selected" => "true", "data-bs-target" => "#winter-rental", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Rental                    
+                    %button.nav-list-link{"aria-controls" => "winter-hanazono", "aria-selected" => "false", "data-bs-target" => "#winter-hanazono", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Hanazono Powder Guides
+                    %button.nav-list-link{"aria-controls" => "winter-adventure", "aria-selected" => "false", "data-bs-target" => "#winter-adventure", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Adventure Park 
+                    %button.nav-list-link{"aria-controls" => "winter-family", "aria-selected" => "false", "data-bs-target" => "#winter-family", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Kidz & Family       
+                  #myTabContent.tab-content
+                    #winter-lodging.tab-pane.fade.show.active{"aria-labelledby" => "winter-lodging-tab", :role => "tabpanel"} 
+                      %ul.tab-list
+                        %li 
+                          %label.form-label{:for => "custom-select"} Ticket Type
+                          %select#custom-select.form-select{"aria-label" => "Default select example"}
+                            %option{:selected => "selected"} Open this select menu
+                            %option{:value => "1"} One
+                            %option{:value => "2"} Two
+                            %option{:value => "3"} Three
+                        %li 
+                          %label.form-label{:for => "date"} Date
+                          %input#formFile.form-control{:type => "date"}/
+                        %li 
+                          %button.btn.btn-warning.btn-black BOOK NOW
+                        %li 
+                          %a.btn.btn-arrow.text-primary{:href => "#"} More Information
+                    #winter-ski.tab-pane.fade{"aria-labelledby" => "winter-ski-tab", :role => "tabpanel"} 
+                      %ul.tab-list
+                        %li 
+                          %a.btn.btn-arrow.text-primary.btn-lg{:href => "#"} More Information
+                    #winter-lift.tab-pane.fade{"aria-labelledby" => "winter-lift-tab", :role => "tabpanel"} 
+                      %ul.tab-list
+                        %li 
+                          %label.form-label{:for => "custom-select"} Ticket Type
+                          %select#custom-select.form-select{"aria-label" => "Default select example"}
+                            %option{:selected => "selected"} Open this select menu
+                            %option{:value => "1"} One
+                            %option{:value => "2"} Two
+                            %option{:value => "3"} Three
+                        %li 
+                          %label.form-label{:for => "date"} Date
+                          %input#formFile.form-control{:type => "date"}/
+                        %li 
+                          %button.btn.btn-warning.btn-black BOOK NOW
+                        %li 
+                          %a.btn.btn-arrow.text-primary{:href => "#"} More Information 
+                    #winter-rental.tab-pane.fade{"aria-labelledby" => "winter-rental-tab", :role => "tabpanel"} 
+                      %ul.tab-list                       
+                        %li
+                          %label.form-label{:for => "date"} Date
+                          %input#formFile.form-control{:type => "date"}/
+                        %li 
+                          %button.btn.btn-warning.btn-black BOOK NOW
+                        %li 
+                          %a.btn.btn-arrow.text-primary{:href => "#"} More Information
+                    #winter-hanazono.tab-pane.fade{"aria-labelledby" => "winter-hanazono-tab", :role => "tabpanel"} 
+                      %ul.tab-list
+                        %li 
+                          %label.form-label{:for => "custom-select"} Ticket Type
+                          %select#custom-select.form-select{"aria-label" => "Default select example"}
+                            %option{:selected => "selected"} Open this select menu
+                            %option{:value => "1"} One
+                            %option{:value => "2"} Two
+                            %option{:value => "3"} Three
+                        %li 
+                          %button.btn.btn-warning.btn-black BOOK NOW
+                    #winter-adventure.tab-pane.fade{"aria-labelledby" => "winter-adventure-tab", :role => "tabpanel"} 
+                      %ul.tab-list
+                        %li 
+                          %label.form-label{:for => "custom-select"} Ticket Type
+                          %select#custom-select.form-select{"aria-label" => "Default select example"}
+                            %option{:selected => "selected"} Open this select menu
+                            %option{:value => "1"} One
+                            %option{:value => "2"} Two
+                            %option{:value => "3"} Three
+                        %li 
+                          %button.btn.btn-warning.btn-black BOOK NOW
+                    #winter-family.tab-pane.fade{"aria-labelledby" => "winter-family-tab", :role => "tabpanel"} 
+                      %ul.tab-list
+                        %li 
+                          %label.form-label{:for => "custom-select"} Ticket Type
+                          %select#custom-select.form-select{"aria-label" => "Default select example"}
+                            %option{:selected => "selected"} Open this select menu
+                            %option{:value => "1"} One
+                            %option{:value => "2"} Two
+                            %option{:value => "3"} Three
+                        %li 
+                          %button.btn.btn-warning.btn-black BOOK NOW
   %script{:src => "js/bootstrap.min.js"}

@@ -230,3 +230,23 @@ $btn-active-border-tint-amount:   10% !default;
 .btn-sm {
   @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
 }
+
+/*CUSTOM STYLES*/
+.btn{
+  &-black{
+    color: $primary;
+  }
+  &-arrow{
+    font-weight: normal;
+    position: relative;
+
+    &::after{
+      display: inline-block;
+      content: "\27F6";
+      margin-left: 1rem;
+    }
+    &:hover{
+      font-weight: 500;
+    }
+  }
+}

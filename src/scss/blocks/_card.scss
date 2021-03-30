@@ -23,7 +23,7 @@ $card-group-margin:                 $grid-gutter-width / 2 !default;
 
 .card {
   position: relative;
-  display: flex;
+  display: flex;  
   flex-direction: column;
   min-width: 0; // See https://github.com/twbs/bootstrap/pull/22740#issuecomment-305868106
   height: $card-height;
@@ -67,6 +67,8 @@ $card-group-margin:                 $grid-gutter-width / 2 !default;
   flex: 1 1 auto;
   padding: $card-spacer-y $card-spacer-x;
   color: $card-color;
+  
+  
 }
 
 .card-title {
@@ -109,11 +111,10 @@ $card-group-margin:                 $grid-gutter-width / 2 !default;
 }
 
 .card-footer {
-  padding: $card-cap-padding-y $card-cap-padding-x;
+  padding: 0;
   color: $card-cap-color;
   background-color: transparent;
   border-top: $card-border-width solid $card-border-color;
-
   &:last-child {
     @include border-radius(0 0 $card-inner-border-radius $card-inner-border-radius);
   }
@@ -232,6 +233,39 @@ $card-group-margin:                 $grid-gutter-width / 2 !default;
           }
         }
       }
+    }
+  }
+}
+
+/*CUSTOM STYLES*/
+
+.card{
+  // full height in the column
+  flex: 1;
+  // height: 100%;
+  // Body always be the remainder space
+  &-body{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  // footer always be at the bottom of the card
+  &-footer{
+    margin-top: auto;
+  }
+
+  // CARD REVIEW
+  &__review{
+    background: $white;
+    &-rating{
+      margin-bottom: $spacer;
+    }
+    .card-body{
+      padding: $spacer;
+    }
+    .card-title{
+      margin-bottom: 0;
     }
   }
 }

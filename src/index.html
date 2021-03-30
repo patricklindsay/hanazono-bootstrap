@@ -2,6 +2,7 @@
 <html>
 <head>
 <link href="css/main.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap-icons.css" rel="stylesheet" type="text/css">
 <title>blocks</title>
 </head>
 <body>
@@ -126,7 +127,10 @@ A simple danger alert—check it out!
 <h5 class="card-title">Copy Integral CMS - Demo Post</h5>
 <p class="card-text">Integral CMS demo post. Integral is a rails content management system (CMS) which gives developers the ability to create a modern website with all the bells and whistles without the hassle.</p>
 <div class="card-footer">
-<small class="text-muted">Last updated 3 mins ago</small>
+<ul class="list-group list-group-horizontal list-group-piped">
+<li class="list-group-item text-muted">March 25,2021</li>
+<li class="list-group-item text-muted">Uncategorised</li>
+</ul>
 </div>
 </div>
 </div>
@@ -138,7 +142,10 @@ A simple danger alert—check it out!
 <h5 class="card-title">Copy Integral CMS - Demo Post</h5>
 <p class="card-text">Integral CMS demo post. Integral is a rails content management system (CMS) which gives developers the ability to create a modern website with all the bells and whistles without the hassle.</p>
 <div class="card-footer">
-<small class="text-muted">Last updated 3 mins ago</small>
+<ul class="list-group list-group-horizontal list-group-piped">
+<li class="list-group-item text-muted">March 25,2021</li>
+<li class="list-group-item text-muted">Uncategorised</li>
+</ul>
 </div>
 </div>
 </div>
@@ -150,11 +157,268 @@ A simple danger alert—check it out!
 <h5 class="card-title">Copy Integral CMS - Demo Post</h5>
 <p class="card-text">Integral CMS demo post. Integral is a rails content management system (CMS) which gives developers the ability to create a modern website with all the bells and whistles without the hassle.</p>
 <div class="card-footer">
-<small class="text-muted">Last updated 3 mins ago</small>
+<ul class="list-group list-group-horizontal list-group-piped">
+<li class="list-group-item text-muted">March 25,2021</li>
+<li class="list-group-item text-muted">Uncategorised</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
+</div>
+</div>
+<div class="col-md-12 mt-5">
+<h3>Review Example</h3>
+<div class="card card__review">
+<div class="card-body">
+<h5 class="card-title">
+Patrick Lindsay
+</h5>
+<div class="card__review-rating">
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+</div>
+<p>This is a review example</p>
+</div>
+</div>
+</div>
+<div class="col-md-12 mt-5 mb-5">
+<h3>Book Now Block</h3>
+<div class="book-now bg-secondary">
+<h2 class="text-center text-white">BOOK NOW</h2>
+<p class="text-center text-white">Please select a season</p>
+<nav>
+<div class="nav nav-tabs" id="nav-tab" role="tablist">
+<button aria-controls="nav-summer" aria-selected="true" class="nav-link active" data-bs-target="#nav-summer" data-bs-toggle="tab" role="tab" type="button">SUMMER MENU</button>
+<button aria-controls="nav-profile" aria-selected="false" class="nav-link" data-bs-target="#nav-winter" data-bs-toggle="tab" role="tab" type="button">WINTER MENU</button>
+</div>
+<div class="tab-content" id="nav-tabContent">
+<div aria-labelledby="nav-summer-tab" class="tab-pane fade show active" id="nav-summer" role="tabpanel">
+<div class="nav nav-tabs" id="myTab" role="tablist">
+<button aria-controls="summer-lodging" aria-selected="true" class="nav-list-link active" data-bs-target="#summer-lodging" data-bs-toggle="tab" role="tab" type="button">Lodging</button>
+<button aria-controls="summer-water" aria-selected="false" class="nav-list-link" data-bs-target="#summer-water" data-bs-toggle="tab" role="tab" type="button">Water Activities</button>
+<button aria-controls="summer-tree" aria-selected="false" class="nav-list-link" data-bs-target="#summer-tree" data-bs-toggle="tab" role="tab" type="button">Tree Trekking</button>
+<button aria-controls="summer-golf" aria-selected="true" class="nav-list-link" data-bs-target="#summer-golf" data-bs-toggle="tab" role="tab" type="button">Golf</button>
+<button aria-controls="summer-other" aria-selected="false" class="nav-list-link" data-bs-target="#summer-other" data-bs-toggle="tab" role="tab" type="button">Other Activites</button>
+</div>
+<div class="tab-content" id="myTabContent">
+<div aria-labelledby="summer-lodging-tab" class="tab-pane fade show active" id="summer-lodging" role="tabpanel">
+<ul class="tab-list">
+<li>
+<label class="form-label" for="custom-select">Ticket Type</label>
+<select aria-label="Default select example" class="form-select" id="custom-select">
+<option selected="selected">Open this select menu</option>
+<option value="1">One</option>
+<option value="2">Two</option>
+<option value="3">Three</option>
+</select>
+</li>
+<li>
+<label class="form-label" for="date">Date</label>
+<input class="form-control" id="formFile" type="date">
+</li>
+<li>
+<button class="btn btn-warning btn-black">BOOK NOW</button>
+</li>
+<li>
+<a class="btn btn-arrow text-primary" href="#">More Information</a>
+</li>
+</ul>
+</div>
+<div aria-labelledby="summer-water-tab" class="tab-pane fade" id="summer-water" role="tabpanel">
+<ul class="tab-list">
+<li>
+<a class="btn btn-arrow text-primary btn-lg" href="#">More Information</a>
+</li>
+</ul>
+</div>
+<div aria-labelledby="summer-tree-tab" class="tab-pane fade" id="summer-tree" role="tabpanel">
+<ul class="tab-list">
+<li>
+<label class="form-label" for="custom-select">Ticket Type</label>
+<select aria-label="Default select example" class="form-select" id="custom-select">
+<option selected="selected">Open this select menu</option>
+<option value="1">One</option>
+<option value="2">Two</option>
+<option value="3">Three</option>
+</select>
+</li>
+<li>
+<label class="form-label" for="date">Date</label>
+<input class="form-control" id="formFile" type="date">
+</li>
+<li>
+<button class="btn btn-warning btn-black">BOOK NOW</button>
+</li>
+<li>
+<a class="btn btn-arrow text-primary" href="#">More Information</a>
+</li>
+</ul>
+</div>
+<div aria-labelledby="summer-golf-tab" class="tab-pane fade" id="summer-golf" role="tabpanel">
+<ul class="tab-list">
+<li>
+<label class="form-label" for="date">Date</label>
+<input class="form-control" id="formFile" type="date">
+</li>
+<li>
+<button class="btn btn-warning btn-black">BOOK NOW</button>
+</li>
+<li>
+<a class="btn btn-arrow text-primary" href="#">More Information</a>
+</li>
+</ul>
+</div>
+<div aria-labelledby="summer-other-tab" class="tab-pane fade" id="summer-other" role="tabpanel">
+<ul class="tab-list">
+<li>
+<label class="form-label" for="custom-select">Ticket Type</label>
+<select aria-label="Default select example" class="form-select" id="custom-select">
+<option selected="selected">Open this select menu</option>
+<option value="1">One</option>
+<option value="2">Two</option>
+<option value="3">Three</option>
+</select>
+</li>
+<li>
+<button class="btn btn-warning btn-black">BOOK NOW</button>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div aria-labelledby="nav-winter-tab" class="tab-pane fade" id="nav-winter" role="tabpanel">
+<div class="nav nav-tabs" role="tablist">
+<button aria-controls="winter-lodging" aria-selected="true" class="nav-list-link active" data-bs-target="#winter-lodging" data-bs-toggle="tab" role="tab" type="button">Lodging</button>
+<button aria-controls="winter-ski" aria-selected="false" class="nav-list-link" data-bs-target="#winter-ski" data-bs-toggle="tab" role="tab" type="button">Ski Lessons</button>
+<button aria-controls="winter-lift" aria-selected="false" class="nav-list-link" data-bs-target="#winter-lift" data-bs-toggle="tab" role="tab" type="button">Lift Tickets</button>
+<button aria-controls="winter-rental" aria-selected="true" class="nav-list-link" data-bs-target="#winter-rental" data-bs-toggle="tab" role="tab" type="button">Rental</button>
+<button aria-controls="winter-hanazono" aria-selected="false" class="nav-list-link" data-bs-target="#winter-hanazono" data-bs-toggle="tab" role="tab" type="button">Hanazono Powder Guides</button>
+<button aria-controls="winter-adventure" aria-selected="false" class="nav-list-link" data-bs-target="#winter-adventure" data-bs-toggle="tab" role="tab" type="button">Adventure Park</button>
+<button aria-controls="winter-family" aria-selected="false" class="nav-list-link" data-bs-target="#winter-family" data-bs-toggle="tab" role="tab" type="button">Kidz & Family</button>
+</div>
+<div class="tab-content" id="myTabContent">
+<div aria-labelledby="winter-lodging-tab" class="tab-pane fade show active" id="winter-lodging" role="tabpanel">
+<ul class="tab-list">
+<li>
+<label class="form-label" for="custom-select">Ticket Type</label>
+<select aria-label="Default select example" class="form-select" id="custom-select">
+<option selected="selected">Open this select menu</option>
+<option value="1">One</option>
+<option value="2">Two</option>
+<option value="3">Three</option>
+</select>
+</li>
+<li>
+<label class="form-label" for="date">Date</label>
+<input class="form-control" id="formFile" type="date">
+</li>
+<li>
+<button class="btn btn-warning btn-black">BOOK NOW</button>
+</li>
+<li>
+<a class="btn btn-arrow text-primary" href="#">More Information</a>
+</li>
+</ul>
+</div>
+<div aria-labelledby="winter-ski-tab" class="tab-pane fade" id="winter-ski" role="tabpanel">
+<ul class="tab-list">
+<li>
+<a class="btn btn-arrow text-primary btn-lg" href="#">More Information</a>
+</li>
+</ul>
+</div>
+<div aria-labelledby="winter-lift-tab" class="tab-pane fade" id="winter-lift" role="tabpanel">
+<ul class="tab-list">
+<li>
+<label class="form-label" for="custom-select">Ticket Type</label>
+<select aria-label="Default select example" class="form-select" id="custom-select">
+<option selected="selected">Open this select menu</option>
+<option value="1">One</option>
+<option value="2">Two</option>
+<option value="3">Three</option>
+</select>
+</li>
+<li>
+<label class="form-label" for="date">Date</label>
+<input class="form-control" id="formFile" type="date">
+</li>
+<li>
+<button class="btn btn-warning btn-black">BOOK NOW</button>
+</li>
+<li>
+<a class="btn btn-arrow text-primary" href="#">More Information</a>
+</li>
+</ul>
+</div>
+<div aria-labelledby="winter-rental-tab" class="tab-pane fade" id="winter-rental" role="tabpanel">
+<ul class="tab-list">
+<li>
+<label class="form-label" for="date">Date</label>
+<input class="form-control" id="formFile" type="date">
+</li>
+<li>
+<button class="btn btn-warning btn-black">BOOK NOW</button>
+</li>
+<li>
+<a class="btn btn-arrow text-primary" href="#">More Information</a>
+</li>
+</ul>
+</div>
+<div aria-labelledby="winter-hanazono-tab" class="tab-pane fade" id="winter-hanazono" role="tabpanel">
+<ul class="tab-list">
+<li>
+<label class="form-label" for="custom-select">Ticket Type</label>
+<select aria-label="Default select example" class="form-select" id="custom-select">
+<option selected="selected">Open this select menu</option>
+<option value="1">One</option>
+<option value="2">Two</option>
+<option value="3">Three</option>
+</select>
+</li>
+<li>
+<button class="btn btn-warning btn-black">BOOK NOW</button>
+</li>
+</ul>
+</div>
+<div aria-labelledby="winter-adventure-tab" class="tab-pane fade" id="winter-adventure" role="tabpanel">
+<ul class="tab-list">
+<li>
+<label class="form-label" for="custom-select">Ticket Type</label>
+<select aria-label="Default select example" class="form-select" id="custom-select">
+<option selected="selected">Open this select menu</option>
+<option value="1">One</option>
+<option value="2">Two</option>
+<option value="3">Three</option>
+</select>
+</li>
+<li>
+<button class="btn btn-warning btn-black">BOOK NOW</button>
+</li>
+</ul>
+</div>
+<div aria-labelledby="winter-family-tab" class="tab-pane fade" id="winter-family" role="tabpanel">
+<ul class="tab-list">
+<li>
+<label class="form-label" for="custom-select">Ticket Type</label>
+<select aria-label="Default select example" class="form-select" id="custom-select">
+<option selected="selected">Open this select menu</option>
+<option value="1">One</option>
+<option value="2">Two</option>
+<option value="3">Three</option>
+</select>
+</li>
+<li>
+<button class="btn btn-warning btn-black">BOOK NOW</button>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
 </div>
 </div>
 </div>

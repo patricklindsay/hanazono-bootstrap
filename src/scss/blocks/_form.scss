@@ -1,0 +1,27 @@
+/*========================FORM LABEL=============================*/
+// scss-docs-start form-label-variables
+$form-label-margin-bottom:              .35rem;
+$form-label-font-weight:                700;
+$form-label-color:                      $primary;
+// scss-docs-end form-label-variables
+
+@import "../../../node_modules/bootstrap/scss/forms/labels";
+/*========================FORM CONTROL========================*/
+// $input-border-width:                    0;
+
+$input-border-radius:                   0;
+$input-border-radius-sm:                0;
+$input-border-radius-lg:                0;
+
+$input-focus-box-shadow:                none;
+
+@import "../../../node_modules/bootstrap/scss/forms/form-control";
+/*========================FORM SELECT========================*/
+// scss-docs-start form-select-variables
+$form-select-indicator:             none;
+$form-select-border-radius:       0;
+$form-select-focus-width:         0;
+$form-select-focus-box-shadow:    none;
+
+// scss-docs-end form-select-variables
+@import "../../../node_modules/bootstrap/scss/forms/form-select";

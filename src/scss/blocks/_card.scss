@@ -72,7 +72,7 @@ $card-group-margin:                 $grid-gutter-width / 2 !default;
 }
 
 .card-title {
-  margin-bottom: $card-title-spacer-y;
+  margin-bottom: $card-title-spacer-y;  
 }
 
 .card-subtitle {
@@ -254,6 +254,20 @@ $card-group-margin:                 $grid-gutter-width / 2 !default;
   &-footer{
     margin-top: auto;
   }
+  &-link{
+    font-weight: 700;
+    font-size: $font-size-lg;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    padding-left: 0;
+    padding-right: 1.5rem;
+    &:before{
+      content: "\27F6";
+      position: absolute;
+      right: .25rem;
+    }
+  }
 
   // CARD REVIEW
   &__review{
@@ -265,7 +279,7 @@ $card-group-margin:                 $grid-gutter-width / 2 !default;
       padding: $spacer;
     }
     .card-title{
-      margin-bottom: 0;
+      margin-bottom: 0;      
     }
   }
 }

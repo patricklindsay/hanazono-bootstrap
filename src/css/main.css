@@ -8329,6 +8329,20 @@ textarea.form-control-lg {
 .card-footer {
   margin-top: auto;
 }
+.card-link {
+  font-weight: 700;
+  font-size: 1.25rem;
+  width: 100%;
+  text-align: left;
+  position: relative;
+  padding-left: 0;
+  padding-right: 1.5rem;
+}
+.card-link:before {
+  content: "⟶";
+  position: absolute;
+  right: 0.25rem;
+}
 .card__review {
   background: #fff;
 }

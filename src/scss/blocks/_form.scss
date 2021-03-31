@@ -16,6 +16,10 @@ $input-border-radius-lg:                0;
 $input-focus-box-shadow:                none;
 
 @import "../../../node_modules/bootstrap/scss/forms/form-control";
+
+textarea{
+  resize:none;
+}
 /*========================FORM SELECT========================*/
 // scss-docs-start form-select-variables
 $form-select-indicator:             none;
@@ -25,3 +29,20 @@ $form-select-focus-box-shadow:    none;
 
 // scss-docs-end form-select-variables
 @import "../../../node_modules/bootstrap/scss/forms/form-select";
+
+/*========================FORM CHECKBOX AND RADIO-BUTTON========================*/
+$form-check-input-border-radius:          .15em;
+$form-check-input-focus-box-shadow:       none;
+
+@import "../../../node_modules/bootstrap/scss/forms/form-check";
+
+/*========================FORM VALIDATION========================*/
+
+@import "../../../node_modules/bootstrap/scss/forms/validation";
+
+
+/*========================FORM CONTAINER========================*/
+.contact-form{
+  width: 75%;
+  margin: auto;
+}

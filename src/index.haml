@@ -293,4 +293,38 @@
                             %option{:value => "3"} Three
                         %li 
                           %button.btn.btn-warning.btn-black BOOK NOW
+        .col-md-12.mt-5.mb-5 
+          %h2.text-center.mb-3 Contact block
+          .contact-form
+            %form.form.needs-validation(action=""){:novalidate => ""}
+              .mb-3
+                %input.form-control{:placeholder => "Full name", :type => "text", :required => ""}/
+                .invalid-feedback.text-danger
+                  can't be blank.
+              .mb-3
+                %input.form-control{:placeholder => "Email", :type => "email", :required => ""}/
+                .invalid-feedback.text-danger
+                  can't be blank.
+              .mb-3  
+                %input.form-control{:placeholder => "Email Confirmation", :type => "email", :required => ""}/
+                .invalid-feedback.text-danger
+                  can't be blank.
+              .mb-3 
+                %select#custom-select.form-select{"aria-label" => "Default select example"}
+                  %option{:selected => "selected"} Open this select menu
+                  %option{:value => "1"} One
+                  %option{:value => "2"} Two
+                  %option{:value => "3"} Three
+              .mb-3
+                %textarea#exampleFormControlTextarea1.form-control{:placeholder => "Message", :required => ""}
+                .invalid-feedback.text-danger
+                  can't be blank.
+              .mb-3 
+                .form-check
+                  %input#flexCheckDefault.form-check-input{:type => "checkbox", :value => ""}/
+                  %label.form-check-label{:for => "flexCheckDefault"}
+                    I'd like to receive monthly updates and special offers
+              .mb-3 
+                %button.btn.btn-outline-primary.btn-lg.w-100
+                  SEND
   %script{:src => "js/bootstrap.min.js"}

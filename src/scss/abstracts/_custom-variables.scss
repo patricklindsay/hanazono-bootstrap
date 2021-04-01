@@ -1,7 +1,25 @@
+/*COLORS*/
 $body-bg: #f0f3f4;
-
 $yellow: #fff100;
-
-
 $primary: #353f51;
 $secondary: #9f8f6b;
+
+
+/*TYPOGRAPHY*/
+$font-family-sans-serif:      "Times New Roman";
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+
+$headings-font-family:        "din-2014", sans-serif;
+
+// scss-docs-end font-variables
+
+
+//links
+$link-color:                              $secondary;
+$link-decoration:                         none;
+$link-shade-percentage:                   20% !default;
+$link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
+$link-hover-decoration:                   null !default;
+
+$stretched-link-pseudo-element:           after !default;
+$stretched-link-z-index:                  1 !default;

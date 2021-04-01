@@ -1,13 +1,25 @@
 !!!
 %html
   %head
+    %link{href: "https://use.typekit.net/yjp6aky.css", rel:"stylesheet"}
     %link{:rel => :stylesheet, :type => :"text/css", :href => "css/main.css"}
     %link{:rel => :stylesheet, :type => :"text/css", :href => "css/bootstrap-icons.css"}
     %title blocks
   %body
-    .container
-      %h3 Trying with halm
+    .container      
       .row
+        .col-md-12.mb-5.mt-5 
+          %h2.mb-5 Hero Example
+          .hero
+            %a.btn.btn-secondary.hero__button{:href=>"#"} Book Now
+            %h1.text-white This is the Hero title
+            .hero__img
+              %img{:src=> "images/random-image.jpg"}
+          %nav.mt-2{"aria-label" => "breadcrumb"}
+            %ol.breadcrumb
+              %li.breadcrumb-item
+                %a{:href => "#"} Home
+              %li.breadcrumb-item.active{"aria-current" => "page"} Library
         .col-md-12.mt-5 
           %h3 Accordion Example
           #accordionExample.accordion
@@ -88,7 +100,19 @@
                 %li Cover Item        
         .col-md-12.mt-5
           %h3 Event Posts Block
-          
+          .card.mt-3.pb-3.border-bottom
+            .row 
+              .col-md-4 
+                %a{:href=>"#"}
+                  %img.card-img-left(src="images/random-image.jpg" alt="random image")/
+              .col-md-8
+                %a.card-title.fs-4.link{:href => "#"} 5 reasons why we love spring skiing & snowboarding
+                %p.card-text Take advantage of big discounts to celebrate the sunshine and blue skies on the slopes of Hanazono!
+                .card-footer
+                  %ul.list-group.list-group-horizontal.list-group-piped
+                    %li.list-group-item.text-muted March 25,2021
+                    %li.list-group-item.text-muted Uncategorised 
+
         .col-md-12.mt-5
           %h3 Recent Posts Block
           .row
@@ -128,21 +152,21 @@
               .card
                 %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
                 .card-body
-                  %a.card-link.btn.text-secondary{:href => "#"} RETURNING GUEST DISCOUNT 30% Off
+                  %a.text-secondary.fw-bold.fs-5.card-link{:href => "#"} RETURNING GUEST DISCOUNT 30% Off
                   %p.card-text Integral CMS demo post. Integral is a rails content management system (CMS) which gives developers the ability to create a modern website with all the bells and whistles without the hassle.
                   
             .col-md-4 
               .card
                 %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
                 .card-body
-                  %a.card-link.btn.text-secondary{:href => "#"} ONSEN DISCOUNT FOR HANAZONO ACTIVITY GUESTS!
+                  %a.text-secondary.fw-bold.fs-5.card-link{:href => "#"} ONSEN DISCOUNT FOR HANAZONO ACTIVITY GUESTS!
                   %p.card-text Integral CMS demo post. Integral is a rails content management system (CMS) which gives developers the ability to create a modern website with all the bells and whistles without the hassle.
                   
             .col-md-4 
               .card
                 %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
                 .card-body
-                  %a.card-link.btn.text-secondary{:href => "#"} BOOK ONLINE AND SAVE 20%!
+                  %a.text-secondary.fw-bold.fs-5.card-link{:href => "#"} BOOK ONLINE AND SAVE 20%!
                   %p.card-text Integral CMS demo post. Integral is a rails content management system (CMS) which gives developers the ability to create a modern website with all the bells and whistles without the hassle.
                   
         
@@ -153,10 +177,10 @@
               %h5.card-title
                 Patrick Lindsay
               .card__review-rating
-                %i.bi.bi-star-fill
-                %i.bi.bi-star-fill
-                %i.bi.bi-star-fill
-                %i.bi.bi-star-fill
+                %i.bi.bi-star-fill.text-secondary
+                %i.bi.bi-star-fill.text-secondary
+                %i.bi.bi-star-fill.text-secondary
+                %i.bi.bi-star-fill.text-secondary
               %p This is a review example
         .col-md-12.mt-5.mb-5
           %h3 Book Now Block
@@ -354,4 +378,28 @@
               .mb-3 
                 %button.btn.btn-outline-primary.btn-lg.w-100
                   SEND
+        .col.md-12.mt-5.mb-5 
+          .wp-block-table 
+            %table.table-bordered.table-striped
+              %thead
+                %tr
+                  %th{:scope => "col"} #
+                  %th{:scope => "col"} First
+                  %th{:scope => "col"} Last
+                  %th{:scope => "col"} Handle
+              %tbody
+                %tr
+                  %th{:scope => "row"} 1
+                  %td Mark
+                  %td Otto
+                  %td @mdo
+                %tr
+                  %th{:scope => "row"} 2
+                  %td Jacob
+                  %td Thornton
+                  %td @fat
+                %tr
+                  %th{:scope => "row"} 3
+                  %td{:colspan => "2"} Larry the Bird
+                  %td @twitter                
   %script{:src => "js/bootstrap.min.js"}

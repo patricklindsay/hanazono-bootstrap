@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/*COLORS*/
+/*TYPOGRAPHY*/
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -21,7 +23,7 @@
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
-  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-sans-serif: "Times New Roman";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 }
@@ -65,6 +67,7 @@ hr:not([size]) {
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-top: 0;
   margin-bottom: 0.5rem;
+  font-family: "din-2014", sans-serif;
   font-weight: 500;
   line-height: 1.2;
 }
@@ -196,11 +199,11 @@ sup {
 }
 
 a {
-  color: #353f51;
-  text-decoration: underline;
+  color: #9f8f6b;
+  text-decoration: none;
 }
 a:hover {
-  color: #2a3241;
+  color: #7f7256;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -7414,7 +7417,6 @@ textarea.form-control-lg {
   }
 }
 
-/*BLOCKS*/
 .accordion-button {
   position: relative;
   display: flex;
@@ -7628,13 +7630,33 @@ textarea.form-control-lg {
   padding: 2rem;
 }
 
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0;
+  margin-bottom: 1rem;
+  list-style: none;
+}
+
+.breadcrumb-item + .breadcrumb-item {
+  padding-left: 0.5rem;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+  float: left;
+  padding-right: 0.5rem;
+  color: #6c757d;
+  content: var(--bs-breadcrumb-divider, "/") /* rtl: var(--bs-breadcrumb-divider, "/") */;
+}
+.breadcrumb-item.active {
+  color: #6c757d;
+}
+
 .btn {
   display: inline-block;
   font-weight: 700;
   line-height: 1.5;
   color: #212529;
   text-align: center;
-  text-decoration: none;
   vertical-align: middle;
   cursor: pointer;
   -webkit-user-select: none;
@@ -8105,11 +8127,11 @@ textarea.form-control-lg {
 
 .btn-link {
   font-weight: 400;
-  color: #353f51;
-  text-decoration: underline;
+  color: #9f8f6b;
+  text-decoration: none;
 }
 .btn-link:hover {
-  color: #2a3241;
+  color: #7f7256;
 }
 .btn-link:disabled, .btn-link.disabled {
   color: #6c757d;
@@ -8258,8 +8280,6 @@ textarea.form-control-lg {
 .card-img-top,
 .card-img-bottom {
   width: 100%;
-  height: 13rem;
-  object-fit: cover;
 }
 
 .card-img,
@@ -8317,6 +8337,17 @@ textarea.form-control-lg {
 }
 
 /*CUSTOM STYLES*/
+.card-img-top {
+  width: 100%;
+  height: 13rem;
+  object-fit: cover;
+}
+.card-img-left {
+  height: 10rem;
+  object-fit: cover;
+  width: 100%;
+}
+
 .card {
   flex: 1;
 }
@@ -8330,8 +8361,6 @@ textarea.form-control-lg {
   margin-top: auto;
 }
 .card-link {
-  font-weight: 700;
-  font-size: 1.25rem;
   width: 100%;
   text-align: left;
   position: relative;
@@ -8932,6 +8961,40 @@ textarea {
   margin: auto;
 }
 
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.hero__button {
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+.hero h1, .hero .h1 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 2.5rem;
+  z-index: 1;
+}
+.hero__img {
+  position: relative;
+}
+.hero__img:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+}
+.hero__img img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
 .list-group {
   display: flex;
   flex-direction: column;
@@ -8970,7 +9033,6 @@ textarea {
   display: block;
   padding: 0 0;
   color: #212529;
-  text-decoration: none;
   background-color: none;
   border: 0 solid rgba(0, 0, 0, 0.125);
 }
@@ -9291,7 +9353,6 @@ textarea {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
-  text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -9422,4 +9483,191 @@ textarea {
 }
 .tab-list li:not(:last-child) {
   margin-right: 1rem;
+}
+
+.wp-block-table table {
+  --bs-table-bg: transparent;
+  --bs-table-striped-color: #212529;
+  --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+  --bs-table-active-color: #212529;
+  --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+  --bs-table-hover-color: #212529;
+  --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  vertical-align: top;
+  border-color: #fff;
+}
+.wp-block-table table > :not(caption) > * > * {
+  padding: 0.65rem 0.5rem;
+  background-color: var(--bs-table-bg);
+  border-bottom-width: 1px;
+  box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+}
+.wp-block-table table > tbody {
+  vertical-align: inherit;
+}
+.wp-block-table table > tbody > tr > th {
+  text-align: center;
+}
+.wp-block-table table > thead {
+  vertical-align: bottom;
+  background: #353f51;
+  color: #fff;
+}
+.wp-block-table table > thead > tr > th:first-child {
+  text-align: center;
+}
+.wp-block-table table > :not(:last-child) > :last-child > * {
+  border-bottom-color: currentColor;
+}
+.wp-block-table .caption-top {
+  caption-side: top;
+}
+.wp-block-table .table-sm > :not(caption) > * > * {
+  padding: 0.25rem 0.25rem;
+}
+.wp-block-table .table-bordered > :not(caption) > * {
+  border-width: 1px 0;
+}
+.wp-block-table .table-bordered > :not(caption) > * > * {
+  border-width: 0 1px;
+}
+.wp-block-table .table-borderless > :not(caption) > * > * {
+  border-bottom-width: 0;
+}
+.wp-block-table .table-striped > tbody > tr:nth-of-type(odd) {
+  --bs-table-accent-bg: var(--bs-table-striped-bg);
+  color: var(--bs-table-striped-color);
+}
+.wp-block-table .table-active {
+  --bs-table-accent-bg: var(--bs-table-active-bg);
+  color: var(--bs-table-active-color);
+}
+.wp-block-table .table-hover > tbody > tr:hover {
+  --bs-table-accent-bg: var(--bs-table-hover-bg);
+  color: var(--bs-table-hover-color);
+}
+.wp-block-table .table-primary {
+  --bs-table-bg: #d7d9dc;
+  --bs-table-striped-bg: #ccced1;
+  --bs-table-striped-color: #000;
+  --bs-table-active-bg: #c2c3c6;
+  --bs-table-active-color: #000;
+  --bs-table-hover-bg: #c7c9cc;
+  --bs-table-hover-color: #000;
+  color: #000;
+  border-color: #c2c3c6;
+}
+.wp-block-table .table-secondary {
+  --bs-table-bg: #ece9e1;
+  --bs-table-striped-bg: #e0ddd6;
+  --bs-table-striped-color: #000;
+  --bs-table-active-bg: #d4d2cb;
+  --bs-table-active-color: #000;
+  --bs-table-hover-bg: #dad8d0;
+  --bs-table-hover-color: #000;
+  color: #000;
+  border-color: #d4d2cb;
+}
+.wp-block-table .table-success {
+  --bs-table-bg: #d1e7dd;
+  --bs-table-striped-bg: #c7dbd2;
+  --bs-table-striped-color: #000;
+  --bs-table-active-bg: #bcd0c7;
+  --bs-table-active-color: #000;
+  --bs-table-hover-bg: #c1d6cc;
+  --bs-table-hover-color: #000;
+  color: #000;
+  border-color: #bcd0c7;
+}
+.wp-block-table .table-info {
+  --bs-table-bg: #cff4fc;
+  --bs-table-striped-bg: #c5e8ef;
+  --bs-table-striped-color: #000;
+  --bs-table-active-bg: #badce3;
+  --bs-table-active-color: #000;
+  --bs-table-hover-bg: #bfe2e9;
+  --bs-table-hover-color: #000;
+  color: #000;
+  border-color: #badce3;
+}
+.wp-block-table .table-warning {
+  --bs-table-bg: #fffccc;
+  --bs-table-striped-bg: #f2efc2;
+  --bs-table-striped-color: #000;
+  --bs-table-active-bg: #e6e3b8;
+  --bs-table-active-color: #000;
+  --bs-table-hover-bg: #ece9bd;
+  --bs-table-hover-color: #000;
+  color: #000;
+  border-color: #e6e3b8;
+}
+.wp-block-table .table-danger {
+  --bs-table-bg: #f8d7da;
+  --bs-table-striped-bg: #eccccf;
+  --bs-table-striped-color: #000;
+  --bs-table-active-bg: #dfc2c4;
+  --bs-table-active-color: #000;
+  --bs-table-hover-bg: #e5c7ca;
+  --bs-table-hover-color: #000;
+  color: #000;
+  border-color: #dfc2c4;
+}
+.wp-block-table .table-light {
+  --bs-table-bg: #f8f9fa;
+  --bs-table-striped-bg: #ecedee;
+  --bs-table-striped-color: #000;
+  --bs-table-active-bg: #dfe0e1;
+  --bs-table-active-color: #000;
+  --bs-table-hover-bg: #e5e6e7;
+  --bs-table-hover-color: #000;
+  color: #000;
+  border-color: #dfe0e1;
+}
+.wp-block-table .table-dark {
+  --bs-table-bg: #212529;
+  --bs-table-striped-bg: #2c3034;
+  --bs-table-striped-color: #fff;
+  --bs-table-active-bg: #373b3e;
+  --bs-table-active-color: #fff;
+  --bs-table-hover-bg: #323539;
+  --bs-table-hover-color: #fff;
+  color: #fff;
+  border-color: #373b3e;
+}
+.wp-block-table .table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+@media (max-width: 575.98px) {
+  .wp-block-table .table-responsive-sm {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+@media (max-width: 767.98px) {
+  .wp-block-table .table-responsive-md {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+@media (max-width: 991.98px) {
+  .wp-block-table .table-responsive-lg {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+@media (max-width: 1199.98px) {
+  .wp-block-table .table-responsive-xl {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+@media (max-width: 1399.98px) {
+  .wp-block-table .table-responsive-xxl {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }

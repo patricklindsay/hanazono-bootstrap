@@ -1,0 +1,99 @@
+!!!
+%html
+  %head
+    %meta{:charset => "UTF-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %link{href: "https://use.typekit.net/yjp6aky.css", rel:"stylesheet"}
+    %link{:rel => :stylesheet, :type => :"text/css", :href => "css/main.css"}
+    %link{:rel => :stylesheet, :type => :"text/css", :href => "css/bootstrap-icons.css"}
+    %title Blog
+  %body
+  
+    .container 
+      %nav.mt-2{"aria-label" => "breadcrumb"}
+        %ol.breadcrumb
+          %li.breadcrumb-item
+            %a{:href => "#"} Home
+          %li.breadcrumb-item.active{"aria-current" => "page"} Library
+      %main#blog-wrapper
+        %h1 Hanazono Niseko news and information
+        .row 
+          .col-lg-9 
+            .d-flex.justify-content-end
+              %select.form-select.form-select__blog{"aria-label" => "Default select example"}
+                %option{:selected => "selected"} Recently Published
+                %option{:value => "1"} Recently Updated
+            .card.card__big-post.border-bottom           
+              %a{:href=>"#"}
+                %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
+              .card-body
+                %a.fs-3{:href=>"#"} Copy Integral CMS - Demo Post
+                %p.card-text Integral CMS demo post. Integral is a rails content management system (CMS) which gives developers the ability to create a modern website with all the bells and whistles without the hassle.
+                .card-footer
+                  %ul.list-group.list-group-horizontal.list-group-piped
+                    %li.list-group-item.text-muted March 25,2021
+                    %li.list-group-item.text-muted Uncategorised 
+            .card.mt-3.pb-3.border-bottom.card__horizontal-post
+              .row 
+                .col-4 
+                  %a{:href=>"#"}
+                    %img.card-img(src="images/random-image.jpg" alt="random image")/
+                .col-8
+                  %a.card-title.link{:href => "#"} 5 reasons why we love spring skiing & snowboarding
+                  %p.card-text Take advantage of big discounts to celebrate the sunshine and blue skies on the slopes of Hanazono!
+                  .card-footer
+                    %ul.list-group.list-group-horizontal.list-group-piped
+                      %li.list-group-item.text-muted March 25,2021
+                      %li.list-group-item.text-muted Uncategorised 
+            .card.mt-3.pb-3.border-bottom.card__horizontal-post
+              .row 
+                .col-4 
+                  %a{:href=>"#"}
+                    %img.card-img(src="images/random-image.jpg" alt="random image")/
+                .col-8
+                  %a.card-title.link{:href => "#"} 5 reasons why we love spring skiing & snowboarding
+                  %p.card-text Take advantage of big discounts to celebrate the sunshine and blue skies on the slopes of Hanazono!
+                  .card-footer
+                    %ul.list-group.list-group-horizontal.list-group-piped
+                      %li.list-group-item.text-muted March 25,2021
+                      %li.list-group-item.text-muted Uncategorised 
+            .inline-articles.border-bottom.mt-3.py-3
+              %h2 Most Read Articles
+              .row
+                .col-md-3.col-6
+                  %a{:href=> "#"}
+                    %img.card-img(src="images/random-image.jpg" alt="random image")/
+                    %p.inline-articles__title.text-truncate 
+                      Lorem ipsum dolor, sit amet consectetur adipisicing.
+                .col-md-3.col-6
+                  %a{:href=> "#"}
+                    %img.card-img(src="images/random-image.jpg" alt="random image")/
+                    %p.inline-articles__title.text-truncate 
+                      Lorem ipsum dolor, sit amet consectetur adipisicing.
+                .col-md-3.col-6
+                  %a{:href=> "#"}
+                    %img.card-img(src="images/random-image.jpg" alt="random image")/
+                    %p.inline-articles__title.text-truncate 
+                      Lorem ipsum dolor, sit amet consectetur adipisicing.
+                .col-md-3.col-6
+                  %a{:href=> "#"}
+                    %img.card-img(src="images/random-image.jpg" alt="random image")/
+                    %p.inline-articles__title.text-truncate 
+                      Lorem ipsum dolor, sit amet consectetur adipisicing.
+            .card.mt-3.pb-3.border-bottom.card__horizontal-post
+              .row 
+                .col-4 
+                  %a{:href=>"#"}
+                    %img.card-img(src="images/random-image.jpg" alt="random image")/
+                .col-8
+                  %a.card-title.link{:href => "#"} 5 reasons why we love spring skiing & snowboarding
+                  %p.card-text Take advantage of big discounts to celebrate the sunshine and blue skies on the slopes of Hanazono!
+                  .card-footer
+                    %ul.list-group.list-group-horizontal.list-group-piped
+                      %li.list-group-item.text-muted March 25,2021
+                      %li.list-group-item.text-muted Uncategorised 
+          .col-lg-3
+            .sidebar.position-sticky.top-0
+              This is a sticky sidebar container
+  %script{:src => "js/bootstrap.min.js"}

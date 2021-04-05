@@ -180,9 +180,6 @@ $nav-pills-link-active-bg:          $component-active-bg !default;
       background: $white;
       color: $primary;
     }
-    &:not(:last-child){
-      margin-right: $spacer;
-    }
   }
   .nav-list-link{
     background:transparent;
@@ -201,18 +198,39 @@ $nav-pills-link-active-bg:          $component-active-bg !default;
   
 }
 .tab{
-  &-content{
-    padding: $spacer*2;
-  }
   &-list{
     list-style: none;
     padding-left: 0;
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    flex-wrap: wrap;
+    margin-top: 3*$spacer;
     li{
+      width: 100%;
+      text-align: center;
+      @include media-breakpoint-up(md){
+        width: auto;
+        text-align: left;
+      }
       &:not(:last-child){
-        margin-right: $spacer;
+        margin-bottom: $spacer;
+        @include media-breakpoint-up(md){
+          margin-right: $spacer;
+          margin-bottom: 0;
+        }
+      }
+      label{
+        display: none;
+        @include media-breakpoint-up(md){
+          display: block;
+        }
+      }
+      button{
+        width: 100%;
+        @include media-breakpoint-up(md){
+          width: auto;
+        }
       }
     }
   }

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <link href="https://use.typekit.net/yjp6aky.css" rel="stylesheet">
 <link href="css/main.css" rel="stylesheet" type="text/css">
 <link href="css/bootstrap-icons.css" rel="stylesheet" type="text/css">
@@ -11,7 +14,7 @@
 <div class="row">
 <div class="col-md-12 mb-5 mt-5">
 <h2 class="mb-5">Hero Example</h2>
-<div class="hero">
+<div class="hero hero--inner">
 <a class="btn btn-secondary hero__button" href="#">Book Now</a>
 <h1 class="text-white">This is the Hero title</h1>
 <div class="hero__img">
@@ -110,28 +113,31 @@ A simple danger alert—check it out!
 </div>
 <div class="col-md-12 mt-5">
 <h3>Cover Examples</h3>
-<div class="cover full-width">
-<img alt="" class="cover-img" src="images/random-image.jpg">
-<div class="cover-body">
-<h3>This is the cover full-width</h3>
-<ul>
-<li>Cover Item</li>
-<li>Cover Item</li>
-<li>Cover Item</li>
-<li>Cover Item</li>
-</ul>
+<div class="cover cover--full mt-5 mb-5">
+<img alt="" class="cover__image" src="images/random-image.jpg">
+<div class="cover__body">
+<h2>About the Resort</h2>
+<p>
+Hanazono Niseko is internationally renowned for its consistently high falls of light powder snow and its long ski season which runs from early December until April. Averaging around 15m+ of snow each season, Hanazono is famous for its wide-open powder bowls and tree runs. The resort is family-friendly with a large open area for the resort operated ski school and lots of activities such for both adults and children. The resort center "HANAZONO 308", offers all kinds of services, including a lift ticket sale, a high-quality gear rental, an arrangement of lessons, and a variety of activities. A cutting-edge slope-side restaurant “HANAZONO EDGE” complements the resort, with an exciting restaurant, café, and bar.
+</p>
 </div>
 </div>
-<div class="cover is-right mt-5 mb-5">
-<img alt="" class="cover-img" src="images/random-image.jpg">
-<div class="cover-body">
-<h3>This is the cover right</h3>
-<ul>
-<li>Cover Item</li>
-<li>Cover Item</li>
-<li>Cover Item</li>
-<li>Cover Item</li>
-</ul>
+<div class="cover cover--left mt-5 mb-5">
+<img alt="" class="cover__image" src="images/random-image.jpg">
+<div class="cover__body">
+<h2>About the Resort</h2>
+<p>
+Hanazono Niseko is internationally renowned for its consistently high falls of light powder snow and its long ski season which runs from early December until April. Averaging around 15m+ of snow each season, Hanazono is famous for its wide-open powder bowls and tree runs. The resort is family-friendly with a large open area for the resort operated ski school and lots of activities such for both adults and children. The resort center "HANAZONO 308", offers all kinds of services, including a lift ticket sale, a high-quality gear rental, an arrangement of lessons, and a variety of activities. A cutting-edge slope-side restaurant “HANAZONO EDGE” complements the resort, with an exciting restaurant, café, and bar.
+</p>
+</div>
+</div>
+<div class="cover cover--right mt-5 mb-5">
+<img alt="" class="cover__image" src="images/random-image.jpg">
+<div class="cover__body">
+<h2>About the Resort</h2>
+<p>
+Hanazono Niseko is internationally renowned for its consistently high falls of light powder snow and its long ski season which runs from early December until April. Averaging around 15m+ of snow each season, Hanazono is famous for its wide-open powder bowls and tree runs. The resort is family-friendly with a large open area for the resort operated ski school and lots of activities such for both adults and children. The resort center "HANAZONO 308", offers all kinds of services, including a lift ticket sale, a high-quality gear rental, an arrangement of lessons, and a variety of activities. A cutting-edge slope-side restaurant “HANAZONO EDGE” complements the resort, with an exciting restaurant, café, and bar.
+</p>
 </div>
 </div>
 </div>
@@ -210,27 +216,54 @@ A simple danger alert—check it out!
 <div class="row">
 <div class="col-md-4">
 <div class="card">
+<a class="card__offer-link" href="#">
 <img alt="..." class="card-img-top" src="images/random-image.jpg">
+<div class="card__label text-white bg-secondary btn">30% OFF</div>
+</a>
 <div class="card-body">
 <a class="text-secondary fw-bold fs-5 card-link" href="#">RETURNING GUEST DISCOUNT 30% Off</a>
+<div class="card__calendar">
+<span>
+<i class="bi bi-calendar"></i>
+</span>
+<p>Expires Oct 31</p>
+</div>
 <p class="card-text">Integral CMS demo post. Integral is a rails content management system (CMS) which gives developers the ability to create a modern website with all the bells and whistles without the hassle.</p>
 </div>
 </div>
 </div>
 <div class="col-md-4">
 <div class="card">
+<a class="card__offer-link" href="#">
 <img alt="..." class="card-img-top" src="images/random-image.jpg">
+<div class="card__label text-white bg-secondary btn">discount ticket</div>
+</a>
 <div class="card-body">
 <a class="text-secondary fw-bold fs-5 card-link" href="#">ONSEN DISCOUNT FOR HANAZONO ACTIVITY GUESTS!</a>
+<div class="card__calendar">
+<span>
+<i class="bi bi-calendar"></i>
+</span>
+<p>Expires Oct 31</p>
+</div>
 <p class="card-text">Integral CMS demo post. Integral is a rails content management system (CMS) which gives developers the ability to create a modern website with all the bells and whistles without the hassle.</p>
 </div>
 </div>
 </div>
 <div class="col-md-4">
 <div class="card">
+<a class="card__offer-link" href="#">
 <img alt="..." class="card-img-top" src="images/random-image.jpg">
+<div class="card__label text-white bg-secondary btn">20% OFF</div>
+</a>
 <div class="card-body">
 <a class="text-secondary fw-bold fs-5 card-link" href="#">BOOK ONLINE AND SAVE 20%!</a>
+<div class="card__calendar">
+<span>
+<i class="bi bi-calendar"></i>
+</span>
+<p>Expires Oct 31</p>
+</div>
 <p class="card-text">Integral CMS demo post. Integral is a rails content management system (CMS) which gives developers the ability to create a modern website with all the bells and whistles without the hassle.</p>
 </div>
 </div>
@@ -574,6 +607,115 @@ SEND
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="col-md-12 mt-5 mb-5">
+<div class="image-link">
+<div class="resort-status">
+<div class="row">
+<div class="col-md-3 col-sm-4">
+<h4>Weather</h4>
+<i class="bi bi-brightness-high resort-status--weather-icon"></i>
+</div>
+<div class="col-md-3 col-sm-4">
+<h4>Wind</h4>
+<span class="resort-status--wind-speed-value"></span>
+<span class="resort-status--wind-speed-metric">m/s</span>
+</div>
+<div class="col-md-6">
+<h4>Temperature</h4>
+<div class="resort-status--temperature">
+<span class="resort-status--current-temperature">6</span>
+<span class="resort-status--current-temperature-metric">° C</span>
+<div class="resort-status--estimated-temperatures">
+<div class="resort-status--estimated-temperature">
+<i class="bi bi-thermometer-high resort-status--estimated-temperature-icon"></i>
+<div>
+<span class="resort-status--estimated-temperature-metric">6</span>
+&nbsp;° C
+</div>
+</div>
+<div class="resort-status--estimated-temperature">
+<i class="bi bi-thermometer-low resort-status--estimated-temperature-icon"></i>
+<div>
+<span class="resort-status--estimated-temperature-metric">3</span>
+&nbsp;° C
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-12 resort-status--spacer hide-for-small-only"></div>
+<div class="col-sm-4">
+<h4>Snow Condition</h4>
+<span class="resort-status--snow-condition">-</span>
+</div>
+<div class="col-sm-4">
+<div class="resort-status--snowfall">
+<div class="resort-status--snowfall-location">
+<span>Mountain Peak</span>
+<span>Snow Base</span>
+</div>
+<div class="resort-status--snowfall-data">
+<span class="resort-status--snowfall-value">290</span>
+<span class="resort-status--snowfall-metric">cm</span>
+</div>
+</div>
+<div class="resort-status--snowfall">
+<div class="resort-status--snowfall-location">
+<span>24HR</span>
+<span>Snow Fall</span>
+</div>
+<div class="resort-status--snowfall-data">
+<span class="resort-status--snowfall-value">0</span>
+<span class="resort-status--snowfall-metric">cm</span>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="resort-status--buttons">
+<a class="btn btn-secondary w-100 mb-3" href="#">Lift Status</a>
+<a class="btn btn-secondary w-100" href="#">Live Camera</a>
+</div>
+</div>
+</div>
+</div>
+<div class="image-block">
+<a class="image-block__link" href="#">
+<img alt="Alt" class="image-block__img" src="./images/random-image.jpg">
+<span class="image-block__text">New! Tree Trekking</span>
+</a>
+</div>
+<div class="image-block">
+<a class="image-block__link" href="#">
+<img alt="Alt" class="image-block__img" src="./images/random-image.jpg">
+<span class="image-block__text">New! Tree Trekking</span>
+</a>
+</div>
+<div class="image-block">
+<a class="image-block__link" href="#">
+<img alt="Alt" class="image-block__img" src="./images/random-image.jpg">
+<span class="image-block__text">New! Tree Trekking</span>
+</a>
+</div>
+<div class="image-block">
+<a class="image-block__link" href="#">
+<img alt="Alt" class="image-block__img" src="./images/random-image.jpg">
+<span class="image-block__text">New! Tree Trekking</span>
+</a>
+</div>
+<div class="image-block">
+<a class="image-block__link" href="#">
+<img alt="Alt" class="image-block__img" src="./images/random-image.jpg">
+<span class="image-block__text">New! Tree Trekking</span>
+</a>
+</div>
+<div class="image-block">
+<a class="image-block__link" href="#">
+<img alt="Alt" class="image-block__img" src="./images/random-image.jpg">
+<span class="image-block__text">New! Tree Trekking</span>
+</a>
+</div>
 </div>
 </div>
 </div>

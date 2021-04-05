@@ -1,0 +1,41 @@
+.season-dates{
+  display: flex;
+  flex-wrap: wrap;
+  padding: $spacer 0;
+  align-items: center;
+  justify-content: center;
+  @include media-breakpoint-up(lg){
+    justify-content: flex-start;
+  }
+  &__list{
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    margin-bottom: 0;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 100%;
+    flex-wrap: wrap;
+    @include media-breakpoint-up(lg){
+      justify-content: flex-start;
+      flex: 1;
+    }
+  }
+  &__item{
+    font-size: $spacer*.9;
+    &:not(:last-child){
+      margin-right: $spacer;
+      line-height: 1;
+    }
+  }
+  &__title{
+    margin-right: $spacer*2;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    font-size: $spacer;
+    margin-bottom: $spacer;
+    @include media-breakpoint-up(lg){
+      margin-bottom: 0;
+    }
+  }
+}

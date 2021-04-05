@@ -243,11 +243,6 @@ $card-group-margin:                 $grid-gutter-width / 2 !default;
     height: 13rem;
     object-fit: cover;
   }
-  &-left{
-    height: 10rem;
-    object-fit: cover;
-    width: 100%;
-  }
 }
 .card{
   // full height in the column
@@ -291,4 +286,56 @@ $card-group-margin:                 $grid-gutter-width / 2 !default;
     }
   }
 
+  //CARD SPECIAL OFFER
+  &__horizontal-post{
+    .card-title{
+      font-size: $spacer;
+      @include media-breakpoint-up(md){
+        font-size: $spacer*1.275;
+      }
+    }
+    .card-text{
+      display: none;
+      @include media-breakpoint-up(md){
+        display: block;
+      }
+    }
+    .card-image{
+      object-fit: cover;
+      width: 100%;
+      @include media-breakpoint-up(md){
+        height: 10rem;
+
+      }
+    }
+  }
+  &__offer-link{
+    position: relative;
+  }
+  &__label{
+    position: absolute;
+    bottom: $spacer;
+    left: 0;
+    font-size: $font-size-sm*0.85;
+    text-transform: uppercase;
+  }
+  &__calendar{
+    display: flex;
+    margin-top: 0.5*$spacer;
+    p{
+      margin-left: $spacer;
+      
+    }
+  }
+
+  //BLOG CARDS CONFIG
+  &__big-post{
+    margin: $spacer 0;
+    .card-img-top{
+      height: 15.625*$spacer;
+      @include media-breakpoint-up(md){
+        height: 31.25*$spacer;
+      }
+    }
+  }
 }

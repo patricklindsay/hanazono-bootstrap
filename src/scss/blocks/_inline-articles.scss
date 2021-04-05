@@ -1,0 +1,11 @@
+.inline-articles{
+  img{
+    max-width: 100%;
+  }
+  &__title{
+    display: inline-block;
+    font-weight: 700;
+    padding: $spacer*.6;
+
+  }
+}

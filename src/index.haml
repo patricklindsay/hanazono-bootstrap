@@ -1,6 +1,9 @@
 !!!
 %html
   %head
+    %meta{:charset => "UTF-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %link{href: "https://use.typekit.net/yjp6aky.css", rel:"stylesheet"}
     %link{:rel => :stylesheet, :type => :"text/css", :href => "css/main.css"}
     %link{:rel => :stylesheet, :type => :"text/css", :href => "css/bootstrap-icons.css"}
@@ -10,7 +13,7 @@
       .row
         .col-md-12.mb-5.mt-5 
           %h2.mb-5 Hero Example
-          .hero
+          .hero.hero--inner
             %a.btn.btn-secondary.hero__button{:href=>"#"} Book Now
             %h1.text-white This is the Hero title
             .hero__img
@@ -80,24 +83,24 @@
             %button.btn.btn-secondary.btn-lg{:type => "button"} This is a bigger button
         .col-md-12.mt-5 
           %h3 Cover Examples
-          .cover.full-width
-            %img.cover-img(src="images/random-image.jpg" alt="")/
-            .cover-body
-              %h3 This is the cover full-width
-              %ul
-                %li Cover Item
-                %li Cover Item
-                %li Cover Item
-                %li Cover Item
-          .cover.is-right.mt-5.mb-5
-            %img.cover-img(src="images/random-image.jpg" alt="")/
-            .cover-body
-              %h3 This is the cover right
-              %ul
-                %li Cover Item
-                %li Cover Item
-                %li Cover Item
-                %li Cover Item        
+          .cover.cover--full.mt-5.mb-5 
+            %img.cover__image(src="images/random-image.jpg" alt="")
+            .cover__body 
+              %h2 About the Resort
+              %p 
+                Hanazono Niseko is internationally renowned for its consistently high falls of light powder snow and its long ski season which runs from early December until April. Averaging around 15m+ of snow each season, Hanazono is famous for its wide-open powder bowls and tree runs. The resort is family-friendly with a large open area for the resort operated ski school and lots of activities such for both adults and children. The resort center "HANAZONO 308", offers all kinds of services, including a lift ticket sale, a high-quality gear rental, an arrangement of lessons, and a variety of activities. A cutting-edge slope-side restaurant “HANAZONO EDGE” complements the resort, with an exciting restaurant, café, and bar.    
+          .cover.cover--left.mt-5.mb-5 
+            %img.cover__image(src="images/random-image.jpg" alt="")
+            .cover__body 
+              %h2 About the Resort
+              %p 
+                Hanazono Niseko is internationally renowned for its consistently high falls of light powder snow and its long ski season which runs from early December until April. Averaging around 15m+ of snow each season, Hanazono is famous for its wide-open powder bowls and tree runs. The resort is family-friendly with a large open area for the resort operated ski school and lots of activities such for both adults and children. The resort center "HANAZONO 308", offers all kinds of services, including a lift ticket sale, a high-quality gear rental, an arrangement of lessons, and a variety of activities. A cutting-edge slope-side restaurant “HANAZONO EDGE” complements the resort, with an exciting restaurant, café, and bar.
+          .cover.cover--right.mt-5.mb-5 
+            %img.cover__image(src="images/random-image.jpg" alt="")
+            .cover__body 
+              %h2 About the Resort
+              %p 
+                Hanazono Niseko is internationally renowned for its consistently high falls of light powder snow and its long ski season which runs from early December until April. Averaging around 15m+ of snow each season, Hanazono is famous for its wide-open powder bowls and tree runs. The resort is family-friendly with a large open area for the resort operated ski school and lots of activities such for both adults and children. The resort center "HANAZONO 308", offers all kinds of services, including a lift ticket sale, a high-quality gear rental, an arrangement of lessons, and a variety of activities. A cutting-edge slope-side restaurant “HANAZONO EDGE” complements the resort, with an exciting restaurant, café, and bar.
         .col-md-12.mt-5
           %h3 Event Posts Block
           .card.mt-3.pb-3.border-bottom
@@ -112,7 +115,6 @@
                   %ul.list-group.list-group-horizontal.list-group-piped
                     %li.list-group-item.text-muted March 25,2021
                     %li.list-group-item.text-muted Uncategorised 
-
         .col-md-12.mt-5
           %h3 Recent Posts Block
           .row
@@ -150,23 +152,41 @@
           .row
             .col-md-4 
               .card
-                %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
+                %a.card__offer-link{:href=>"#"}
+                  %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
+                  .card__label.text-white.bg-secondary.btn 30% OFF
                 .card-body
                   %a.text-secondary.fw-bold.fs-5.card-link{:href => "#"} RETURNING GUEST DISCOUNT 30% Off
+                  .card__calendar 
+                    %span
+                      %i.bi.bi-calendar
+                    %p Expires Oct 31 
                   %p.card-text Integral CMS demo post. Integral is a rails content management system (CMS) which gives developers the ability to create a modern website with all the bells and whistles without the hassle.
                   
             .col-md-4 
               .card
-                %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
+                %a.card__offer-link{:href=>"#"}
+                  %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
+                  .card__label.text-white.bg-secondary.btn discount ticket
                 .card-body
                   %a.text-secondary.fw-bold.fs-5.card-link{:href => "#"} ONSEN DISCOUNT FOR HANAZONO ACTIVITY GUESTS!
+                  .card__calendar 
+                    %span
+                      %i.bi.bi-calendar
+                    %p Expires Oct 31 
                   %p.card-text Integral CMS demo post. Integral is a rails content management system (CMS) which gives developers the ability to create a modern website with all the bells and whistles without the hassle.
                   
             .col-md-4 
               .card
-                %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
+                %a.card__offer-link{:href=>"#"}
+                  %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
+                  .card__label.text-white.bg-secondary.btn 20% OFF
                 .card-body
                   %a.text-secondary.fw-bold.fs-5.card-link{:href => "#"} BOOK ONLINE AND SAVE 20%!
+                  .card__calendar 
+                    %span
+                      %i.bi.bi-calendar
+                    %p Expires Oct 31 
                   %p.card-text Integral CMS demo post. Integral is a rails content management system (CMS) which gives developers the ability to create a modern website with all the bells and whistles without the hassle.
                   
         
@@ -401,5 +421,79 @@
                 %tr
                   %th{:scope => "row"} 3
                   %td{:colspan => "2"} Larry the Bird
-                  %td @twitter                
+                  %td @twitter   
+        .col-md-12.mt-5.mb-5 
+          .image-link
+            .resort-status
+              .row 
+                .col-md-3.col-sm-4 
+                  %h4 Weather 
+                  %i.bi.bi-brightness-high.resort-status--weather-icon
+                .col-md-3.col-sm-4
+                  %h4 Wind 
+                  %span.resort-status--wind-speed-value 
+                  %span.resort-status--wind-speed-metric m/s
+                .col-md-6
+                  %h4 Temperature 
+                  .resort-status--temperature
+                    %span.resort-status--current-temperature 6
+                    %span.resort-status--current-temperature-metric ° C
+                    .resort-status--estimated-temperatures 
+                      .resort-status--estimated-temperature 
+                        %i.bi.bi-thermometer-high.resort-status--estimated-temperature-icon
+                        %div 
+                          %span.resort-status--estimated-temperature-metric 6
+                          &nbsp;° C
+                      .resort-status--estimated-temperature 
+                        %i.bi.bi-thermometer-low.resort-status--estimated-temperature-icon
+                        %div 
+                          %span.resort-status--estimated-temperature-metric 3
+                          &nbsp;° C
+                .col-12.resort-status--spacer.hide-for-small-only
+                .col-sm-4 
+                  %h4 Snow Condition
+                  %span.resort-status--snow-condition -
+                .col-sm-4
+                  .resort-status--snowfall
+                    .resort-status--snowfall-location 
+                      %span Mountain Peak
+                      %span Snow Base 
+                    .resort-status--snowfall-data 
+                      %span.resort-status--snowfall-value 290
+                      %span.resort-status--snowfall-metric cm
+                  .resort-status--snowfall 
+                    .resort-status--snowfall-location
+                      %span 24HR
+                      %span Snow Fall
+                    .resort-status--snowfall-data 
+                      %span.resort-status--snowfall-value 0
+                      %span.resort-status--snowfall-metric cm
+                .col-md-4
+                  .resort-status--buttons 
+                    %a.btn.btn-secondary.w-100.mb-3{:href => "#"} Lift Status
+                    %a.btn.btn-secondary.w-100{:href => "#"} Live Camera             
+            .image-block 
+              %a.image-block__link{:href => "#"}
+                %img.image-block__img{:src => "./images/random-image.jpg", :alt => "Alt"}
+                %span.image-block__text New! Tree Trekking            
+            .image-block 
+              %a.image-block__link{:href => "#"}
+                %img.image-block__img{:src => "./images/random-image.jpg", :alt => "Alt"}
+                %span.image-block__text New! Tree Trekking            
+            .image-block 
+              %a.image-block__link{:href => "#"}
+                %img.image-block__img{:src => "./images/random-image.jpg", :alt => "Alt"}
+                %span.image-block__text New! Tree Trekking
+            .image-block 
+              %a.image-block__link{:href => "#"}
+                %img.image-block__img{:src => "./images/random-image.jpg", :alt => "Alt"}
+                %span.image-block__text New! Tree Trekking
+            .image-block 
+              %a.image-block__link{:href => "#"}
+                %img.image-block__img{:src => "./images/random-image.jpg", :alt => "Alt"}
+                %span.image-block__text New! Tree Trekking     
+            .image-block 
+              %a.image-block__link{:href => "#"}
+                %img.image-block__img{:src => "./images/random-image.jpg", :alt => "Alt"}
+                %span.image-block__text New! Tree Trekking                
   %script{:src => "js/bootstrap.min.js"}

@@ -30,6 +30,13 @@ $form-select-focus-box-shadow:    none;
 // scss-docs-end form-select-variables
 @import "../../../node_modules/bootstrap/scss/forms/form-select";
 
+.form-select__blog{
+  background: transparent;
+  border: none;
+  appearance: auto;
+  width: auto;
+}
+
 /*========================FORM CHECKBOX AND RADIO-BUTTON========================*/
 $form-check-input-border-radius:          .15em;
 $form-check-input-focus-box-shadow:       none;

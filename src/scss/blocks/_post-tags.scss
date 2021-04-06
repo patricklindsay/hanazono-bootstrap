@@ -1,0 +1,23 @@
+.post-tags{
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: $spacer;
+  @include media-breakpoint-up(sm){
+    margin-bottom: 0;
+  }
+  &__item{
+    &:not(:last-child){
+      margin-right: 0.5*$spacer;
+    }
+    a{
+      padding: .3rem .5rem;
+      font-size: .8*$spacer;
+      color: $white;
+      &:hover{
+        color: $secondary;
+      }
+    }
+  }
+}

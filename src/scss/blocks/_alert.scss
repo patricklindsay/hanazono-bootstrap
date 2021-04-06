@@ -1,60 +1,22 @@
-// Define alert colors, border radius, and padding.
+
 
 // scss-docs-start alert-variables
-$alert-padding-y:               $spacer !default;
-$alert-padding-x:               $spacer !default;
-$alert-margin-bottom:           1rem !default;
 $alert-border-radius:           0;
 $alert-border-left:             $spacer solid; 
-$alert-link-font-weight:        $font-weight-bold !default;
 $alert-border-width:            $spacer;
-$alert-bg-scale:                -80% !default;
 $alert-border-scale:             0%;
-$alert-color-scale:             40% !default;
-$alert-dismissible-padding-r:   $alert-padding-x * 3 !default; // 3x covers width of x plus default padding on either side
 // scss-docs-end alert-variables
 //
-// Base styles
-//
+// // Base styles
+// //
+@import "../../../node_modules/bootstrap/scss/alert";
 
-.alert {
-  position: relative;
-  padding: $alert-padding-y $alert-padding-x;
-  margin-bottom: $alert-margin-bottom;
+/*CUSTOM*/
+
+.alert{
   border: 0;
   border-left: $alert-border-width solid transparent;
-  @include border-radius($alert-border-radius);
 }
-
-// Headings for larger alerts
-.alert-heading {
-  // Specified to prevent conflicts of changing $headings-color
-  color: inherit;
-}
-
-// Provide class for links that match alerts
-.alert-link {
-  font-weight: $alert-link-font-weight;
-}
-
-
-// Dismissible alerts
-//
-// Expand the right padding and account for the close button's positioning.
-
-.alert-dismissible {
-  padding-right: $alert-dismissible-padding-r;
-
-  // Adjust close link position
-  .btn-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: $stretched-link-z-index + 1;
-    padding: $alert-padding-y * 1.25 $alert-padding-x;
-  }
-}
-
 
 // scss-docs-start alert-modifiers
 // Generate contextual modifier classes for colorizing the alert.
@@ -71,3 +33,5 @@ $alert-dismissible-padding-r:   $alert-padding-x * 3 !default; // 3x covers widt
   }
 }
 // scss-docs-end alert-modifiers
+
+

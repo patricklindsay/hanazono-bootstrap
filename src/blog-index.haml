@@ -1,0 +1,136 @@
+!!!
+%html
+  %head
+    %meta{:charset => "UTF-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %link{href: "https://use.typekit.net/yjp6aky.css", rel:"stylesheet"}
+    %link{:rel => :stylesheet, :type => :"text/css", :href => "css/main.css"}
+    %link{:rel => :stylesheet, :type => :"text/css", :href => "css/bootstrap-icons.css"}
+    %title Blog
+  %body
+    .container 
+      %nav.mt-2{"aria-label" => "breadcrumb"}
+        %ol.breadcrumb
+          %li.breadcrumb-item
+            %a{:href => "#"} Home
+          %li.breadcrumb-item
+            %a{:href => "#"} Blog
+          %li.breadcrumb-item.active{"aria-current" => "page"} Article
+        %main#blog-wrapper 
+          .row 
+            .col-lg-9 
+              %article.article
+                %header.article__header.border-bottom.py-3.mb-3
+                  %h1 5 reasons why we love spring skiing & snowboarding
+                  .row 
+                    .col-sm-8
+                      .article__author
+                        %span 
+                          %img.article__avatar(src="https://cdn.hanazononiseko.com/assets/integral/defaults/user_avatar-2d841c1311da3aec0d663bff7fb13001346e31f08e2a0aa75c6403d0e28a3ea3.jpg" alt="user Avatar") 
+                        Eri Shibuya 
+                      %ul.list-group.list-group-horizontal.list-group-piped
+                        %li.list-group-item.text-muted March 25,2021
+                        %li.list-group-item.text-muted Uncategorised 
+                    .col-sm-4.d-flex.justify-content-end.align-items-start
+                      %button.btn.btn-secondary
+                        %i.bi.bi-share
+                        SHARE
+                %section.block-editor-content
+                  %h4 2021 Green Season of Hanazono
+                  %h2 Booking Now OPEN for Summer 2021 on March 29!
+                  %p 
+                    Some ski resorts are still open in the Niseko area, but the snow is melting day by day, new buds are sprouting,   and we are excited for the coming of spring! We will finally open bookings for green season activities from                   
+                    %b March  29th.
+                  .wp-block-image.is-style-padded 
+                    %figure
+                      %img(src="https://cdn.hanazononiseko.com/uploads/integral/image/file/1547/rafting-image-2-large.jpg")
+                  %p
+                    Hanazono offers a wide range of outdoor activities for both adults and children!
+                    %br 
+                    Explore Hokkaido’s mountains, forests, oceans, and rivers during Niseko’s spectacular green season. Check out what’s happening at Hanazono for summer 2021 below!
+                  %h3 Booking open on March 29
+                  %figure.wp-block-table.is-style-striped
+                    %table
+                      %thead
+                        %tr
+                          %th{:scope => "col"} 
+                          %th{:scope => "col"} Period
+                          %th{:scope => "col"} Price
+                          %th{:scope => "col"} Age Limit
+                      %tbody
+                        %tr
+                          %th.text-center{:scope => "row"} 
+                            %a.link.text-secondary{:href=>"https://hanazononiseko.com/en/summer/activities/tree-trekking"}Tree Trekking
+                          %td.text-center April 29 - October 31
+                          %td.text-center 
+                            Adult ¥4,500
+                          %td.text-center Age 6+ / Height 115cm +
+                        %tr
+                          %th{:scope => "row"} 2
+                          %td Jacob
+                          %td Thornton
+                          %td @fat
+                        %tr
+                          %th{:scope => "row"} 3
+                          %td{:colspan => "2"} Larry the Bird
+                          %td @twitter 
+                  %h3 Booking scheduled to open from May
+                  %figure.wp-block-table
+                    %table
+                      %thead
+                        %tr
+                          %th{:scope => "col"} 
+                          %th{:scope => "col"} Period
+                          %th{:scope => "col"} Price
+                          %th{:scope => "col"} Age Limit
+                      %tbody
+                        %tr
+                          %th.text-center{:scope => "row"} 
+                            %a.link.text-secondary{:href=>"https://hanazononiseko.com/en/summer/activities/tree-trekking"}Tree Trekking
+                          %td.text-center April 29 - October 31
+                          %td.text-center 
+                            Adult ¥4,500
+                          %td.text-center Age 6+ / Height 115cm +
+                        %tr
+                          %th{:scope => "row"} 2
+                          %td Jacob
+                          %td Thornton
+                          %td @fat
+                        %tr
+                          %th{:scope => "row"} 3
+                          %td{:colspan => "2"} Larry the Bird
+                          %td @twitter 
+                  .wp-block-buttons.text-center
+                    .wp-block-button.btn.btn-secondary 
+                      %a.wp-block-button__link{:href=>"#"} Check out more
+                  %hr.wp-block-separtor.is-style-dots
+                  .alert.alert-secondary{:role => "alert"}
+                    %h5 PREVENTION MEASURES AGAINST COVID-19
+                    %p 
+                      This season’s summer activities at Hanazono Niseko Resort will operate while sticking to the following guidelines to ensure the safety of our customers and our employees.
+                    %p 
+                      Please read it carefully before making a booking.
+                      %br
+                      %b Please bring and wear a mask when entering the resort center Hanazono 308, and keep it on while moving to the activity location.
+                    .wp-block-buttons
+                      .wp-block-button.btn.btn-outline-secondary
+                        %a.wp-block-button__link{:href=>"#"} Check out more
+                %footer.article__footer.border-top.border-bottom
+                  .row 
+                    .col-sm-8.d-flex.align-items-end
+                      %ul.post-tags
+                        %li.post-tags__item Tags:
+                        %li.post-tags__item 
+                          %a.badge.bg-primary{:href=>"#"} booking
+                        %li.post-tags__item 
+                          %a.badge.bg-primary{:href=>"#"} booking
+                        %li.post-tags__item 
+                          %a.badge.bg-primary{:href=>"#"} booking
+                        %li.post-tags__item 
+                          %a.badge.bg-primary{:href=>"#"} booking
+                    .col-sm-4.d-flex.gap-2
+                      %button.btn.btn-primary.w-100 SHARE 
+                      %button.btn.btn-secondary.w-100 SUBSCRIBE
+
+  %script{:src => "js/bootstrap.min.js"}

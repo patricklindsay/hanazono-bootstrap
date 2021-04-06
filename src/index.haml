@@ -9,9 +9,9 @@
     %link{:rel => :stylesheet, :type => :"text/css", :href => "css/bootstrap-icons.css"}
     %title blocks
   %body
-    .container      
-      .row
-        .col-md-12.mb-5.mt-5 
+    .main-content.container      
+      .wp-block-columns.row
+        .wp-block-column.col-md-12 
           %h2.mb-5 Hero Example
           .hero.hero--inner
             %a.btn.btn-secondary.hero__button{:href=>"#"} Book Now
@@ -23,9 +23,9 @@
               %li.breadcrumb-item
                 %a{:href => "#"} Home
               %li.breadcrumb-item.active{"aria-current" => "page"} Library
-        .col-md-12.mt-5 
+        .wp-block-column.col-md-12 
           %h3 Accordion Example
-          #accordionExample.accordion
+          .wp-block-integral-accordion#accordionExample.accordion
           .accordion-item
             %h2#headingOne.accordion-header
               %button.accordion-button{"aria-controls" => "collapseOne", "aria-expanded" => "true", "data-bs-target" => "#collapseOne", "data-bs-toggle" => "collapse", :type => "button"}
@@ -56,70 +56,75 @@
                 It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
                 = succeed "," do
                   %code .accordion-body
-        .col-md-12.mt-5 
+        .wp-block-column.col-md-12
           %h3 Card Example
-          .card
+          .wp-block-integral-card.card
             %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
             .card-body
               %h5.card-title Card title
               %p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
               %a.btn.btn-primary{:href => "#"} Go somewhere
-        .col-md-12.mt-5
+        .wp-block-column.col-md-12
           %h3 Alert Example
-          .alert.alert-primary{:role => "alert"}
+          .wp-block-integral-alert.alert.alert-primary{:role => "alert"}
             A simple primary alert—check it out!
-          .alert.alert-secondary{:role => "alert"}
+          .wp-block-integral-alert.alert.alert-secondary{:role => "alert"}
             A simple secondary alert—check it out!
-          .alert.alert-warning{:role => "alert"}
+          .wp-block-integral-alert.alert.alert-warning{:role => "alert"}
             A simple warning alert—check it out!
-          .alert.alert-danger{:role => "alert"}
+          .wp-block-integral-alert.alert.alert-danger{:role => "alert"}
             A simple danger alert—check it out!
-        .col-md-12.mt-5
+        .wp-block-column.col-md-12.mt-5
           %h3 Button Examples
-          %button.btn.btn-primary{:type => "button"} Primary
-          %button.btn.btn-secondary{:type => "button"} Secondary
-          %button.btn.btn-outline-primary{:type => "button"} Success
-          .mt-3
-            %button.btn.btn-secondary.btn-lg{:type => "button"} This is a bigger button
-        .col-md-12.mt-5 
+          .wp-block-buttons.text-center
+            .wp-block-button.btn.btn-primary 
+              %a.wp-block-button__link{:href=>"#"} Primary
+            .wp-block-button.btn.btn-secondary 
+              %a.wp-block-button__link{:href=>"#"} Secondary
+            .wp-block-button.btn.btn-success 
+              %a.wp-block-button__link{:href=>"#"} Success
+            .wp-block-button.btn.btn-secondary.btn-lg 
+              %a.wp-block-button__link{:href=>"#"} This is a bigger button         
+          
+        .wp-block-column.col-md-12.mt-5 
           %h3 Cover Examples
-          .cover.cover--full.mt-5.mb-5 
+          .wp-block-integral-cover.cover.cover--full.mt-5.mb-5 
             %img.cover__image(src="images/random-image.jpg" alt="")
             .cover__body 
               %h2 About the Resort
               %p 
                 Hanazono Niseko is internationally renowned for its consistently high falls of light powder snow and its long ski season which runs from early December until April. Averaging around 15m+ of snow each season, Hanazono is famous for its wide-open powder bowls and tree runs. The resort is family-friendly with a large open area for the resort operated ski school and lots of activities such for both adults and children. The resort center "HANAZONO 308", offers all kinds of services, including a lift ticket sale, a high-quality gear rental, an arrangement of lessons, and a variety of activities. A cutting-edge slope-side restaurant “HANAZONO EDGE” complements the resort, with an exciting restaurant, café, and bar.    
-          .cover.cover--left.mt-5.mb-5 
-            %img.cover__image(src="images/random-image.jpg" alt="")
-            .cover__body 
-              %h2 About the Resort
-              %p 
-                Hanazono Niseko is internationally renowned for its consistently high falls of light powder snow and its long ski season which runs from early December until April. Averaging around 15m+ of snow each season, Hanazono is famous for its wide-open powder bowls and tree runs. The resort is family-friendly with a large open area for the resort operated ski school and lots of activities such for both adults and children. The resort center "HANAZONO 308", offers all kinds of services, including a lift ticket sale, a high-quality gear rental, an arrangement of lessons, and a variety of activities. A cutting-edge slope-side restaurant “HANAZONO EDGE” complements the resort, with an exciting restaurant, café, and bar.
-          .cover.cover--right.mt-5.mb-5 
-            %img.cover__image(src="images/random-image.jpg" alt="")
-            .cover__body 
-              %h2 About the Resort
-              %p 
-                Hanazono Niseko is internationally renowned for its consistently high falls of light powder snow and its long ski season which runs from early December until April. Averaging around 15m+ of snow each season, Hanazono is famous for its wide-open powder bowls and tree runs. The resort is family-friendly with a large open area for the resort operated ski school and lots of activities such for both adults and children. The resort center "HANAZONO 308", offers all kinds of services, including a lift ticket sale, a high-quality gear rental, an arrangement of lessons, and a variety of activities. A cutting-edge slope-side restaurant “HANAZONO EDGE” complements the resort, with an exciting restaurant, café, and bar.
-        .col-md-12.mt-5
+          .wp-block-integral-cover.cover.cover--left.mt-3
+              %img.cover__image(src="images/random-image.jpg" alt="")
+              .cover__body 
+                %h2 About the Resort
+                %p 
+                  Hanazono Niseko is internationally renowned for its consistently high falls of light powder snow and its long ski season which runs from early December until April. Averaging around 15m+ of snow each season, Hanazono is famous for its wide-open powder bowls and tree runs. The resort is family-friendly with a large open area for the resort operated ski school and lots of activities such for both adults and children. The resort center "HANAZONO 308", offers all kinds of services, including a lift ticket sale, a high-quality gear rental, an arrangement of lessons, and a variety of activities. A cutting-edge slope-side restaurant “HANAZONO EDGE” complements the resort, with an exciting restaurant, café, and bar.    
+          .wp-block-integral-cover.cover.cover--right.mt-3
+              %img.cover__image(src="images/random-image.jpg" alt="")
+              .cover__body 
+                %h2 About the Resort
+                %p 
+                  Hanazono Niseko is internationally renowned for its consistently high falls of light powder snow and its long ski season which runs from early December until April. Averaging around 15m+ of snow each season, Hanazono is famous for its wide-open powder bowls and tree runs. The resort is family-friendly with a large open area for the resort operated ski school and lots of activities such for both adults and children. The resort center "HANAZONO 308", offers all kinds of services, including a lift ticket sale, a high-quality gear rental, an arrangement of lessons, and a variety of activities. A cutting-edge slope-side restaurant “HANAZONO EDGE” complements the resort, with an exciting restaurant, café, and bar.    
+        .wp-block-column.col-md-12.mt-5
           %h3 Event Posts Block
-          .card.mt-3.pb-3.border-bottom
+          .wp-block-itengral-card.card.card__horizontal-post
             .row 
-              .col-md-4 
+              .col-4 
                 %a{:href=>"#"}
-                  %img.card-img-left(src="images/random-image.jpg" alt="random image")/
-              .col-md-8
-                %a.card-title.fs-4.link{:href => "#"} 5 reasons why we love spring skiing & snowboarding
+                  %img.card-img(src="images/random-image.jpg" alt="random image")/
+              .col-8
+                %a.card-title.link{:href => "#"} 5 reasons why we love spring skiing & snowboarding
                 %p.card-text Take advantage of big discounts to celebrate the sunshine and blue skies on the slopes of Hanazono!
                 .card-footer
                   %ul.list-group.list-group-horizontal.list-group-piped
                     %li.list-group-item.text-muted March 25,2021
                     %li.list-group-item.text-muted Uncategorised 
-        .col-md-12.mt-5
+        .wp-block-column.col-md-12.mt-5
           %h3 Recent Posts Block
           .row
-            .col-md-4 
-              .card
+            .wp-block-column.col-md-4 
+              .wp-block-itengral-card.card
                 %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
                 .card-body
                   %h5.card-title Copy Integral CMS - Demo Post
@@ -128,8 +133,8 @@
                     %ul.list-group.list-group-horizontal.list-group-piped
                       %li.list-group-item.text-muted March 25,2021
                       %li.list-group-item.text-muted Uncategorised 
-            .col-md-4 
-              .card
+            .wp-block-column.col-md-4 
+              .wp-block-itengral-card.card
                 %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
                 .card-body
                   %h5.card-title Copy Integral CMS - Demo Post
@@ -138,8 +143,8 @@
                     %ul.list-group.list-group-horizontal.list-group-piped
                       %li.list-group-item.text-muted March 25,2021
                       %li.list-group-item.text-muted Uncategorised 
-            .col-md-4 
-              .card
+            .wp-block-column.col-md-4 
+              .wp-block-itengral-card.card
                 %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
                 .card-body
                   %h5.card-title Copy Integral CMS - Demo Post
@@ -149,9 +154,9 @@
                       %li.list-group-item.text-muted March 25,2021
                       %li.list-group-item.text-muted Uncategorised 
           %h3.mt-5.mb-5 Special Offers blocks 
-          .row
-            .col-md-4 
-              .card
+          .wp-block-columns.row
+            .wp-block-column.col-md-4 
+              .wp-block-itengral-card.card
                 %a.card__offer-link{:href=>"#"}
                   %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
                   .card__label.text-white.bg-secondary.btn 30% OFF
@@ -163,8 +168,8 @@
                     %p Expires Oct 31 
                   %p.card-text Integral CMS demo post. Integral is a rails content management system (CMS) which gives developers the ability to create a modern website with all the bells and whistles without the hassle.
                   
-            .col-md-4 
-              .card
+            .wp-block-column.col-md-4 
+              .wp-block-itengral-card.card
                 %a.card__offer-link{:href=>"#"}
                   %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
                   .card__label.text-white.bg-secondary.btn discount ticket
@@ -176,8 +181,8 @@
                     %p Expires Oct 31 
                   %p.card-text Integral CMS demo post. Integral is a rails content management system (CMS) which gives developers the ability to create a modern website with all the bells and whistles without the hassle.
                   
-            .col-md-4 
-              .card
+            .wp-block-column.col-md-4 
+              .wp-block-itengral-card.card
                 %a.card__offer-link{:href=>"#"}
                   %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
                   .card__label.text-white.bg-secondary.btn 20% OFF
@@ -190,9 +195,9 @@
                   %p.card-text Integral CMS demo post. Integral is a rails content management system (CMS) which gives developers the ability to create a modern website with all the bells and whistles without the hassle.
                   
         
-        .col-md-12.mt-5 
+        .wp-block-column.col-md-12.mt-5 
           %h3 Review Example 
-          .card.card__review
+          .wp-block-itengral-card.card.card__review
             .card-body
               %h5.card-title
                 Patrick Lindsay
@@ -202,16 +207,16 @@
                 %i.bi.bi-star-fill.text-secondary
                 %i.bi.bi-star-fill.text-secondary
               %p This is a review example
-        .col-md-12.mt-5.mb-5
+        .wp-block-column.col-md-12.mt-5.mb-5
           %h3 Book Now Block
           .book-now.bg-secondary 
             %h2.text-center.text-white BOOK NOW 
             %p.text-center.text-white Please select a season
-            %nav
+            %nav.book-now__nav
               #nav-tab.nav.nav-tabs{:role => "tablist"}
                 %button.nav-link.active{"aria-controls" => "nav-summer", "aria-selected" => "true", "data-bs-target" => "#nav-summer", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} SUMMER MENU
                 %button.nav-link{"aria-controls" => "nav-profile", "aria-selected" => "false", "data-bs-target" => "#nav-winter", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} WINTER MENU
-              #nav-tabContent.tab-content
+              #nav-tabContent.tab-content.book-now__content
                 #nav-summer.tab-pane.fade.show.active{"aria-labelledby" => "nav-summer-tab", :role => "tabpanel"} 
                   #myTab.nav.nav-tabs{:role => "tablist"}                    
                     %button.nav-list-link.active{"aria-controls" => "summer-lodging", "aria-selected" => "true", "data-bs-target" => "#summer-lodging", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Lodging                    
@@ -364,9 +369,9 @@
                             %option{:value => "3"} Three
                         %li 
                           %button.btn.btn-warning.btn-black BOOK NOW
-        .col-md-12.mt-5.mb-5 
+        .wp-block-column.col-md-12.mt-5.mb-5 
           %h2.text-center.mb-3 Contact block
-          .contact-form
+          .wp-block-integral-form.contact-form
             %form.form.needs-validation(action=""){:novalidate => ""}
               .mb-3
                 %input.form-control{:placeholder => "Full name", :type => "text", :required => ""}/
@@ -398,21 +403,23 @@
               .mb-3 
                 %button.btn.btn-outline-primary.btn-lg.w-100
                   SEND
-        .col.md-12.mt-5.mb-5 
-          .wp-block-table 
-            %table.table-bordered.table-striped
+        .wp-block-column.col.md-12.mt-5.mb-5 
+          %figure.wp-block-table.is-style-striped
+            %table
               %thead
                 %tr
-                  %th{:scope => "col"} #
-                  %th{:scope => "col"} First
-                  %th{:scope => "col"} Last
-                  %th{:scope => "col"} Handle
+                  %th{:scope => "col"} 
+                  %th{:scope => "col"} Period
+                  %th{:scope => "col"} Price
+                  %th{:scope => "col"} Age Limit
               %tbody
                 %tr
-                  %th{:scope => "row"} 1
-                  %td Mark
-                  %td Otto
-                  %td @mdo
+                  %th.text-center{:scope => "row"} 
+                    %a.link.text-secondary{:href=>"https://hanazononiseko.com/en/summer/activities/tree-trekking"}Tree Trekking
+                  %td.text-center April 29 - October 31
+                  %td.text-center 
+                    Adult ¥4,500
+                  %td.text-center Age 6+ / Height 115cm +
                 %tr
                   %th{:scope => "row"} 2
                   %td Jacob
@@ -421,9 +428,10 @@
                 %tr
                   %th{:scope => "row"} 3
                   %td{:colspan => "2"} Larry the Bird
-                  %td @twitter   
-        .col-md-12.mt-5.mb-5 
-          .image-link
+                  %td @twitter 
+          %h3 Booking scheduled to open from May
+        .wp-block-column.col-md-12.mt-5.mb-5 
+          .wp-block-column.image-link
             .resort-status
               .row 
                 .col-md-3.col-sm-4 

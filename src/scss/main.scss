@@ -26,10 +26,6 @@
 
 
 
-// 5. Include base reset
-@import "./abstracts/base";
-
-
 // 5. Include blocks
 @import "./blocks/accordion";
 @import "./blocks/alert";
@@ -43,7 +39,21 @@
 @import "./blocks/image-block";
 @import "./blocks/list-group";
 @import "./blocks/nav";
+@import "./blocks/post-tags";
 @import "./blocks/resort-status";
 @import "./blocks/season-dates";
-@import "./blocks/section";
+@import "./blocks/swipper";
 @import "./blocks/table";
+
+// 6. GUTENBERG BLOCKS
+@import "./blocks/block-editor-content";
+@import "./blocks/wp-block-button";
+@import "./blocks/wp-block-columns";
+@import "./blocks/wp-block-image";
+@import "./blocks/wp-block-table";
+@import "./blocks/wp-block-separator";
+
+// 7. LAYOUT
+@import "./layout/article";
+@import "./layout/main-content";
+@import "./layout/section";

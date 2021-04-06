@@ -1,0 +1,8 @@
+.section{
+  margin: 4*$spacer 0;
+
+  &--sponsor{
+    background: $gray-300;
+    padding: $spacer*2 0;
+  }
+}

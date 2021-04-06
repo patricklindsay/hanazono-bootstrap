@@ -1,0 +1,47 @@
+!!!
+%html
+  %head
+    %meta{:charset => "UTF-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %link{href: "https://use.typekit.net/yjp6aky.css", rel:"stylesheet"}
+    %link{:rel => :stylesheet, :type => :"text/css", :href => "css/main.css"}
+    %link{:rel => :stylesheet, :type => :"text/css", :href => "css/bootstrap-icons.css"}
+    %title Blog
+  %body
+    %main.main-content#main-content
+      .container#inner-page 
+        .hero.hero--inner
+          %a.btn.btn-secondary.hero__button{:href=>"#"} Book Now
+          %h1.text-white Niseko Maps
+          .hero__img
+            %img{:src=> "images/random-image.jpg"}
+        %nav.mt-2{"aria-label" => "breadcrumb"}
+          %ol.breadcrumb
+            %li.breadcrumb-item
+              %a{:href => "#"} Home
+            %li.breadcrumb-item.active{"aria-current" => "page"} Library
+        .block-editor-content 
+          %h2 Niseko United Resort Map 2020-2021
+          .wp-block-image
+            %figure
+              %img.wp-image-1084(src="https://cdn.hanazononiseko.com/uploads/integral/image/file/1084/niseko-united_trail-map_2020-21_eg-page-001.jpg")
+          .wp-block-buttons.text-center
+            .wp-block-button.btn.btn-lg.btn-outline-secondary 
+              %a.wp-block-button__link{:href=>"#"} DOWNLOAD MAP (PDF: 14MB)
+          .wp-block-columns.row 
+            .wp-block-column.col-md-6 
+              .wp-block-integral-card.card 
+                %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
+                .card-body
+                  %a.text-secondary.fw-bold.fs-5.card-link{:href => "#"} RETURNING GUEST DISCOUNT 30% Off
+                  %p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+                  %a.btn.btn-primary.w-100{:href => "#"} Go somewhere
+            .wp-block-column.col-md-6
+              .wp-block-integral-card.card 
+                %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
+                .card-body
+                  %a.text-secondary.fw-bold.fs-5.card-link{:href => "#"} RETURNING GUEST DISCOUNT 30% Off
+                  %p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+                  %a.btn.btn-primary.w-100{:href => "#"} Go somewhere
+    %script{:src => "js/bootstrap.min.js"}

@@ -1,41 +1,40 @@
-.season-dates{
+.season-dates {
   display: flex;
-  flex-wrap: wrap;
-  padding: $spacer 0;
+  margin: 1rem 0;
   align-items: center;
-  justify-content: center;
-  @include media-breakpoint-up(lg){
-    justify-content: flex-start;
-  }
-  &__list{
-    list-style: none;
-    padding-left: 0;
-    display: flex;
-    margin-bottom: 0;
-    align-items: center;
-    justify-content: center;
-    flex: 0 0 100%;
-    flex-wrap: wrap;
-    @include media-breakpoint-up(lg){
-      justify-content: flex-start;
-      flex: 1;
-    }
-  }
-  &__item{
-    font-size: $spacer*.9;
-    &:not(:last-child){
-      margin-right: $spacer;
-      line-height: 1;
-    }
-  }
-  &__title{
-    margin-right: $spacer*2;
+  @include media-breakpoint-down(sm){
+    display: block;
+    text-align: center;    
+}
+
+  &-title {
+    font-family: $headings-font-family;
     text-transform: uppercase;
-    letter-spacing: .5px;
-    font-size: $spacer;
-    margin-bottom: $spacer;
-    @include media-breakpoint-up(lg){
-      margin-bottom: 0;
-    }
+    font-weight: bold;
+    margin-right: 2rem;
+    letter-spacing: 0.5px;
+    @include media-breakpoint-down(sm){
+      margin-bottom: 1rem;  
+      margin-right: 0;       
+  }
+  }
+  &-body {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  &-divider {
+    margin: 0 1rem;
+    @include media-breakpoint-down(sm){
+      display: none;      
+  }
+  }
+  &-season {
+    @include media-breakpoint-down(sm){
+      display: block;      
+  }
+  }
+  &-season-title {
+    text-transform: uppercase;
+    margin-right: 0.5rem;
   }
 }

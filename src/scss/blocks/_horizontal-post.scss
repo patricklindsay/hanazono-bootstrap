@@ -1,0 +1,38 @@
+.horizontal-post{
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e2e1e1;
+  img{
+    height: 65px;
+    object-fit: cover;
+    width: 100%;
+    @include media-breakpoint-up(md){
+      height: 140px;
+    }
+    @include media-breakpoint-up(lg){
+      height: 156px;
+    }
+  }
+
+  &-body{
+    h3{
+      font-size: 20px;
+      color: #0a0a0a;
+
+      a{
+        color: currentColor;
+        &:hover{
+          color: $primary;
+        }
+      }
+    }
+    p{
+      display: none;
+      color: rgba(59,59,59,0.85);
+      font-size: 14px;
+      @include media-breakpoint-up(md){
+        display: block;
+      }
+    }
+  }
+}

@@ -8,6 +8,7 @@
     margin-bottom: 0;
   }
   &__item{
+    margin-bottom: 0.5*$spacer;
     &:not(:last-child){
       margin-right: 0.5*$spacer;
     }
@@ -15,9 +16,18 @@
       padding: .3rem .5rem;
       font-size: .8*$spacer;
       color: $white;
+      &.badge{
+        background: #8a8a8a;
+      }
       &:hover{
-        color: $secondary;
+        color: $white;
+        &.badge{
+          background: $primary;
+        }
       }
     }
+  }
+  &.center{
+    justify-content: center;
   }
 }

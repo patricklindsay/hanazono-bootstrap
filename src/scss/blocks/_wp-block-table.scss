@@ -21,6 +21,7 @@ $table-border-color:          $white;
 // scss-docs-end table-variables
 .wp-block-table{
   margin-bottom: $spacer*1.5;
+  overflow-x: auto;
   table {
     --#{$variable-prefix}table-bg: #{$table-bg};
     --#{$variable-prefix}table-striped-color: #{$table-striped-color};
@@ -35,12 +36,8 @@ $table-border-color:          $white;
     color: $table-color;
     vertical-align: $table-cell-vertical-align;
     border-color: $table-border-color;
-  
-    // Target th & td
-    // We need the child combinator to prevent styles leaking to nested tables which doesn't have a `.table` class.
-    // We use the universal selectors here to simplify the selector (else we would need 6 different selectors).
-    // Another advantage is that this generates less code and makes the selector less specific making it easier to override.
-    // stylelint-disable-next-line selector-max-universal
+    overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
     > :not(caption) > * > * {
       padding: $table-cell-padding-y $table-cell-padding-x;
       background-color: var(--#{$variable-prefix}table-bg);
@@ -57,7 +54,7 @@ $table-border-color:          $white;
   
     > thead {
       vertical-align: bottom;
-      background: $primary;
+      background: $secondary;
       color: $white;
     }
     > thead > tr > th:first-child{

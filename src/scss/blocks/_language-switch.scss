@@ -1,0 +1,82 @@
+.language-switch {
+  position: relative;
+  color: $white;
+  &:hover {
+    &:before,
+    &:after {
+      color: $primary;
+    }
+  }
+  &:before {
+    font-family: "bootstrap-icons";
+    content: '\f3ef';
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    pointer-events: none;
+  }
+  select {
+    background-color: unset;
+    border: none;
+    background-image: none;
+    color: $white;
+    box-shadow: none;
+    padding: 0 1rem 0 2rem;
+    margin-bottom: 0;
+    font-size: .9em;
+    cursor: pointer;
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+    font-family: inherit;
+    &:hover {
+      color: $primary;
+    }
+    &:focus{
+      outline: none;
+    }
+  }
+}
+.language-switch__mobile {
+  select {
+    background-color: #0a0a0a;
+  }
+  &:before {
+    left: 1rem;
+  }
+}
+.language-switch__footer {
+  &:before {
+    left: 0;
+    font-size: 1.55rem;
+  }
+  select {
+    padding-left: 2.5rem;
+    font-size: 1rem;
+    padding-top: 1rem;
+    width: 100%;
+  }
+}
+.language-switch__header {
+  font-family: $headings-font-family;
+  font-size: 1rem;
+  select {    
+    // background-color: #211d1f
+    color: #354153;
+  }
+  &:before {
+    color: #354153;
+  }  // &:after
+  //   @include font-awesome('\f078')
+  //   position: absolute
+  //   top: 0.75rem
+  //   right: 0.5rem
+  //   font-size: 0.5em
+  //   pointer-events: none
+  //   &:hover
+  //     color: $primary-color
+
+  select {
+    padding: 0 1.5rem 0 2rem;    
+  }
+}

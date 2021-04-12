@@ -1,4 +1,7 @@
 .block-editor-content{
+  h5{
+    margin: $spacer 0;
+  }
   h4{
     margin: $spacer 0;
   }
@@ -7,6 +10,7 @@
   }
   h2{
     margin: $spacer 0;
+    font-size: 2.5rem;
   }
 
   p{

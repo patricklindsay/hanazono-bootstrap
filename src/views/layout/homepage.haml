@@ -6,8 +6,8 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %title Home Page
     %link{href: "https://use.typekit.net/yjp6aky.css", rel:"stylesheet"}
-    %link{:rel => :stylesheet, :type => :"text/css", :href => "../../css/main.css"}
     %link{:rel => :stylesheet, :type => :"text/css", :href => "../../css/bootstrap-icons.css"}
+    %link{:rel => :stylesheet, :type => :"text/css", :href => "../../css/main.css"}
     %link{:href => "https://unpkg.com/swiper/swiper-bundle.min.css", :rel => "stylesheet"}/
   %body
     %section.hero-video.hero
@@ -339,9 +339,7 @@
                       %p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
                       %ul.list-group.list-group-horizontal.list-group-piped
                         %li.list-group-item.text-muted March 25,2021
-                        %li.list-group-item.text-muted Uncategorised 
-              
-      
+                        %li.list-group-item.text-muted Uncategorised                
         .cover.cover--left.mt-3
           %img.cover__image(src="../../images/random-image.jpg" alt="")
           .cover__body 
@@ -372,32 +370,99 @@
                 %img(src="https://cdn.hanazononiseko.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdmdDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fede0fe20aaa0124486b21d12feb25c0a1329c7a/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJZ0Eya0NJQU09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--3ef3136a9e88c7f7795c61c54bc97a3c5575f2a1/k2-logo.png")
             .swiper-slide
               %a{:href=>"https://k2snow.com/en-jp"}
-                %img(src="https://cdn.hanazononiseko.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdmdDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fede0fe20aaa0124486b21d12feb25c0a1329c7a/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJZ0Eya0NJQU09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--3ef3136a9e88c7f7795c61c54bc97a3c5575f2a1/k2-logo.png")
-
-  
+                %img(src="https://cdn.hanazononiseko.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdmdDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fede0fe20aaa0124486b21d12feb25c0a1329c7a/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJZ0Eya0NJQU09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--3ef3136a9e88c7f7795c61c54bc97a3c5575f2a1/k2-logo.png")  
     %footer.lazyload.body-footer#contact-area
-      -# %section.footer 
-      -#   .row
-      -#     .col 
-      -#       .top-bar 
-      -#         .top-bar-left 
-      -#           .language-switch.language-switch__footer
-      -#             %select#switch_language{:name => "switch_language"}
-      -#               %option{:value => ""} English | 日本語 | 中文
-      -#               %option{"data-alternative-url" => "https://hanazononiseko-staging-pr-83.herokuapp.com/en/special-offers/returning-guest-discount2021", :value => "en"} English
-      -#               %option{"data-alternative-url" => "https://hanazononiseko-staging-pr-83.herokuapp.com/ja/special-offers/returning-guest-discount2021", :value => "ja"} 日本語
-      -#               %option{"data-alternative-url" => "https://hanazononiseko-staging-pr-83.herokuapp.com/zh/special-offers/returning-guest-discount2021", :value => "zh"} 中文
-      -#         .top-bar-right.hide-for-small-only
-      -#           %ul.menu.horizontal.social
-      -#             %li 
-      -#               %a(href="#") 
-      -#                 %i.bi.bi-facebook
-      -#             %li 
-      -#               %a(href="#") 
-      -#                 %i.bi.bi-instagram
-      -#             %li 
-      -#               %a(href="#") 
-      -#                 %i.bi.bi-twitter
+      %section.footer.container
+        .row
+          .col-12 
+            .top-bar 
+              .top-bar-left 
+                .language-switch.language-switch__footer
+                  %select#switch_language{:name => "switch_language"}
+                    %option{:value => ""} English | 日本語 | 中文
+                    %option{"data-alternative-url" => "https://hanazononiseko-staging-pr-83.herokuapp.com/en/special-offers/returning-guest-discount2021", :value => "en"} English
+                    %option{"data-alternative-url" => "https://hanazononiseko-staging-pr-83.herokuapp.com/ja/special-offers/returning-guest-discount2021", :value => "ja"} 日本語
+                    %option{"data-alternative-url" => "https://hanazononiseko-staging-pr-83.herokuapp.com/zh/special-offers/returning-guest-discount2021", :value => "zh"} 中文
+              .top-bar-right.d-md-block.d-none
+                %ul.menu.horizontal.social
+                  %li 
+                    %a(href="#") 
+                      %i.bi.bi-facebook
+                  %li 
+                    %a(href="#") 
+                      %i.bi.bi-instagram
+                  %li 
+                    %a(href="#") 
+                      %i.bi.bi-twitter
+          .col-md-3 
+            %img.body-footer--image(src="../../images/hanazono-logo-square-5a053faa48efe111bfdaad5e2c137b2b4de46079992c19756634822b7fc8700f.svg" alt="Hanazono footer")/
+            %a(href="#") 
+              %img.body-footer--image.small(src="https://hanazononiseko-staging-pr-83.herokuapp.com/assets/trip-advisor-fec83103f2ce37bd4ec3579f8604bcc2deab100f400f387e087cf608f267b81d.png" alt="")
+          .col-md-3
+            %h3 Navigation
+            %ul.simple.vertical
+              %li 
+                %a(href="#") Summer Resort Overview
+              %li 
+                %a(href="#") Summer Activities
+              %li 
+                %a(href="#") Winter Resort Overview
+              %li 
+                %a(href="#") Winter Rentals
+              %li 
+                %a(href="#") Snowsports School
+              %li 
+                %a(href="#") Winter Activities
+              %li 
+                %a(href="#") News
+              %li 
+                %a(href="#") Events
+              %li 
+                %a(href="#") Special Offers
+          .col-md-3
+            %h3 Useful Links
+            %ul.simple.vertical
+              %li 
+                %a(href="#") Contact Us
+              %li 
+                %a(href="#") Lost and Found
+              %li 
+                %a(href="#") Company
+              %li 
+                %a(href="#") News Release
+              %li 
+                %a(href="#") Employment
+              %li 
+                %a(href="#") Development
+              %li 
+                %a(href="#") Media Request
+              %li 
+                %a(href="#") Download Center
+              %li 
+                %a(href="#") Privacy Policy
+              %li 
+                %a(href="#") Booking Terms & Conditions - Winter
+              %li 
+                %a(href="#") Booking Terms & Conditions - Summer
+          .col-lg-3
+            %h3 Newsletter
+            %form.remote-form.clearfix{"accept-charset" => "UTF-8", :action => "https://hanazononiseko-staging-pr-83.herokuapp.com/newsletter_signup", "data-remote" => "true", "data-remote-form-event" => "newsletterSignup", "data-remote-form-failure-message" => "Sorry! Unfortunately there was a problem signing you up, please try again later.", "data-remote-form-success-message" => "Great! You've successful signed up for exciting news about Hanazono!", :method => "post"}
+              %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+              %input#newsletter_signup_email{:name => "newsletter_signup[email]", :placeholder => "Email Address", :required => "required", :type => "email"}/
+              %input#newsletter_signup_context{:name => "newsletter_signup[context]", :type => "hidden", :value => "en"}/
+              %button.btn.btn-primary Send
+          .col-12.d-block.d-md-none.mt-4
+            %ul.menu.horizontal.social
+              %li 
+                %a(href="#") 
+                  %i.bi.bi-facebook
+              %li 
+                %a(href="#") 
+                  %i.bi.bi-instagram
+              %li 
+                %a(href="#") 
+                  %i.bi.bi-twitter
+    %p.copyright Copyright @ 2021 hanazononiseko.com All rights reserved.
   %script{:src => "../../js/bootstrap.min.js"}
   %script{:src => "https://unpkg.com/swiper/swiper-bundle.min.js"}
   :javascript

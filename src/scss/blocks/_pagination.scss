@@ -1,0 +1,43 @@
+$pagination-padding-y:              .1875rem;
+$pagination-padding-x:              .625rem;
+$pagination-padding-y-sm:           .25rem;
+$pagination-padding-x-sm:           .5rem;
+$pagination-padding-y-lg:           .75rem;
+$pagination-padding-x-lg:           1.5rem;
+
+$pagination-color:                  $black;
+$pagination-bg:                     none;
+$pagination-border-width:           none;
+$pagination-border-radius:          none;
+
+$pagination-focus-bg:               $gray-200;
+$pagination-focus-box-shadow:       none;
+$pagination-focus-outline:          0;
+
+$pagination-hover-color:            $link-hover-color;
+$pagination-hover-bg:               #e6e6e6;
+
+$pagination-active-color:           $white;
+$pagination-active-bg:              $primary;
+$pagination-active-border-color:    none;
+
+$pagination-disabled-color:         #cacaca;
+$pagination-disabled-bg:            none;
+
+@import "../../../node_modules/bootstrap/scss/pagination";
+
+.pagination{
+  .page-item{
+    display: none;
+    &.next{
+      display: inline-block;
+    }
+    &.prev{
+      display: inline-block;
+    }
+    @include media-breakpoint-up(md){
+      display: inline-block;
+    }
+  }
+}
+

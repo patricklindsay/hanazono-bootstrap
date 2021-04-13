@@ -1,0 +1,14 @@
+
+
+.wp-block-button{
+  display: inline-block;
+  text-transform: uppercase;
+  width: auto;
+  &__link{
+    color: currentColor;
+    &:hover{
+      color: currentColor;
+    }
+    
+  }
+}

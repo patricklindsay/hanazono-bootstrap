@@ -24,48 +24,16 @@
 @import "../../node_modules/bootstrap/scss/forms";
 @import "../../node_modules/bootstrap/scss/transitions";
 
+// 5. Boostrap blocks
+@import "./bs-blocks/bs-blocks";
+
+// 6. Integral blocks
+@import "./integral/integral";
+
+// 7. Hanazono blocks
+@import "./hanazono-blocks/hanazono-blocks";
+
+// 8. Layout blocks
+@import "./layout/layout";
 
 
-// 5. Include blocks
-@import "./blocks/accordion";
-@import "./blocks/alert";
-@import "./blocks/book-now";
-@import "./blocks/breadcrumb";
-@import "./blocks/button";
-@import "./blocks/card";
-@import "./blocks/categories";
-@import "./blocks/cover";
-@import "./blocks/form";
-@import "./blocks/hero";
-@import "./blocks/horizontal-post";
-@import "./blocks/image-block";
-@import "./blocks/inline-articles";
-@import "./blocks/language-switch";
-@import "./blocks/latest-post";
-@import "./blocks/list-group";
-@import "./blocks/nav";
-@import "./blocks/pagination";
-@import "./blocks/post-tags";
-@import "./blocks/resort-status";
-@import "./blocks/season-dates";
-@import "./blocks/season-switcher";
-@import "./blocks/sidebar";
-@import "./blocks/swipper";
-@import "./blocks/table";
-
-// 6. GUTENBERG BLOCKS
-@import "./blocks/block-editor-content";
-@import "./blocks/wp-block-button";
-@import "./blocks/wp-block-columns";
-@import "./blocks/wp-block-image";
-@import "./blocks/wp-block-recent-posts";
-@import "./blocks/wp-block-separator";
-@import "./blocks/wp-block-table";
-@import "./blocks/wp-block-integral-card";
-
-// 7. LAYOUT
-@import "./layout/article";
-@import "./layout/footer";
-@import "./layout/main-content";
-@import "./layout/section";
-@import "./layout/homepage";

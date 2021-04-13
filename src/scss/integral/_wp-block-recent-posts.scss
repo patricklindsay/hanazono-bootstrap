@@ -1,0 +1,13 @@
+.wp-block-recent-posts{
+  margin: 1rem 0;
+  .scroll-wrapper{
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    // & > *:not(:last-child){
+    //   margin-right: 1rem;
+    // }
+  }
+
+  
+}

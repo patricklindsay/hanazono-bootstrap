@@ -1,0 +1,49 @@
+
+
+// scss-docs-start alert-variables
+$alert-border-radius:           0;
+$alert-border-left:             $spacer solid; 
+$alert-border-width:            $spacer;
+$alert-border-scale:             0%;
+// scss-docs-end alert-variables
+//
+// // Base styles
+// //
+@import "../../../node_modules/bootstrap/scss/alert";
+
+/*CUSTOM*/
+
+.alert{
+  border: 0;
+  border-left: $alert-border-width solid transparent;
+}
+
+// scss-docs-start alert-modifiers
+// Generate contextual modifier classes for colorizing the alert.
+
+@each $state, $value in $theme-colors {
+  $alert-background: shift-color($value, $alert-bg-scale);
+  $alert-border: shift-color($value, $alert-border-scale);
+  $alert-color: shift-color($value, $alert-color-scale);
+  @if (contrast-ratio($alert-background, $alert-color) < $min-contrast-ratio) {
+    $alert-color: mix($value, color-contrast($alert-background), abs($alert-color-scale));
+  }
+  .alert-#{$state} {
+    @include alert-variant($alert-background, $alert-border, $alert-color);
+  }
+}
+// scss-docs-end alert-modifiers
+
+
+.alert-clickable{
+    color: #fefefe;
+    background-color: #d64141;
+    text-align: center;
+    padding: 5px 0;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    a{
+      color: #fefefe;
+      display: block;
+    }
+}

@@ -1,0 +1,107 @@
+.off-canvas {
+   position: fixed;
+    z-index: 100;
+    transition: transform 0.5s ease;
+    backface-visibility: hidden;
+    background: #354153;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    overflow-y: auto;
+    &.is-close{
+      visibility: hidden;
+    }
+    &.position-right{
+      top: 0;
+      right: 0;
+      height: 100%;
+      overflow-y: auto;
+      width: 100%;
+      transform: translateX(100%);
+    }
+    &.is-open{
+      transform: translate(0,0);
+    }
+  .search-button {
+    position: absolute;
+    right: 3rem;
+    top: .85rem;
+    padding: 0.5rem;
+    z-index: 1;
+    background: none;
+    border: none;
+  }
+  .close-button {
+    position: absolute;
+    color: $white;
+    font-size: 2.25rem;
+    line-height: 1;
+    top: .75rem;
+    background: none;
+    border: none;
+    right: 1rem;
+  }
+
+  &-top-bar {
+    padding: .5rem;
+  }
+
+  &.is-transition-push {
+    z-index: 100;
+  }
+  .season-switcher .btn {
+    flex: 1 1 0px;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  i {
+    color: $white;
+    font-size: 1rem;
+  }
+
+  a {
+    color: $white;
+  }
+  .accordion{
+    margin-top: 1rem;
+    font-size: .9rem;
+  }
+  .accordion-item{
+    margin-bottom: 0;
+    background: none;
+    border: none;
+  }
+  .accordion-button{
+    position: relative;
+    padding-left: 2.5rem;
+    font-family: din-2014, sans-serif;
+    margin-bottom: .5rem;
+    &:after{
+      position: absolute;
+      left: .75rem;
+    }
+  }
+  .accordion-button:not(.collapse){
+    background:none;
+  }
+  .accordion-body{
+    background: #242e3d;
+    color: $white;
+    padding-left: 1.75rem;
+    h4{
+      color: #fefefe;
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    }
+    a{padding: 0.35rem 0;}
+
+    div[class^="col"]:first-child{
+      h4{
+        margin-bottom: 0;
+      }
+    }
+  }
+}

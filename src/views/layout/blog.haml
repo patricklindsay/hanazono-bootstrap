@@ -10,302 +10,545 @@
     %link{:rel => :stylesheet, :type => :"text/css", :href => "../../css/main.css"}
     %link{:href => "https://unpkg.com/swiper/swiper-bundle.min.css", :rel => "stylesheet"}/
   %body
-    .container
-      %nav.mt-2{"aria-label" => "breadcrumb"}
-        %ol.breadcrumb
-          %li.breadcrumb-item
-            %a{:href => "#"} Home
-          %li.breadcrumb-item
-            %a{:href => "#"} Blog
-          %li.breadcrumb-item.active{"aria-current" => "page"} Article
-    
-    #blog-wrapper.container
-      %h1 Hanazono Niseko news and information
+    #offCanvas.off-canvas.position-right
+      %button.close-button{"aria-label" => "Close menu", "data-close" => "", :type => "button"}
+        %span{"aria-hidden" => "true"} ×
+      %button.search.search-button{"aria-controls" => "search-modal", "aria-haspopup" => "true", "data-toggle" => "search-modal", :tabindex => "0"}
+        %i.bi.bi-search 
+      %ul.menu.off-canvas-top-bar 
+        %li 
+          %a(href="#") 
+            %i.bi.bi-envelope
+        %li.language-switch
+          %select#switch_language{:name => "switch_language"}
+            %option English | 日本語 | 中文
+            %option{"data-alternative-url" => "https://hanazononiseko.com/en", :value => "en"} English
+            %option{"data-alternative-url" => "https://hanazononiseko.com/ja", :value => "ja"} 日本語
+            %option{"data-alternative-url" => "https://hanazononiseko.com/zh", :value => "zh"} 中文
+      #accordion.accordion
+        .accordion-item          
+          %button.accordion-button.collapsed{"aria-controls" => "discover", "aria-expanded" => "true", "data-bs-target" => "#discover", "data-bs-toggle" => "collapse", :type => "button"}
+            Discover
+          #discover.accordion-collapse.collapse{"aria-labelledby" => "headingOne", "data-bs-parent" => "#accordion"}
+            .accordion-body
+              %p.season-switcher-title Please select a season
+              .button-group.season-switcher
+                %button.btn.active{"data-action" => "season-switcher#switch", "data-controller" => "season-switcher", "data-seasonal-switch" => "summer"} Summer Menu
+                %button.btn{"data-action" => "season-switcher#switch", "data-controller" => "season-switcher", "data-seasonal-switch" => "winter"} Winter Menu
+                %div(data-seasonal-pane="winter")
+                  .row
+                    .col-md-3
+                      %h4 The Resort
+                      %ul.main-menu-list
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/resort"} Resort Overview
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/resort/restaurants"} Dinning & Cafe
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/rental-and-retail/retail"} Retail Store
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/rental-and-retail/rental"} Rentals
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/rental-and-retail/niseko-boot-lab"} Custom Boots & Insole Store
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/daycare"} Child Care
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/events"} Events
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/resort/access"} Access
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/safetymeasures"} Covid-19 Safety Plan Guidelines   
+                    .col-md-3
+                      %h4 Adventures
+                      %ul.main-menu-list
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/adventure-park"} Activity Overview
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/snowmobile-tours"} Snowmobile Tour
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/snow-rafting"} Snow Rafting Tour
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/tube-park"} Tube Park
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/snowshoe-tour"} Snowshoeing Tour
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/horseback-riding"} Horse Riding Tour
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/galaxy-of-kidz"} Indoor Kids Adventure
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/backcountry-guiding"} Backcountry Guiding Tour
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/resort/terrain-parks"} Terrain Parks
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/weiss-cat-skiing"} Niseko Weiss CAT Tour
+                    .col-md-3
+                      %h4 Snowsports Lessons
+                      %ul.main-menu-list
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/ski-school"} Snowsports School Overview
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/ski-school/kids"} Kids Programs
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/ski-school/adults"} Adult Programs
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/ski-school/adults#private-ski-lesson"} Private Lessons
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/ski-school/diamond-pro"} Ski Concierge Service
+                    .col-md-3
+                      %h4 Event & News
+                      %ul.main-menu-list
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/blog"} News
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/events"} Events
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/special-offers"} Special Offers
+        .accordion-item   
+          %button.accordion-button.collapsed{"aria-controls" => "mountain", "aria-expanded" => "false", "data-bs-target" => "#mountain", "data-bs-toggle" => "collapse", :type => "button"}
+            The Mountain
+          #mountain.accordion-collapse.collapse{"aria-labelledby" => "headingTwo", "data-bs-parent" => "#accordion"}
+            .accordion-body
+              %strong This is the second item's accordion body.
+              It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+              = succeed "," do
+                %code .accordion-body
+        .accordion-item          
+          %button.accordion-button.collapsed{"aria-controls" => "trip", "aria-expanded" => "false", "data-bs-target" => "#trip", "data-bs-toggle" => "collapse", :type => "button"}
+            Plan Your Trip
+          #trip.accordion-collapse.collapse{"aria-labelledby" => "headingThree", "data-bs-parent" => "#accordion"}
+            .accordion-body
+              %strong This is the third item's accordion body.
+              It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+              = succeed "," do
+                %code .accordion-body
+        .accordion-item          
+          %button.accordion-button.collapsed{"aria-controls" => "lodging", "aria-expanded" => "false", "data-bs-target" => "#lodging", "data-bs-toggle" => "collapse", :type => "button"}
+            Lodging
+          #lodging.accordion-collapse.collapse{"aria-labelledby" => "headingThree", "data-bs-parent" => "#accordion"}
+            .accordion-body
+              %strong This is the third item's accordion body.
+              It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+              = succeed "," do
+                %code .accordion-body
+    .main-nav
       .row 
-        .col-lg-9
-          .d-flex.justify-content-end
-            %select.form-select.form-select__blog{"aria-label" => "Default select example"}
-              %option{:selected => "selected"} Recently Published
-              %option{:value => "1"} Recently Updated 
-          .latest-post          
-            %a(href="#") 
-              %img(src="../../images/random-image.jpg" alt="alt")/
-            %h2.latest-post-title 
-              %a(href="#") Bookings for Hanazono green season 2021
-            %p Booking Now OPEN for Summer 2021 from March 29! Check out what's happening in Hanazono this summer.
-            %ul.list-group.list-group-horizontal.list-group-piped
-              %li.list-group-item.text-muted March 25,2021
-              %li.list-group-item.text-muted Uncategorised 
-          .horizontal-post 
-            .row 
-              .col-4
-                %a(href="#") 
-                  %img(src="../../images/random-image.jpg" alt="")/
-              .col-8.horizontal-post-body
-                %h3 
-                  %a(href="#") 5 reasons why we love spring skiing & snowboarding  
-                %p Take advantage of big discounts to celebrate the sunshine and blue skies on the slopes of Hanazono!
-                %ul.list-group.list-group-horizontal.list-group-piped
-                  %li.list-group-item.text-muted March 25,2021
-                  %li.list-group-item.text-muted Uncategorised 
-          .horizontal-post 
-            .row 
-              .col-4
-                %a(href="#") 
-                  %img(src="../../images/random-image.jpg" alt="")/
-              .col-8.horizontal-post-body
-                %h3 
-                  %a(href="#") 5 reasons why we love spring skiing & snowboarding  
-                %p Take advantage of big discounts to celebrate the sunshine and blue skies on the slopes of Hanazono!
-                %ul.list-group.list-group-horizontal.list-group-piped
-                  %li.list-group-item.text-muted March 25,2021
-                  %li.list-group-item.text-muted Uncategorised 
-          .horizontal-post 
-            .row 
-              .col-4
-                %a(href="#") 
-                  %img(src="../../images/random-image.jpg" alt="")/
-              .col-8.horizontal-post-body
-                %h3 
-                  %a(href="#") 5 reasons why we love spring skiing & snowboarding  
-                %p Take advantage of big discounts to celebrate the sunshine and blue skies on the slopes of Hanazono!
-                %ul.list-group.list-group-horizontal.list-group-piped
-                  %li.list-group-item.text-muted March 25,2021
-                  %li.list-group-item.text-muted Uncategorised 
-          .inline-articles
-            %h2 Most Read Articles 
-            .row 
-              .col-md-3.col-6 
-                %a(href="#") 
-                  %img(src="../../images/random-image.jpg" alt="alt")/
-                  %h4.inline-articles-title Why Niseko should be your next summer travel destination 
-              .col-md-3.col-6 
-                %a(href="#") 
-                  %img(src="../../images/random-image.jpg" alt="alt")/
-                  %h4.inline-articles-title Why Niseko should be your next summer travel destination 
-              .col-md-3.col-6 
-                %a(href="#") 
-                  %img(src="../../images/random-image.jpg" alt="alt")/
-                  %h4.inline-articles-title Why Niseko should be your next summer travel destination 
-              .col-md-3.col-6 
-                %a(href="#") 
-                  %img(src="../../images/random-image.jpg" alt="alt")/
-                  %h4.inline-articles-title Why Niseko should be your next summer travel destination 
-          .horizontal-post 
-            .row 
-              .col-4
-                %a(href="#") 
-                  %img(src="../../images/random-image.jpg" alt="")/
-              .col-8.horizontal-post-body
-                %h3 
-                  %a(href="#") 5 reasons why we love spring skiing & snowboarding  
-                %p Take advantage of big discounts to celebrate the sunshine and blue skies on the slopes of Hanazono!
-                %ul.list-group.list-group-horizontal.list-group-piped
-                  %li.list-group-item.text-muted March 25,2021
-                  %li.list-group-item.text-muted Uncategorised 
-          .horizontal-post 
-            .row 
-              .col-4
-                %a(href="#") 
-                  %img(src="../../images/random-image.jpg" alt="")/
-              .col-8.horizontal-post-body
-                %h3 
-                  %a(href="#") 5 reasons why we love spring skiing & snowboarding  
-                %p Take advantage of big discounts to celebrate the sunshine and blue skies on the slopes of Hanazono!
-                %ul.list-group.list-group-horizontal.list-group-piped
-                  %li.list-group-item.text-muted March 25,2021
-                  %li.list-group-item.text-muted Uncategorised 
-          .d-flex.justify-content-center 
-            %nav{"aria-label" => "Page navigation example"}
-              %ul.pagination
-                %li.page-item.disabled.prev
-                  %a.page-link{:href => "#"} 
-                    %span{"aria-hidden" => "true"} «
-                    ← Previous
-                %li.page-item.active
-                  %a.page-link{:href => "#"} 1
-                %li.page-item
-                  %a.page-link{:href => "#"} 2
-                %li.page-item
-                  %a.page-link{:href => "#"} 3
-                %li.page-item.next
-                  %a.page-link{:href => "#"} 
-                    Next →
-                    %span{"aria-hidden" => "true"} »        
-        .col-lg-3
-          .sidebar
-            .sidebar-widget.newsletter-signup
-              %i.bi.bi-envelope-open-fill
-              %h4 Hanazono News & Discounts
-              %p The latest news and special offers from our resort straight to your inbox
-              %form#new_newsletter_signup.simple_form.remote-form{"accept-charset" => "UTF-8", :action => "https://hanazononiseko-staging-pr-83.herokuapp.com/newsletter_signup", "data-client-side-validations" => "{\"html_settings\":{\"type\":\"SimpleForm::FormBuilder\",\"error_class\":\"form-error is-visible\",\"error_tag\":\"span\",\"wrapper_error_class\":\"field-with-errors\",\"wrapper_tag\":\"div\",\"wrapper_class\":\"input\",\"wrapper\":\"default\"},\"number_format\":{\"separator\":\".\",\"delimiter\":\",\"},\"validators\":{\"newsletter_signup[email]\":{\"presence\":[{\"message\":\"can't be blank\"}],\"format\":[{\"message\":\"is invalid\",\"with\":{\"source\":\"^[^@\\\\s]+@[^@\\\\s]+$\",\"options\":\"\"}}]}}}", "data-remote" => "true", "data-remote-form-event" => "newsletterSignup", "data-remote-form-failure-message" => "Sorry! Unfortunately there was a problem signing you up, please try again later.", "data-remote-form-success-message" => "Great! You've successful signed up for exciting news about Hanazono!", :method => "post", :novalidate => "novalidate"}
-                %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-                .input.email.required.newsletter_signup_email
-                  %input#newsletter_signup_email.string.email.required.form-control{"data-validate" => "true", :name => "newsletter_signup[email]", :placeholder => "Your email address..", :type => "email"}/
-                %input#newsletter_signup_context{:name => "newsletter_signup[context]", :type => "hidden", :value => "en"}/
-                %input.btn.btn-primary{"data-disable-with" => "Sign Up", :name => "commit", :type => "submit", :value => "Sign Up"}/
-            .sidebar-widget 
-              %h2.sidebar-widget-title Recent Posts
-              .sidebar-articles 
-                .row.list-item
-                  .col-3.image
-                    %a(href="#") 
-                      %img{:alt => "Bookings for Hanazono green season 2021", :src => "../../images/random-image.jpg"}/
-                  .col-9.data 
-                    %a(href="#") 5 reasons why we love spring skiing & snowboarding
-                    %ul.list-group.list-group-horizontal.list-group-piped
-                      %li.list-group-item.text-muted Published about 1 month ago
-                .row.list-item
-                  .col-3.image
-                    %a(href="#") 
-                      %img{:alt => "Bookings for Hanazono green season 2021", :src => "../../images/random-image.jpg"}/
-                  .col-9.data 
-                    %a(href="#") 5 reasons why we love spring skiing & snowboarding
-                    %ul.list-group.list-group-horizontal.list-group-piped
-                      %li.list-group-item.text-muted Published about 1 month ago
-                .row.list-item
-                  .col-3.image
-                    %a(href="#") 
-                      %img{:alt => "Bookings for Hanazono green season 2021", :src => "../../images/random-image.jpg"}/
-                  .col-9.data 
-                    %a(href="#") 5 reasons why we love spring skiing & snowboarding
-                    %ul.list-group.list-group-horizontal.list-group-piped
-                      %li.list-group-item.text-muted Published about 1 month ago   
-            .sidebar-widget
-              %h2.sidebar-widget-title Popular Tags 
-              %ul.post-tags.center
-                %li.post-tags__item 
-                  %a.badge{:href=>"#"} booking
-                %li.post-tags__item 
-                  %a.badge{:href=>"#"} booking
-                %li.post-tags__item 
-                  %a.badge{:href=>"#"} booking
-                %li.post-tags__item 
-                  %a.badge{:href=>"#"} booking  
-                %li.post-tags__item 
-                  %a.badge{:href=>"#"} booking   
-              %a.sidebar-widget-link{:href => "https://hanazononiseko-staging-pr-83.herokuapp.com/en/blog/tags"} View All 
-            .sidebar-widget.card-listing 
-              %h2 Featured Picks  
-              .swiper-container.initialize.swiper-container-horizontal
-                .swiper-wrapper 
-                  .swiper-slide 
-                    %div 
-                      %a(href="") 
-                        %img(src="https://hanazononiseko-staging-pr-83.herokuapp.com/assets/sidebar/featured-guiding-051232901adff5375179abbe90635ec428bde5b79aea3e1ebda45eb821ef1c99.jpg" alt="")/   
-                    %div 
-                      %h3 
-                        %a(href="#") In Search of Powder
-                      %span.subtitle Hanazono Powder Guides
-                  .swiper-slide 
-                    %div 
-                      %a(href="") 
-                        %img(src="https://hanazononiseko-staging-pr-83.herokuapp.com/assets/sidebar/featured-guiding-051232901adff5375179abbe90635ec428bde5b79aea3e1ebda45eb821ef1c99.jpg" alt="")/   
-                    %div 
-                      %h3 
-                        %a(href="#") In Search of Powder
-                      %span.subtitle Hanazono Powder Guides
-                  .swiper-slide 
-                    %div 
-                      %a(href="") 
-                        %img(src="https://hanazononiseko-staging-pr-83.herokuapp.com/assets/sidebar/featured-guiding-051232901adff5375179abbe90635ec428bde5b79aea3e1ebda45eb821ef1c99.jpg" alt="")/   
-                    %div 
-                      %h3 
-                        %a(href="#") In Search of Powder
-                      %span.subtitle Hanazono Powder Guides
-                .swiper-pagination.swiper-pagination-clickable
-    %footer.lazyload.body-footer#contact-area
-      %section.footer.container
-        .row
-          .col-12 
-            .top-bar 
-              .top-bar-left 
-                .language-switch.language-switch__footer
-                  %select#switch_language{:name => "switch_language"}
-                    %option{:value => ""} English | 日本語 | 中文
-                    %option{"data-alternative-url" => "https://hanazononiseko-staging-pr-83.herokuapp.com/en/special-offers/returning-guest-discount2021", :value => "en"} English
-                    %option{"data-alternative-url" => "https://hanazononiseko-staging-pr-83.herokuapp.com/ja/special-offers/returning-guest-discount2021", :value => "ja"} 日本語
-                    %option{"data-alternative-url" => "https://hanazononiseko-staging-pr-83.herokuapp.com/zh/special-offers/returning-guest-discount2021", :value => "zh"} 中文
-              .top-bar-right.d-md-block.d-none
-                %ul.menu.horizontal.social
-                  %li 
-                    %a(href="#") 
-                      %i.bi.bi-facebook
-                  %li 
-                    %a(href="#") 
-                      %i.bi.bi-instagram
-                  %li 
-                    %a(href="#") 
-                      %i.bi.bi-twitter
-          .col-md-3 
-            %img.body-footer--image(src="../../images/hanazono-logo-square-5a053faa48efe111bfdaad5e2c137b2b4de46079992c19756634822b7fc8700f.svg" alt="Hanazono footer")/
-            %a(href="#") 
-              %img.body-footer--image.small(src="https://hanazononiseko-staging-pr-83.herokuapp.com/assets/trip-advisor-fec83103f2ce37bd4ec3579f8604bcc2deab100f400f387e087cf608f267b81d.png" alt="")
-          .col-md-3
-            %h3 Navigation
-            %ul.simple.vertical
+        .top-bar 
+          .top-bar-left
+            .top-bar-title
+              %a(href="#") 
+                %img(src="../../images/logo-b185940850f8a747ac937d78672a44ad1b713689a4b9ce1a8fad46b7b5729667.svg" alt="")/ 
+          .top-bar-right
+            %ul.menu 
               %li 
-                %a(href="#") Summer Resort Overview
-              %li 
-                %a(href="#") Summer Activities
-              %li 
-                %a(href="#") Winter Resort Overview
-              %li 
-                %a(href="#") Winter Rentals
-              %li 
-                %a(href="#") Snowsports School
-              %li 
-                %a(href="#") Winter Activities
-              %li 
-                %a(href="#") News
-              %li 
-                %a(href="#") Events
-              %li 
-                %a(href="#") Special Offers
-          .col-md-3
-            %h3 Useful Links
-            %ul.simple.vertical
-              %li 
-                %a(href="#") Contact Us
-              %li 
-                %a(href="#") Lost and Found
-              %li 
-                %a(href="#") Company
-              %li 
-                %a(href="#") News Release
-              %li 
-                %a(href="#") Employment
-              %li 
-                %a(href="#") Development
-              %li 
-                %a(href="#") Media Request
-              %li 
-                %a(href="#") Download Center
-              %li 
-                %a(href="#") Privacy Policy
-              %li 
-                %a(href="#") Booking Terms & Conditions - Winter
-              %li 
-                %a(href="#") Booking Terms & Conditions - Summer
+                .d-lg-block.d-none
+                  %ul.main-menu.nav.nav-tabs{:role=>"tablist"}
+                    %li 
+                      %button(href="" data-bs-toggle="tab" data-target="discover-desktop" role="tab") Discover 
+                    %li 
+                      %button(href="" data-bs-toggle="tab" data-target="mountain-desktop" role="tab") The Mountain 
+                    %li 
+                      %button(href="" data-bs-toggle="tab" data-target="trip-desktop" role="tab") Plan Your Trip 
+                    %li 
+                      %button(href="" data-bs-toggle="tab" data-target="lodging-desktop" role="tab") Lodging 
+                    %li 
+                      %a(href="#") Contact Us 
+              %li.d-lg-none.menu-switch
+                %button.menu-icon{"aria-controls" => "offCanvas", "aria-expanded" => "false", "data-open" => "offCanvas"} 
+              %li.d-lg-flex.d-none.language-switch.language-switch__header
+                %select#switch_language{:name => "switch_language"}
+                  %option{"data-alternative-url" => "https://hanazononiseko.com/en", :selected => "selected", :value => "en"} English
+                  %option{"data-alternative-url" => "https://hanazononiseko.com/ja", :value => "ja"} 日本語
+                  %option{"data-alternative-url" => "https://hanazononiseko.com/zh", :value => "zh"} 中文
+              %li.d-lg-flex.d-none 
+                %a.search.search-btn(href="#") 
+                  %i.bi.bi-search  
+
+    #nav-tabContent.tab-content
+      #discover-desktop.tab-pane.main-menu-tab{"aria-labelledby" => "discover-tab", :role => "tabpanel"} 
+        %p.season-switcher-title Please select a season
+        .button-group.season-switcher
+          %button.btn.active{"data-action" => "season-switcher#switch", "data-controller" => "season-switcher", "data-seasonal-switch" => "summer"} Summer Menu
+          %button.btn{"data-action" => "season-switcher#switch", "data-controller" => "season-switcher", "data-seasonal-switch" => "winter"} Winter Menu
+        %div(data-seasonal-pane="winter")
+          .row
+            .col-md-3
+              %h4 The Resort
+              %ul.main-menu-list
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/winter/resort"} Resort Overview
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/winter/resort/restaurants"} Dinning & Cafe
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/winter/rental-and-retail/retail"} Retail Store
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/winter/rental-and-retail/rental"} Rentals
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/winter/rental-and-retail/niseko-boot-lab"} Custom Boots & Insole Store
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/winter/activities/daycare"} Child Care
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/winter/events"} Events
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/winter/resort/access"} Access
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/winter/safetymeasures"} Covid-19 Safety Plan Guidelines   
+            .col-md-3
+              %h4 Adventures
+              %ul.main-menu-list
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/winter/adventure-park"} Activity Overview
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/winter/activities/snowmobile-tours"} Snowmobile Tour
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/winter/activities/snow-rafting"} Snow Rafting Tour
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/winter/activities/tube-park"} Tube Park
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/winter/activities/snowshoe-tour"} Snowshoeing Tour
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/winter/activities/horseback-riding"} Horse Riding Tour
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/winter/activities/galaxy-of-kidz"} Indoor Kids Adventure
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/winter/activities/backcountry-guiding"} Backcountry Guiding Tour
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/winter/resort/terrain-parks"} Terrain Parks
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/winter/activities/weiss-cat-skiing"} Niseko Weiss CAT Tour
+            .col-md-3
+              %h4 Snowsports Lessons
+              %ul.main-menu-list
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/winter/ski-school"} Snowsports School Overview
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/winter/ski-school/kids"} Kids Programs
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/winter/ski-school/adults"} Adult Programs
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/winter/ski-school/adults#private-ski-lesson"} Private Lessons
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/winter/ski-school/diamond-pro"} Ski Concierge Service
+            .col-md-3
+              %h4 Event & News
+              %ul.main-menu-list
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/blog"} News
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/winter/events"} Events
+                %li
+                  %a{:href => "https://hanazononiseko.com/en/special-offers"} Special Offers
+      
+      
+      
+      
+      #mountain-desktop.tab-pane.main-menu-tab{"aria-labelledby" => "mountain-tab", :role => "tabpanel"} Mountain
+      #trip-desktop.tab-pane.main-menu-tab{"aria-labelledby" => "trip-tab", :role => "tabpanel"} Plan Your trip
+      #lodging-desktop.tab-pane.main-menu-tab{"aria-labelledby" => "lodging-tab", :role => "tabpanel"} Lodging
+
+
+
+
+
+
+
+    .main-content
+      .container
+        %nav{"aria-label" => "breadcrumb"}
+          %ol.breadcrumb
+            %li.breadcrumb-item
+              %a{:href => "#"} Home
+            %li.breadcrumb-item
+              %a{:href => "#"} Blog
+            %li.breadcrumb-item.active{"aria-current" => "page"} Article
+      
+      #blog-wrapper.container
+        %h1 Hanazono Niseko news and information
+        .row 
+          .col-lg-9
+            .d-flex.justify-content-end
+              %select.form-select.form-select__blog{"aria-label" => "Default select example"}
+                %option{:selected => "selected"} Recently Published
+                %option{:value => "1"} Recently Updated 
+            .wp-block-latest-post          
+              %a(href="#") 
+                %img(src="../../images/random-image.jpg" alt="alt")/
+              %h2.latest-post-title 
+                %a(href="#") Bookings for Hanazono green season 2021
+              %p Booking Now OPEN for Summer 2021 from March 29! Check out what's happening in Hanazono this summer.
+              %ul.list-group.list-group-horizontal.list-group-piped
+                %li.list-group-item.text-muted March 25,2021
+                %li.list-group-item.text-muted Uncategorised 
+            .wp-block-horizontal-post 
+              .row 
+                .col-4
+                  %a(href="#") 
+                    %img(src="../../images/random-image.jpg" alt="")/
+                .col-8.horizontal-post-body
+                  %h3 
+                    %a(href="#") 5 reasons why we love spring skiing & snowboarding  
+                  %p Take advantage of big discounts to celebrate the sunshine and blue skies on the slopes of Hanazono!
+                  %ul.list-group.list-group-horizontal.list-group-piped
+                    %li.list-group-item.text-muted March 25,2021
+                    %li.list-group-item.text-muted Uncategorised 
+            .wp-block-horizontal-post 
+              .row 
+                .col-4
+                  %a(href="#") 
+                    %img(src="../../images/random-image.jpg" alt="")/
+                .col-8.horizontal-post-body
+                  %h3 
+                    %a(href="#") 5 reasons why we love spring skiing & snowboarding  
+                  %p Take advantage of big discounts to celebrate the sunshine and blue skies on the slopes of Hanazono!
+                  %ul.list-group.list-group-horizontal.list-group-piped
+                    %li.list-group-item.text-muted March 25,2021
+                    %li.list-group-item.text-muted Uncategorised 
+            .wp-block-horizontal-post 
+              .row 
+                .col-4
+                  %a(href="#") 
+                    %img(src="../../images/random-image.jpg" alt="")/
+                .col-8.horizontal-post-body
+                  %h3 
+                    %a(href="#") 5 reasons why we love spring skiing & snowboarding  
+                  %p Take advantage of big discounts to celebrate the sunshine and blue skies on the slopes of Hanazono!
+                  %ul.list-group.list-group-horizontal.list-group-piped
+                    %li.list-group-item.text-muted March 25,2021
+                    %li.list-group-item.text-muted Uncategorised 
+            .inline-articles
+              %h2 Most Read Articles 
+              .row 
+                .col-md-3.col-6 
+                  %a(href="#") 
+                    %img(src="../../images/random-image.jpg" alt="alt")/
+                    %h4.inline-articles-title Why Niseko should be your next summer travel destination 
+                .col-md-3.col-6 
+                  %a(href="#") 
+                    %img(src="../../images/random-image.jpg" alt="alt")/
+                    %h4.inline-articles-title Why Niseko should be your next summer travel destination 
+                .col-md-3.col-6 
+                  %a(href="#") 
+                    %img(src="../../images/random-image.jpg" alt="alt")/
+                    %h4.inline-articles-title Why Niseko should be your next summer travel destination 
+                .col-md-3.col-6 
+                  %a(href="#") 
+                    %img(src="../../images/random-image.jpg" alt="alt")/
+                    %h4.inline-articles-title Why Niseko should be your next summer travel destination 
+            .wp-block-horizontal-post 
+              .row 
+                .col-4
+                  %a(href="#") 
+                    %img(src="../../images/random-image.jpg" alt="")/
+                .col-8.horizontal-post-body
+                  %h3 
+                    %a(href="#") 5 reasons why we love spring skiing & snowboarding  
+                  %p Take advantage of big discounts to celebrate the sunshine and blue skies on the slopes of Hanazono!
+                  %ul.list-group.list-group-horizontal.list-group-piped
+                    %li.list-group-item.text-muted March 25,2021
+                    %li.list-group-item.text-muted Uncategorised 
+            .wp-block-horizontal-post 
+              .row 
+                .col-4
+                  %a(href="#") 
+                    %img(src="../../images/random-image.jpg" alt="")/
+                .col-8.horizontal-post-body
+                  %h3 
+                    %a(href="#") 5 reasons why we love spring skiing & snowboarding  
+                  %p Take advantage of big discounts to celebrate the sunshine and blue skies on the slopes of Hanazono!
+                  %ul.list-group.list-group-horizontal.list-group-piped
+                    %li.list-group-item.text-muted March 25,2021
+                    %li.list-group-item.text-muted Uncategorised 
+            .d-flex.justify-content-center 
+              %nav{"aria-label" => "Page navigation example"}
+                %ul.pagination
+                  %li.page-item.disabled.prev
+                    %a.page-link{:href => "#"} 
+                      %span{"aria-hidden" => "true"} «
+                      ← Previous
+                  %li.page-item.active
+                    %a.page-link{:href => "#"} 1
+                  %li.page-item
+                    %a.page-link{:href => "#"} 2
+                  %li.page-item
+                    %a.page-link{:href => "#"} 3
+                  %li.page-item.next
+                    %a.page-link{:href => "#"} 
+                      Next →
+                      %span{"aria-hidden" => "true"} »        
           .col-lg-3
-            %h3 Newsletter
-            %form.remote-form.clearfix{"accept-charset" => "UTF-8", :action => "https://hanazononiseko-staging-pr-83.herokuapp.com/newsletter_signup", "data-remote" => "true", "data-remote-form-event" => "newsletterSignup", "data-remote-form-failure-message" => "Sorry! Unfortunately there was a problem signing you up, please try again later.", "data-remote-form-success-message" => "Great! You've successful signed up for exciting news about Hanazono!", :method => "post"}
-              %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-              %input#newsletter_signup_email{:name => "newsletter_signup[email]", :placeholder => "Email Address", :required => "required", :type => "email"}/
-              %input#newsletter_signup_context{:name => "newsletter_signup[context]", :type => "hidden", :value => "en"}/
-              %button.btn.btn-primary Send
-          .col-12.d-block.d-md-none.mt-4
-            %ul.menu.horizontal.social
-              %li 
-                %a(href="#") 
-                  %i.bi.bi-facebook
-              %li 
-                %a(href="#") 
-                  %i.bi.bi-instagram
-              %li 
-                %a(href="#") 
-                  %i.bi.bi-twitter
-    %p.copyright Copyright @ 2021 hanazononiseko.com All rights reserved.
+            .sidebar
+              .sidebar-widget.newsletter-signup
+                %i.bi.bi-envelope-open-fill
+                %h4 Hanazono News & Discounts
+                %p The latest news and special offers from our resort straight to your inbox
+                %form#new_newsletter_signup.simple_form.remote-form{"accept-charset" => "UTF-8", :action => "https://hanazononiseko-staging-pr-83.herokuapp.com/newsletter_signup", "data-client-side-validations" => "{\"html_settings\":{\"type\":\"SimpleForm::FormBuilder\",\"error_class\":\"form-error is-visible\",\"error_tag\":\"span\",\"wrapper_error_class\":\"field-with-errors\",\"wrapper_tag\":\"div\",\"wrapper_class\":\"input\",\"wrapper\":\"default\"},\"number_format\":{\"separator\":\".\",\"delimiter\":\",\"},\"validators\":{\"newsletter_signup[email]\":{\"presence\":[{\"message\":\"can't be blank\"}],\"format\":[{\"message\":\"is invalid\",\"with\":{\"source\":\"^[^@\\\\s]+@[^@\\\\s]+$\",\"options\":\"\"}}]}}}", "data-remote" => "true", "data-remote-form-event" => "newsletterSignup", "data-remote-form-failure-message" => "Sorry! Unfortunately there was a problem signing you up, please try again later.", "data-remote-form-success-message" => "Great! You've successful signed up for exciting news about Hanazono!", :method => "post", :novalidate => "novalidate"}
+                  %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+                  .input.email.required.newsletter_signup_email
+                    %input#newsletter_signup_email.string.email.required.form-control{"data-validate" => "true", :name => "newsletter_signup[email]", :placeholder => "Your email address..", :type => "email"}/
+                  %input#newsletter_signup_context{:name => "newsletter_signup[context]", :type => "hidden", :value => "en"}/
+                  %input.btn.btn-primary{"data-disable-with" => "Sign Up", :name => "commit", :type => "submit", :value => "Sign Up"}/
+              .sidebar-widget 
+                %h2.sidebar-widget-title Recent Posts
+                .sidebar-articles 
+                  .row.list-item
+                    .col-3.image
+                      %a(href="#") 
+                        %img{:alt => "Bookings for Hanazono green season 2021", :src => "../../images/random-image.jpg"}/
+                    .col-9.data 
+                      %a(href="#") 5 reasons why we love spring skiing & snowboarding
+                      %ul.list-group.list-group-horizontal.list-group-piped
+                        %li.list-group-item.text-muted Published about 1 month ago
+                  .row.list-item
+                    .col-3.image
+                      %a(href="#") 
+                        %img{:alt => "Bookings for Hanazono green season 2021", :src => "../../images/random-image.jpg"}/
+                    .col-9.data 
+                      %a(href="#") 5 reasons why we love spring skiing & snowboarding
+                      %ul.list-group.list-group-horizontal.list-group-piped
+                        %li.list-group-item.text-muted Published about 1 month ago
+                  .row.list-item
+                    .col-3.image
+                      %a(href="#") 
+                        %img{:alt => "Bookings for Hanazono green season 2021", :src => "../../images/random-image.jpg"}/
+                    .col-9.data 
+                      %a(href="#") 5 reasons why we love spring skiing & snowboarding
+                      %ul.list-group.list-group-horizontal.list-group-piped
+                        %li.list-group-item.text-muted Published about 1 month ago   
+              .sidebar-widget
+                %h2.sidebar-widget-title Popular Tags 
+                %ul.post-tags.center
+                  %li.post-tags__item 
+                    %a.badge{:href=>"#"} booking
+                  %li.post-tags__item 
+                    %a.badge{:href=>"#"} booking
+                  %li.post-tags__item 
+                    %a.badge{:href=>"#"} booking
+                  %li.post-tags__item 
+                    %a.badge{:href=>"#"} booking  
+                  %li.post-tags__item 
+                    %a.badge{:href=>"#"} booking   
+                %a.sidebar-widget-link{:href => "https://hanazononiseko-staging-pr-83.herokuapp.com/en/blog/tags"} View All 
+              .sidebar-widget.card-listing 
+                %h2 Featured Picks  
+                .swiper-container.initialize.swiper-container-horizontal
+                  .swiper-wrapper 
+                    .swiper-slide 
+                      %div 
+                        %a(href="") 
+                          %img(src="https://hanazononiseko-staging-pr-83.herokuapp.com/assets/sidebar/featured-guiding-051232901adff5375179abbe90635ec428bde5b79aea3e1ebda45eb821ef1c99.jpg" alt="")/   
+                      %div 
+                        %h3 
+                          %a(href="#") In Search of Powder
+                        %span.subtitle Hanazono Powder Guides
+                    .swiper-slide 
+                      %div 
+                        %a(href="") 
+                          %img(src="https://hanazononiseko-staging-pr-83.herokuapp.com/assets/sidebar/featured-guiding-051232901adff5375179abbe90635ec428bde5b79aea3e1ebda45eb821ef1c99.jpg" alt="")/   
+                      %div 
+                        %h3 
+                          %a(href="#") In Search of Powder
+                        %span.subtitle Hanazono Powder Guides
+                    .swiper-slide 
+                      %div 
+                        %a(href="") 
+                          %img(src="https://hanazononiseko-staging-pr-83.herokuapp.com/assets/sidebar/featured-guiding-051232901adff5375179abbe90635ec428bde5b79aea3e1ebda45eb821ef1c99.jpg" alt="")/   
+                      %div 
+                        %h3 
+                          %a(href="#") In Search of Powder
+                        %span.subtitle Hanazono Powder Guides
+                  .swiper-pagination.swiper-pagination-clickable
+      %footer.lazyload.body-footer#contact-area
+        %section.footer.container
+          .row
+            .col-12 
+              .top-bar 
+                .top-bar-left 
+                  .language-switch.language-switch__footer
+                    %select#switch_language{:name => "switch_language"}
+                      %option{:value => ""} English | 日本語 | 中文
+                      %option{"data-alternative-url" => "https://hanazononiseko-staging-pr-83.herokuapp.com/en/special-offers/returning-guest-discount2021", :value => "en"} English
+                      %option{"data-alternative-url" => "https://hanazononiseko-staging-pr-83.herokuapp.com/ja/special-offers/returning-guest-discount2021", :value => "ja"} 日本語
+                      %option{"data-alternative-url" => "https://hanazononiseko-staging-pr-83.herokuapp.com/zh/special-offers/returning-guest-discount2021", :value => "zh"} 中文
+                .top-bar-right.d-md-block.d-none
+                  %ul.menu.social
+                    %li 
+                      %a(href="#") 
+                        %i.bi.bi-facebook
+                    %li 
+                      %a(href="#") 
+                        %i.bi.bi-instagram
+                    %li 
+                      %a(href="#") 
+                        %i.bi.bi-twitter
+            .col-md-3 
+              %img.body-footer--image(src="../../images/hanazono-logo-square-5a053faa48efe111bfdaad5e2c137b2b4de46079992c19756634822b7fc8700f.svg" alt="Hanazono footer")/
+              %a(href="#") 
+                %img.body-footer--image.small(src="https://hanazononiseko-staging-pr-83.herokuapp.com/assets/trip-advisor-fec83103f2ce37bd4ec3579f8604bcc2deab100f400f387e087cf608f267b81d.png" alt="")
+            .col-md-3
+              %h3 Navigation
+              %ul.simple.vertical
+                %li 
+                  %a(href="#") Summer Resort Overview
+                %li 
+                  %a(href="#") Summer Activities
+                %li 
+                  %a(href="#") Winter Resort Overview
+                %li 
+                  %a(href="#") Winter Rentals
+                %li 
+                  %a(href="#") Snowsports School
+                %li 
+                  %a(href="#") Winter Activities
+                %li 
+                  %a(href="#") News
+                %li 
+                  %a(href="#") Events
+                %li 
+                  %a(href="#") Special Offers
+            .col-md-3
+              %h3 Useful Links
+              %ul.simple.vertical
+                %li 
+                  %a(href="#") Contact Us
+                %li 
+                  %a(href="#") Lost and Found
+                %li 
+                  %a(href="#") Company
+                %li 
+                  %a(href="#") News Release
+                %li 
+                  %a(href="#") Employment
+                %li 
+                  %a(href="#") Development
+                %li 
+                  %a(href="#") Media Request
+                %li 
+                  %a(href="#") Download Center
+                %li 
+                  %a(href="#") Privacy Policy
+                %li 
+                  %a(href="#") Booking Terms & Conditions - Winter
+                %li 
+                  %a(href="#") Booking Terms & Conditions - Summer
+            .col-lg-3
+              %h3 Newsletter
+              %form.remote-form.clearfix{"accept-charset" => "UTF-8", :action => "https://hanazononiseko-staging-pr-83.herokuapp.com/newsletter_signup", "data-remote" => "true", "data-remote-form-event" => "newsletterSignup", "data-remote-form-failure-message" => "Sorry! Unfortunately there was a problem signing you up, please try again later.", "data-remote-form-success-message" => "Great! You've successful signed up for exciting news about Hanazono!", :method => "post"}
+                %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+                %input#newsletter_signup_email{:name => "newsletter_signup[email]", :placeholder => "Email Address", :required => "required", :type => "email"}/
+                %input#newsletter_signup_context{:name => "newsletter_signup[context]", :type => "hidden", :value => "en"}/
+                %button.btn.btn-primary Send
+            .col-12.d-block.d-md-none.mt-4
+              %ul.menu.horizontal.social
+                %li 
+                  %a(href="#") 
+                    %i.bi.bi-facebook
+                %li 
+                  %a(href="#") 
+                    %i.bi.bi-instagram
+                %li 
+                  %a(href="#") 
+                    %i.bi.bi-twitter
+      %p.copyright Copyright @ 2021 hanazononiseko.com All rights reserved.
+    %a.btn.button--book-now__mobile{:href => "https://hanazononiseko-staging-pr-83.herokuapp.com/en/book"} Book Now
     %script{:src => "../../js/bootstrap.min.js"}
     %script{:src => "https://unpkg.com/swiper/swiper-bundle.min.js"}
     :javascript
@@ -315,3 +558,36 @@
           clickable: true
         },
       });
+      const triggerTabList = [].slice.call(document.querySelectorAll('.main-menu.nav button'))
+      triggerTabList.forEach(function (triggerEl) {
+      
+
+        triggerEl.addEventListener('mouseover', function (event) {
+          const panel = document.getElementById(triggerEl.dataset.target)
+          panel.classList.add("active")
+          triggerEl.classList.add('hover')
+        triggerEl.addEventListener('mouseout', function (event) {
+          if(event.relatedTarget != panel){
+            panel.classList.remove("active")
+            triggerEl.classList.remove('hover')
+          } 
+           panel.addEventListener('mouseout', function(event){
+            panel.classList.remove("active")
+            triggerEl.classList.remove('hover')
+            }) 
+          })
+        })
+        
+      })
+      const offCanvasButton = document.querySelector('.menu-icon')
+      const offCanvas = document.querySelector('.off-canvas')
+      const offCanvasClose = document.querySelector('.close-button')
+        offCanvasButton.addEventListener('click', () => {
+          offCanvas.classList.remove('is-close');
+          offCanvas.classList.add('is-open');
+        })
+        offCanvasClose.addEventListener('click', () => {
+          offCanvas.classList.remove('is-open');
+          offCanvas.classList.add('is-close');
+        })
+

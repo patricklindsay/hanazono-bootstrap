@@ -1,0 +1,10 @@
+.wp-block-alert{
+  color: $black;
+
+  div[class^="btn-outline-"]{
+    &:hover{
+      background-color: none!important;
+      
+    }
+  }
+}

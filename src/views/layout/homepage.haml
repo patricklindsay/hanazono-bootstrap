@@ -10,459 +10,697 @@
     %link{:rel => :stylesheet, :type => :"text/css", :href => "../../css/main.css"}
     %link{:href => "https://unpkg.com/swiper/swiper-bundle.min.css", :rel => "stylesheet"}/
   %body
-    %section.hero-video.hero
-      %a.btn.button--book-now{:href => "https://hanazononiseko-staging-pr-83.herokuapp.com/en/book"} Book Now
-      %video{ playsinline: true, autoplay: true, muted: true, loop: true }
-        %source{ src: 'https://cdn.hanazononiseko.com/nhr-summer.mp4', type: "video/mp4" }
-      .hero-video-overlay
-      .slogan-area
-        %h2
-          Adventure
-          %br
-          Awaits
-      .title-area
-        %h1
-          Niseko
-          %br
-          Hanazono
-          %br
-          Resort
-          %br
-          %span Hokkaido Japan
-    .container 
-      .season-dates
-        .season-dates-title SEASON DATES
-        %p.season-dates-body
-          %span.season-dates-season
-            %span.season-dates-season-title 
-              SUMMER SEASON
-            April 29, 2021 - October 31, 2021
-      .section 
-        %h2.homepage.text-center Special Offers
-        .row 
-          .col-md-4
-            .wp-block-integral-card 
+    #offCanvas.off-canvas.position-right
+      %button.close-button{"aria-label" => "Close menu", "data-close" => "", :type => "button"}
+        %span{"aria-hidden" => "true"} ×
+      %button.search.search-button{"aria-controls" => "search-modal", "aria-haspopup" => "true", "data-toggle" => "search-modal", :tabindex => "0"}
+        %i.bi.bi-search 
+      %ul.menu.off-canvas-top-bar 
+        %li 
+          %a(href="#") 
+            %i.bi.bi-envelope
+        %li.language-switch
+          %select#switch_language{:name => "switch_language"}
+            %option English | 日本語 | 中文
+            %option{"data-alternative-url" => "https://hanazononiseko.com/en", :value => "en"} English
+            %option{"data-alternative-url" => "https://hanazononiseko.com/ja", :value => "ja"} 日本語
+            %option{"data-alternative-url" => "https://hanazononiseko.com/zh", :value => "zh"} 中文
+      #accordion.accordion
+        .accordion-item          
+          %button.accordion-button.collapsed{"aria-controls" => "discover", "aria-expanded" => "true", "data-bs-target" => "#discover", "data-bs-toggle" => "collapse", :type => "button"}
+            Discover
+          #discover.accordion-collapse.collapse{"aria-labelledby" => "headingOne", "data-bs-parent" => "#accordion"}
+            .accordion-body
+              %p.season-switcher-title Please select a season
+              .button-group.season-switcher
+                %button.btn.active{"data-action" => "season-switcher#switch", "data-controller" => "season-switcher", "data-seasonal-switch" => "summer"} Summer Menu
+                %button.btn{"data-action" => "season-switcher#switch", "data-controller" => "season-switcher", "data-seasonal-switch" => "winter"} Winter Menu
+                %div(data-seasonal-pane="winter")
+                  .row
+                    .col-md-3
+                      %h4 The Resort
+                      %ul.main-menu-list
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/resort"} Resort Overview
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/resort/restaurants"} Dinning & Cafe
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/rental-and-retail/retail"} Retail Store
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/rental-and-retail/rental"} Rentals
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/rental-and-retail/niseko-boot-lab"} Custom Boots & Insole Store
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/daycare"} Child Care
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/events"} Events
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/resort/access"} Access
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/safetymeasures"} Covid-19 Safety Plan Guidelines   
+                    .col-md-3
+                      %h4 Adventures
+                      %ul.main-menu-list
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/adventure-park"} Activity Overview
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/snowmobile-tours"} Snowmobile Tour
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/snow-rafting"} Snow Rafting Tour
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/tube-park"} Tube Park
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/snowshoe-tour"} Snowshoeing Tour
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/horseback-riding"} Horse Riding Tour
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/galaxy-of-kidz"} Indoor Kids Adventure
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/backcountry-guiding"} Backcountry Guiding Tour
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/resort/terrain-parks"} Terrain Parks
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/weiss-cat-skiing"} Niseko Weiss CAT Tour
+                    .col-md-3
+                      %h4 Snowsports Lessons
+                      %ul.main-menu-list
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/ski-school"} Snowsports School Overview
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/ski-school/kids"} Kids Programs
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/ski-school/adults"} Adult Programs
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/ski-school/adults#private-ski-lesson"} Private Lessons
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/ski-school/diamond-pro"} Ski Concierge Service
+                    .col-md-3
+                      %h4 Event & News
+                      %ul.main-menu-list
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/blog"} News
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/events"} Events
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/special-offers"} Special Offers
+        .accordion-item   
+          %button.accordion-button.collapsed{"aria-controls" => "mountain", "aria-expanded" => "false", "data-bs-target" => "#mountain", "data-bs-toggle" => "collapse", :type => "button"}
+            The Mountain
+          #mountain.accordion-collapse.collapse{"aria-labelledby" => "headingTwo", "data-bs-parent" => "#accordion"}
+            .accordion-body
+              %strong This is the second item's accordion body.
+              It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+              = succeed "," do
+                %code .accordion-body
+        .accordion-item          
+          %button.accordion-button.collapsed{"aria-controls" => "trip", "aria-expanded" => "false", "data-bs-target" => "#trip", "data-bs-toggle" => "collapse", :type => "button"}
+            Plan Your Trip
+          #trip.accordion-collapse.collapse{"aria-labelledby" => "headingThree", "data-bs-parent" => "#accordion"}
+            .accordion-body
+              %strong This is the third item's accordion body.
+              It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+              = succeed "," do
+                %code .accordion-body
+        .accordion-item          
+          %button.accordion-button.collapsed{"aria-controls" => "lodging", "aria-expanded" => "false", "data-bs-target" => "#lodging", "data-bs-toggle" => "collapse", :type => "button"}
+            Lodging
+          #lodging.accordion-collapse.collapse{"aria-labelledby" => "headingThree", "data-bs-parent" => "#accordion"}
+            .accordion-body
+              %strong This is the third item's accordion body.
+              It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+              = succeed "," do
+                %code .accordion-body
+    .main-nav
+      .row 
+        .top-bar 
+          .top-bar-left
+            .top-bar-title
               %a(href="#") 
-                %img(src="../../images/random-image.jpg" alt="Random")/
-              .card-section 
-                %h3.card__title 
-                  %a(href="#") RETURNING GUEST DISCOUNT 30% Off
-                %hr.card__divider
-                .card-body 
-                  %p Big thank you to all our guests who return to Hanazono again! Save 30% every time you book another activity with us during 2021's summer season!
-          .col-md-4
-            .wp-block-integral-card 
+                %img(src="../../images/logo-b185940850f8a747ac937d78672a44ad1b713689a4b9ce1a8fad46b7b5729667.svg" alt="")/ 
+          .top-bar-right
+            %ul.menu 
+              %li 
+                .d-lg-block.d-none
+                  %ul.main-menu.nav.nav-tabs{:role=>"tablist"}
+                    %li 
+                      %button(href="" data-bs-toggle="tab" data-target="discover-desktop" role="tab") Discover 
+                    %li 
+                      %button(href="" data-bs-toggle="tab" data-target="mountain-desktop" role="tab") The Mountain 
+                    %li 
+                      %button(href="" data-bs-toggle="tab" data-target="trip-desktop" role="tab") Plan Your Trip 
+                    %li 
+                      %button(href="" data-bs-toggle="tab" data-target="lodging-desktop" role="tab") Lodging 
+                    %li 
+                      %a(href="#") Contact Us 
+              %li.d-lg-none.menu-switch
+                %button.menu-icon{"aria-controls" => "offCanvas", "aria-expanded" => "false", "data-open" => "offCanvas"} 
+              %li.d-lg-flex.d-none.language-switch.language-switch__header
+                %select#switch_language{:name => "switch_language"}
+                  %option{"data-alternative-url" => "https://hanazononiseko.com/en", :selected => "selected", :value => "en"} English
+                  %option{"data-alternative-url" => "https://hanazononiseko.com/ja", :value => "ja"} 日本語
+                  %option{"data-alternative-url" => "https://hanazononiseko.com/zh", :value => "zh"} 中文
+              %li.d-lg-flex.d-none 
+                %a.search.search-btn(href="#") 
+                  %i.bi.bi-search  
+
+      #nav-tabContent.tab-content
+        #discover-desktop.tab-pane.main-menu-tab{"aria-labelledby" => "discover-tab", :role => "tabpanel"} 
+          %p.season-switcher-title Please select a season
+          .button-group.season-switcher
+            %button.btn.active{"data-action" => "season-switcher#switch", "data-controller" => "season-switcher", "data-seasonal-switch" => "summer"} Summer Menu
+            %button.btn{"data-action" => "season-switcher#switch", "data-controller" => "season-switcher", "data-seasonal-switch" => "winter"} Winter Menu
+          %div(data-seasonal-pane="winter")
+            .row
+              .col-md-3
+                %h4 The Resort
+                %ul.main-menu-list
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/resort"} Resort Overview
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/resort/restaurants"} Dinning & Cafe
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/rental-and-retail/retail"} Retail Store
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/rental-and-retail/rental"} Rentals
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/rental-and-retail/niseko-boot-lab"} Custom Boots & Insole Store
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/activities/daycare"} Child Care
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/events"} Events
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/resort/access"} Access
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/safetymeasures"} Covid-19 Safety Plan Guidelines   
+              .col-md-3
+                %h4 Adventures
+                %ul.main-menu-list
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/adventure-park"} Activity Overview
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/activities/snowmobile-tours"} Snowmobile Tour
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/activities/snow-rafting"} Snow Rafting Tour
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/activities/tube-park"} Tube Park
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/activities/snowshoe-tour"} Snowshoeing Tour
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/activities/horseback-riding"} Horse Riding Tour
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/activities/galaxy-of-kidz"} Indoor Kids Adventure
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/activities/backcountry-guiding"} Backcountry Guiding Tour
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/resort/terrain-parks"} Terrain Parks
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/activities/weiss-cat-skiing"} Niseko Weiss CAT Tour
+              .col-md-3
+                %h4 Snowsports Lessons
+                %ul.main-menu-list
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/ski-school"} Snowsports School Overview
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/ski-school/kids"} Kids Programs
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/ski-school/adults"} Adult Programs
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/ski-school/adults#private-ski-lesson"} Private Lessons
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/ski-school/diamond-pro"} Ski Concierge Service
+              .col-md-3
+                %h4 Event & News
+                %ul.main-menu-list
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/blog"} News
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/events"} Events
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/special-offers"} Special Offers
+        
+        
+        
+        
+        #mountain-desktop.tab-pane.main-menu-tab{"aria-labelledby" => "mountain-tab", :role => "tabpanel"} Mountain
+        #trip-desktop.tab-pane.main-menu-tab{"aria-labelledby" => "trip-tab", :role => "tabpanel"} Plan Your trip
+        #lodging-desktop.tab-pane.main-menu-tab{"aria-labelledby" => "lodging-tab", :role => "tabpanel"} Lodging
+    .main-content
+      .alert-clickable 
+        %a{:href => "https://hanazononiseko.com/en/summer/safetymeasures"} Please Click HERE to Learn About the Resort's Prevention Measures Against COVID-19 
+      %section.hero-video.hero
+        %a.btn.button--book-now{:href => "https://hanazononiseko-staging-pr-83.herokuapp.com/en/book"} Book Now
+        %video{ playsinline: true, autoplay: true, muted: true, loop: true }
+          %source{ src: 'https://cdn.hanazononiseko.com/nhr-summer.mp4', type: "video/mp4" }
+        .hero-video-overlay
+        .slogan-area
+          %h2
+            Adventure
+            %br
+            Awaits
+        .title-area
+          %img{:src => "https://cdn.hanazononiseko.com/assets/logo-badge-6459aea67577d35878b5393464d5e153e5ad9faa3c92d38981042bd784cef08a.svg"}/
+          %h1
+            Niseko
+            %br
+            Hanazono
+            %br
+            Resort
+            %br
+            %span Hokkaido Japan
+      .container 
+        .season-dates
+          .season-dates-title SEASON DATES
+          %p.season-dates-body
+            %span.season-dates-season
+              %span.season-dates-season-title 
+                SUMMER SEASON
+              April 29, 2021 - October 31, 2021
+        .section 
+          %h2.homepage.text-center Special Offers
+          .row 
+            .col-md-4
+              .wp-block-integral-card 
+                %a(href="#") 
+                  %img(src="../../images/random-image.jpg" alt="Random")/
+                .card-section 
+                  %h3.card__title 
+                    %a(href="#") RETURNING GUEST DISCOUNT 30% Off
+                  %hr.card__divider
+                  .card-body 
+                    %p Big thank you to all our guests who return to Hanazono again! Save 30% every time you book another activity with us during 2021's summer season!
+            .col-md-4
+              .wp-block-integral-card 
+                %a(href="#") 
+                  %img(src="../../images/random-image.jpg" alt="Random")/
+                .card-section 
+                  %h3.card__title 
+                    %a(href="#") RETURNING GUEST DISCOUNT 30% Off
+                  %hr.card__divider
+                  .card-body 
+                    %p Big thank you to all our guests who return to Hanazono again! Save 30% every time you book another activity with us during 2021's summer season!
+            .col-md-4
+              .wp-block-integral-card 
+                %a(href="#") 
+                  %img(src="../../images/random-image.jpg" alt="Random")/
+                .card-section 
+                  %h3.card__title 
+                    %a(href="#") RETURNING GUEST DISCOUNT 30% Off
+                  %hr.card__divider
+                  .card-body 
+                    %p Big thank you to all our guests who return to Hanazono again! Save 30% every time you book another activity with us during 2021's summer season!
+        .section 
+          .image-link
+            .resort-status
+              .row 
+                .col-md-3.col-4.order-0 
+                  %h4 Weather 
+                  %i.bi.bi-brightness-high.resort-status--weather-icon
+                .col-md-3.col-4.order-0
+                  %h4 Wind 
+                  %span.resort-status--wind-speed-value 
+                  %span.resort-status--wind-speed-metric m/s
+                .col-md-6.col-7.order-sm-0.order-1
+                  %h4 Temperature 
+                  .resort-status--temperature
+                    %span.resort-status--current-temperature 6
+                    %span.resort-status--current-temperature-metric ° C
+                    .resort-status--estimated-temperatures 
+                      .resort-status--estimated-temperature 
+                        %i.bi.bi-thermometer-high.resort-status--estimated-temperature-icon
+                        %div 
+                          %span.resort-status--estimated-temperature-metric 6
+                          &nbsp;° C
+                      .resort-status--estimated-temperature 
+                        %i.bi.bi-thermometer-low.resort-status--estimated-temperature-icon
+                        %div 
+                          %span.resort-status--estimated-temperature-metric 3
+                          &nbsp;° C
+                .col-12.resort-status--spacer.d-sm-block.d-none
+                .col-sm-4.col-3 
+                  %h4 Snow Condition
+                  %span.resort-status--snow-condition -
+                .col-sm-4.col-5
+                  %h4 &#8192;
+                  .resort-status--snowfall
+                    .resort-status--snowfall-location 
+                      %span Mountain Peak
+                      %span Snow Base 
+                    .resort-status--snowfall-data 
+                      %span.resort-status--snowfall-value 290
+                      %span.resort-status--snowfall-metric cm
+                  .resort-status--snowfall 
+                    .resort-status--snowfall-location
+                      %span 24HR
+                      %span Snow Fall
+                    .resort-status--snowfall-data 
+                      %span.resort-status--snowfall-value 0
+                      %span.resort-status--snowfall-metric cm
+                .col-md-4.order-2
+                  .resort-status--buttons 
+                    %a.btn.btn-primary.w-100{:href => "#"} Lift Status
+                    %a.btn.btn-primary.w-100{:href => "#"} Live Camera             
+            .homepage-image-block
+              %img{:src => "../../images/random-image.jpg", :alt => "Alt"}
+              %a{:href => "#"}
+                %span New! Tree Trekking            
+            .homepage-image-block
+              %img{:src => "../../images/random-image.jpg", :alt => "Alt"}
+              %a{:href => "#"}
+                %span New! Tree Trekking            
+            .homepage-image-block
+              %img{:src => "../../images/random-image.jpg", :alt => "Alt"}
+              %a{:href => "#"}
+                %span New! Tree Trekking
+            .homepage-image-block
+              %img{:src => "../../images/random-image.jpg", :alt => "Alt"}
+              %a{:href => "#"}
+                %span New! Tree Trekking
+            .homepage-image-block
+              %img{:src => "../../images/random-image.jpg", :alt => "Alt"}
+              %a{:href => "#"}
+                %span New! Tree Trekking     
+            .homepage-image-block
+              %img{:src => "../../images/random-image.jpg", :alt => "Alt"}
+              %a{:href => "#"}
+                %span New! Tree Trekking
+          .wp-block-book-now 
+            %h2 book now
+            %p.wp-block-book-now--subtitle Please select a season
+            %nav.book-now__nav
+              .nav.nav-tabs.season-switcher{:role => "tablist"}
+                %button.btn.active{"aria-controls" => "nav-summer", "aria-selected" => "true", "data-bs-target" => "#nav-summer", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} SUMMER MENU
+                %button.btn{"aria-controls" => "nav-profile", "aria-selected" => "false", "data-bs-target" => "#nav-winter", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} WINTER MENU
+              #nav-tabContent.tab-content
+                #nav-summer.tab-pane.fade.show.active{"aria-labelledby" => "nav-summer-tab", :role => "tabpanel"} 
+                  #myTab.nav.nav-tabs{:role => "tablist"}                    
+                    %button.tabs-title.active{"aria-controls" => "summer-lodging", "aria-selected" => "true", "data-bs-target" => "#summer-lodging", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Lodging                    
+                    %button.tabs-title{"aria-controls" => "summer-water", "aria-selected" => "false", "data-bs-target" => "#summer-water", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Water Activities                    
+                    %button.tabs-title{"aria-controls" => "summer-tree", "aria-selected" => "false", "data-bs-target" => "#summer-tree", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Tree Trekking
+                    %button.tabs-title{"aria-controls" => "summer-golf", "aria-selected" => "true", "data-bs-target" => "#summer-golf", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Golf                    
+                    %button.tabs-title{"aria-controls" => "summer-other", "aria-selected" => "false", "data-bs-target" => "#summer-other", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Other Activites       
+                  #myTabContent.tab-content
+                    #summer-lodging.tab-pane.fade.show.active{"aria-labelledby" => "summer-lodging-tab", :role => "tabpanel"} 
+                      %ul.tab-list
+                        %li 
+                          %label.form-label{:for => "custom-select"} Ticket Type
+                          %select#custom-select.form-select{"aria-label" => "Default select example"}
+                            %option{:selected => "selected"} Open this select menu
+                            %option{:value => "1"} One
+                            %option{:value => "2"} Two
+                            %option{:value => "3"} Three
+                        %li 
+                          %label.form-label{:for => "date"} Date
+                          %input#formFile.form-control{:type => "date"}/
+                        %li 
+                          %button.btn.btn-warning.btn-black BOOK NOW
+                        %li 
+                          %a.btn{:href => "#"} More Information
+                    #summer-water.tab-pane.fade{"aria-labelledby" => "summer-water-tab", :role => "tabpanel"} 
+                      %ul.tab-list
+                        %li 
+                          %a.btn.btn-lg{:href => "#"} More Information
+                    #summer-tree.tab-pane.fade{"aria-labelledby" => "summer-tree-tab", :role => "tabpanel"} 
+                      %ul.tab-list
+                        %li 
+                          %label.form-label{:for => "custom-select"} Ticket Type
+                          %select#custom-select.form-select{"aria-label" => "Default select example"}
+                            %option{:selected => "selected"} Open this select menu
+                            %option{:value => "1"} One
+                            %option{:value => "2"} Two
+                            %option{:value => "3"} Three
+                        %li 
+                          %label.form-label{:for => "date"} Date
+                          %input#formFile.form-control{:type => "date"}/
+                        %li 
+                          %button.btn.btn-warning.btn-black BOOK NOW
+                        %li 
+                          %a.btn{:href => "#"} More Information 
+                    #summer-golf.tab-pane.fade{"aria-labelledby" => "summer-golf-tab", :role => "tabpanel"} 
+                      %ul.tab-list                       
+                        %li
+                          %label.form-label{:for => "date"} Date
+                          %input#formFile.form-control{:type => "date"}/
+                        %li 
+                          %button.btn.btn-warning.btn-black BOOK NOW
+                        %li 
+                          %a.btn{:href => "#"} More Information
+                    #summer-other.tab-pane.fade{"aria-labelledby" => "summer-other-tab", :role => "tabpanel"} 
+                      %ul.tab-list
+                        %li 
+                          %label.form-label{:for => "custom-select"} Ticket Type
+                          %select#custom-select.form-select{"aria-label" => "Default select example"}
+                            %option{:selected => "selected"} Open this select menu
+                            %option{:value => "1"} One
+                            %option{:value => "2"} Two
+                            %option{:value => "3"} Three
+                        %li 
+                          %button.btn.btn-warning.btn-black BOOK NOW
+                #nav-winter.tab-pane.fade{"aria-labelledby" => "nav-winter-tab", :role => "tabpanel"} 
+                  .nav.nav-tabs{:role => "tablist"}                    
+                    %button.tabs-title.active{"aria-controls" => "winter-lodging", "aria-selected" => "true", "data-bs-target" => "#winter-lodging", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Lodging                    
+                    %button.tabs-title{"aria-controls" => "winter-ski", "aria-selected" => "false", "data-bs-target" => "#winter-ski", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Ski Lessons                    
+                    %button.tabs-title{"aria-controls" => "winter-lift", "aria-selected" => "false", "data-bs-target" => "#winter-lift", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Lift Tickets
+                    %button.tabs-title{"aria-controls" => "winter-rental", "aria-selected" => "true", "data-bs-target" => "#winter-rental", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Rental                    
+                    %button.tabs-title{"aria-controls" => "winter-hanazono", "aria-selected" => "false", "data-bs-target" => "#winter-hanazono", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Hanazono Powder Guides
+                    %button.tabs-title{"aria-controls" => "winter-adventure", "aria-selected" => "false", "data-bs-target" => "#winter-adventure", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Adventure Park 
+                    %button.tabs-title{"aria-controls" => "winter-family", "aria-selected" => "false", "data-bs-target" => "#winter-family", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Kidz & Family       
+                  #myTabContent.tab-content
+                    #winter-lodging.tab-pane.fade.show.active{"aria-labelledby" => "winter-lodging-tab", :role => "tabpanel"} 
+                      %ul.tab-list
+                        %li 
+                          %label.form-label{:for => "custom-select"} Ticket Type
+                          %select#custom-select.form-select{"aria-label" => "Default select example"}
+                            %option{:selected => "selected"} Open this select menu
+                            %option{:value => "1"} One
+                            %option{:value => "2"} Two
+                            %option{:value => "3"} Three
+                        %li 
+                          %label.form-label{:for => "date"} Date
+                          %input#formFile.form-control{:type => "date"}/
+                        %li 
+                          %button.btn.btn-warning.btn-black BOOK NOW
+                        %li 
+                          %a.btn{:href => "#"} More Information
+                    #winter-ski.tab-pane.fade{"aria-labelledby" => "winter-ski-tab", :role => "tabpanel"} 
+                      %ul.tab-list
+                        %li 
+                          %a.btn.btn-lg{:href => "#"} More Information
+                    #winter-lift.tab-pane.fade{"aria-labelledby" => "winter-lift-tab", :role => "tabpanel"} 
+                      %ul.tab-list
+                        %li 
+                          %label.form-label{:for => "custom-select"} Ticket Type
+                          %select#custom-select.form-select{"aria-label" => "Default select example"}
+                            %option{:selected => "selected"} Open this select menu
+                            %option{:value => "1"} One
+                            %option{:value => "2"} Two
+                            %option{:value => "3"} Three
+                        %li 
+                          %label.form-label{:for => "date"} Date
+                          %input#formFile.form-control{:type => "date"}/
+                        %li 
+                          %button.btn.btn-warning.btn-black BOOK NOW
+                        %li 
+                          %a.btn{:href => "#"} More Information 
+                    #winter-rental.tab-pane.fade{"aria-labelledby" => "winter-rental-tab", :role => "tabpanel"} 
+                      %ul.tab-list                       
+                        %li
+                          %label.form-label{:for => "date"} Date
+                          %input#formFile.form-control{:type => "date"}/
+                        %li 
+                          %button.btn.btn-warning.btn-black BOOK NOW
+                        %li 
+                          %a.btn{:href => "#"} More Information
+                    #winter-hanazono.tab-pane.fade{"aria-labelledby" => "winter-hanazono-tab", :role => "tabpanel"} 
+                      %ul.tab-list
+                        %li 
+                          %label.form-label{:for => "custom-select"} Ticket Type
+                          %select#custom-select.form-select{"aria-label" => "Default select example"}
+                            %option{:selected => "selected"} Open this select menu
+                            %option{:value => "1"} One
+                            %option{:value => "2"} Two
+                            %option{:value => "3"} Three
+                        %li 
+                          %button.btn.btn-warning.btn-black BOOK NOW
+                    #winter-adventure.tab-pane.fade{"aria-labelledby" => "winter-adventure-tab", :role => "tabpanel"} 
+                      %ul.tab-list
+                        %li 
+                          %label.form-label{:for => "custom-select"} Ticket Type
+                          %select#custom-select.form-select{"aria-label" => "Default select example"}
+                            %option{:selected => "selected"} Open this select menu
+                            %option{:value => "1"} One
+                            %option{:value => "2"} Two
+                            %option{:value => "3"} Three
+                        %li 
+                          %button.btn.btn-warning.btn-black BOOK NOW
+                    #winter-family.tab-pane.fade{"aria-labelledby" => "winter-family-tab", :role => "tabpanel"} 
+                      %ul.tab-list
+                        %li 
+                          %label.form-label{:for => "custom-select"} Ticket Type
+                          %select#custom-select.form-select{"aria-label" => "Default select example"}
+                            %option{:selected => "selected"} Open this select menu
+                            %option{:value => "1"} One
+                            %option{:value => "2"} Two
+                            %option{:value => "3"} Three
+                        %li 
+                          %button.btn.btn-warning.btn-black BOOK NOW
+        .section
+          %h2.homepage.text-center Recent Post
+          .wp-block-recent-posts
+            .scroll-container 
+              .scroll-wrapper.row
+                .col-md-4
+                  .wp-block-recent-post
+                    %a(href="#") 
+                      %img.card__post-image(src="../../images/random-image.jpg" alt="Random")/
+                      .card-body
+                        %h3.card-title Card title
+                        %p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+                        %ul.list-group.list-group-horizontal.list-group-piped
+                          %li.list-group-item.text-muted March 25,2021
+                          %li.list-group-item.text-muted Uncategorised 
+                .col-md-4
+                  .wp-block-recent-post
+                    %a(href="#") 
+                      %img.card__post-image(src="../../images/random-image.jpg" alt="Random")/
+                      .card-body
+                        %h3.card-title Card title
+                        %p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+                        %ul.list-group.list-group-horizontal.list-group-piped
+                          %li.list-group-item.text-muted March 25,2021
+                          %li.list-group-item.text-muted Uncategorised 
+                .col-md-4
+                  .wp-block-recent-post
+                    %a(href="#") 
+                      %img.card__post-image(src="../../images/random-image.jpg" alt="Random")/
+                      .card-body
+                        %h3.card-title Card title
+                        %p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+                        %ul.list-group.list-group-horizontal.list-group-piped
+                          %li.list-group-item.text-muted March 25,2021
+                          %li.list-group-item.text-muted Uncategorised          
+          .wp-block-cover.cover--left.mt-3
+            %img.cover__image(src="../../images/random-image.jpg" alt="")
+            .cover__body 
+              %h2 About the Resort
+              %p 
+                Hanazono Niseko is internationally renowned for its consistently high falls of light powder snow and its long ski season which runs from early December until April. Averaging around 15m+ of snow each season, Hanazono is famous for its wide-open powder bowls and tree runs. The resort is family-friendly with a large open area for the resort operated ski school and lots of activities such for both adults and children. The resort center "HANAZONO 308", offers all kinds of services, including a lift ticket sale, a high-quality gear rental, an arrangement of lessons, and a variety of activities. A cutting-edge slope-side restaurant “HANAZONO EDGE” complements the resort, with an exciting restaurant, café, and bar.    
+      .section--sponsors
+        .container
+          .swiper-container
+            .swiper-wrapper
+              .swiper-slide
+                %a{:href=>"https://k2snow.com/en-jp"}
+                  %img(src="https://cdn.hanazononiseko.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdmdDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fede0fe20aaa0124486b21d12feb25c0a1329c7a/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJZ0Eya0NJQU09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--3ef3136a9e88c7f7795c61c54bc97a3c5575f2a1/k2-logo.png")
+              .swiper-slide
+                %a{:href=>"https://k2snow.com/en-jp"}
+                  %img(src="https://cdn.hanazononiseko.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdmdDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fede0fe20aaa0124486b21d12feb25c0a1329c7a/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJZ0Eya0NJQU09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--3ef3136a9e88c7f7795c61c54bc97a3c5575f2a1/k2-logo.png")
+              .swiper-slide
+                %a{:href=>"https://k2snow.com/en-jp"}
+                  %img(src="https://cdn.hanazononiseko.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdmdDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fede0fe20aaa0124486b21d12feb25c0a1329c7a/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJZ0Eya0NJQU09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--3ef3136a9e88c7f7795c61c54bc97a3c5575f2a1/k2-logo.png")
+              .swiper-slide
+                %a{:href=>"https://k2snow.com/en-jp"}
+                  %img(src="https://cdn.hanazononiseko.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdmdDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fede0fe20aaa0124486b21d12feb25c0a1329c7a/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJZ0Eya0NJQU09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--3ef3136a9e88c7f7795c61c54bc97a3c5575f2a1/k2-logo.png")
+              .swiper-slide
+                %a{:href=>"https://k2snow.com/en-jp"}
+                  %img(src="https://cdn.hanazononiseko.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdmdDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fede0fe20aaa0124486b21d12feb25c0a1329c7a/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJZ0Eya0NJQU09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--3ef3136a9e88c7f7795c61c54bc97a3c5575f2a1/k2-logo.png")
+              .swiper-slide
+                %a{:href=>"https://k2snow.com/en-jp"}
+                  %img(src="https://cdn.hanazononiseko.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdmdDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fede0fe20aaa0124486b21d12feb25c0a1329c7a/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJZ0Eya0NJQU09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--3ef3136a9e88c7f7795c61c54bc97a3c5575f2a1/k2-logo.png")
+              .swiper-slide
+                %a{:href=>"https://k2snow.com/en-jp"}
+                  %img(src="https://cdn.hanazononiseko.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdmdDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fede0fe20aaa0124486b21d12feb25c0a1329c7a/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJZ0Eya0NJQU09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--3ef3136a9e88c7f7795c61c54bc97a3c5575f2a1/k2-logo.png")  
+      %footer.lazyload.body-footer#contact-area
+        %section.footer.container
+          .row
+            .col-12 
+              .top-bar 
+                .top-bar-left 
+                  .language-switch.language-switch__footer
+                    %select#switch_language{:name => "switch_language"}
+                      %option{:value => ""} English | 日本語 | 中文
+                      %option{"data-alternative-url" => "https://hanazononiseko-staging-pr-83.herokuapp.com/en/special-offers/returning-guest-discount2021", :value => "en"} English
+                      %option{"data-alternative-url" => "https://hanazononiseko-staging-pr-83.herokuapp.com/ja/special-offers/returning-guest-discount2021", :value => "ja"} 日本語
+                      %option{"data-alternative-url" => "https://hanazononiseko-staging-pr-83.herokuapp.com/zh/special-offers/returning-guest-discount2021", :value => "zh"} 中文
+                .top-bar-right.d-md-block.d-none
+                  %ul.menu.horizontal.social
+                    %li 
+                      %a(href="#") 
+                        %i.bi.bi-facebook
+                    %li 
+                      %a(href="#") 
+                        %i.bi.bi-instagram
+                    %li 
+                      %a(href="#") 
+                        %i.bi.bi-twitter
+            .col-md-3 
+              %img.body-footer--image(src="../../images/hanazono-logo-square-5a053faa48efe111bfdaad5e2c137b2b4de46079992c19756634822b7fc8700f.svg" alt="Hanazono footer")/
               %a(href="#") 
-                %img(src="../../images/random-image.jpg" alt="Random")/
-              .card-section 
-                %h3.card__title 
-                  %a(href="#") RETURNING GUEST DISCOUNT 30% Off
-                %hr.card__divider
-                .card-body 
-                  %p Big thank you to all our guests who return to Hanazono again! Save 30% every time you book another activity with us during 2021's summer season!
-          .col-md-4
-            .wp-block-integral-card 
-              %a(href="#") 
-                %img(src="../../images/random-image.jpg" alt="Random")/
-              .card-section 
-                %h3.card__title 
-                  %a(href="#") RETURNING GUEST DISCOUNT 30% Off
-                %hr.card__divider
-                .card-body 
-                  %p Big thank you to all our guests who return to Hanazono again! Save 30% every time you book another activity with us during 2021's summer season!
-      .section 
-        .image-link
-          .resort-status
-            .row 
-              .col-md-3.col-4.order-0 
-                %h4 Weather 
-                %i.bi.bi-brightness-high.resort-status--weather-icon
-              .col-md-3.col-4.order-0
-                %h4 Wind 
-                %span.resort-status--wind-speed-value 
-                %span.resort-status--wind-speed-metric m/s
-              .col-md-6.col-7.order-sm-0.order-1
-                %h4 Temperature 
-                .resort-status--temperature
-                  %span.resort-status--current-temperature 6
-                  %span.resort-status--current-temperature-metric ° C
-                  .resort-status--estimated-temperatures 
-                    .resort-status--estimated-temperature 
-                      %i.bi.bi-thermometer-high.resort-status--estimated-temperature-icon
-                      %div 
-                        %span.resort-status--estimated-temperature-metric 6
-                        &nbsp;° C
-                    .resort-status--estimated-temperature 
-                      %i.bi.bi-thermometer-low.resort-status--estimated-temperature-icon
-                      %div 
-                        %span.resort-status--estimated-temperature-metric 3
-                        &nbsp;° C
-              .col-12.resort-status--spacer.d-sm-block.d-none
-              .col-sm-4.col-3 
-                %h4 Snow Condition
-                %span.resort-status--snow-condition -
-              .col-sm-4.col-5
-                %h4 &#8192;
-                .resort-status--snowfall
-                  .resort-status--snowfall-location 
-                    %span Mountain Peak
-                    %span Snow Base 
-                  .resort-status--snowfall-data 
-                    %span.resort-status--snowfall-value 290
-                    %span.resort-status--snowfall-metric cm
-                .resort-status--snowfall 
-                  .resort-status--snowfall-location
-                    %span 24HR
-                    %span Snow Fall
-                  .resort-status--snowfall-data 
-                    %span.resort-status--snowfall-value 0
-                    %span.resort-status--snowfall-metric cm
-              .col-md-4.order-2
-                .resort-status--buttons 
-                  %a.btn.btn-primary.w-100{:href => "#"} Lift Status
-                  %a.btn.btn-primary.w-100{:href => "#"} Live Camera             
-          .homepage-image-block
-            %img{:src => "../../images/random-image.jpg", :alt => "Alt"}
-            %a{:href => "#"}
-              %span New! Tree Trekking            
-          .homepage-image-block
-            %img{:src => "../../images/random-image.jpg", :alt => "Alt"}
-            %a{:href => "#"}
-              %span New! Tree Trekking            
-          .homepage-image-block
-            %img{:src => "../../images/random-image.jpg", :alt => "Alt"}
-            %a{:href => "#"}
-              %span New! Tree Trekking
-          .homepage-image-block
-            %img{:src => "../../images/random-image.jpg", :alt => "Alt"}
-            %a{:href => "#"}
-              %span New! Tree Trekking
-          .homepage-image-block
-            %img{:src => "../../images/random-image.jpg", :alt => "Alt"}
-            %a{:href => "#"}
-              %span New! Tree Trekking     
-          .homepage-image-block
-            %img{:src => "../../images/random-image.jpg", :alt => "Alt"}
-            %a{:href => "#"}
-              %span New! Tree Trekking
-        .wp-block-book-now 
-          %h2 book now
-          %p.wp-block-book-now--subtitle Please select a season
-          %nav.book-now__nav
-            .nav.nav-tabs.season-switcher{:role => "tablist"}
-              %button.btn.active{"aria-controls" => "nav-summer", "aria-selected" => "true", "data-bs-target" => "#nav-summer", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} SUMMER MENU
-              %button.btn{"aria-controls" => "nav-profile", "aria-selected" => "false", "data-bs-target" => "#nav-winter", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} WINTER MENU
-            #nav-tabContent.tab-content
-              #nav-summer.tab-pane.fade.show.active{"aria-labelledby" => "nav-summer-tab", :role => "tabpanel"} 
-                #myTab.nav.nav-tabs{:role => "tablist"}                    
-                  %button.tabs-title.active{"aria-controls" => "summer-lodging", "aria-selected" => "true", "data-bs-target" => "#summer-lodging", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Lodging                    
-                  %button.tabs-title{"aria-controls" => "summer-water", "aria-selected" => "false", "data-bs-target" => "#summer-water", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Water Activities                    
-                  %button.tabs-title{"aria-controls" => "summer-tree", "aria-selected" => "false", "data-bs-target" => "#summer-tree", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Tree Trekking
-                  %button.tabs-title{"aria-controls" => "summer-golf", "aria-selected" => "true", "data-bs-target" => "#summer-golf", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Golf                    
-                  %button.tabs-title{"aria-controls" => "summer-other", "aria-selected" => "false", "data-bs-target" => "#summer-other", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Other Activites       
-                #myTabContent.tab-content
-                  #summer-lodging.tab-pane.fade.show.active{"aria-labelledby" => "summer-lodging-tab", :role => "tabpanel"} 
-                    %ul.tab-list
-                      %li 
-                        %label.form-label{:for => "custom-select"} Ticket Type
-                        %select#custom-select.form-select{"aria-label" => "Default select example"}
-                          %option{:selected => "selected"} Open this select menu
-                          %option{:value => "1"} One
-                          %option{:value => "2"} Two
-                          %option{:value => "3"} Three
-                      %li 
-                        %label.form-label{:for => "date"} Date
-                        %input#formFile.form-control{:type => "date"}/
-                      %li 
-                        %button.btn.btn-warning.btn-black BOOK NOW
-                      %li 
-                        %a.btn{:href => "#"} More Information
-                  #summer-water.tab-pane.fade{"aria-labelledby" => "summer-water-tab", :role => "tabpanel"} 
-                    %ul.tab-list
-                      %li 
-                        %a.btn.btn-lg{:href => "#"} More Information
-                  #summer-tree.tab-pane.fade{"aria-labelledby" => "summer-tree-tab", :role => "tabpanel"} 
-                    %ul.tab-list
-                      %li 
-                        %label.form-label{:for => "custom-select"} Ticket Type
-                        %select#custom-select.form-select{"aria-label" => "Default select example"}
-                          %option{:selected => "selected"} Open this select menu
-                          %option{:value => "1"} One
-                          %option{:value => "2"} Two
-                          %option{:value => "3"} Three
-                      %li 
-                        %label.form-label{:for => "date"} Date
-                        %input#formFile.form-control{:type => "date"}/
-                      %li 
-                        %button.btn.btn-warning.btn-black BOOK NOW
-                      %li 
-                        %a.btn{:href => "#"} More Information 
-                  #summer-golf.tab-pane.fade{"aria-labelledby" => "summer-golf-tab", :role => "tabpanel"} 
-                    %ul.tab-list                       
-                      %li
-                        %label.form-label{:for => "date"} Date
-                        %input#formFile.form-control{:type => "date"}/
-                      %li 
-                        %button.btn.btn-warning.btn-black BOOK NOW
-                      %li 
-                        %a.btn{:href => "#"} More Information
-                  #summer-other.tab-pane.fade{"aria-labelledby" => "summer-other-tab", :role => "tabpanel"} 
-                    %ul.tab-list
-                      %li 
-                        %label.form-label{:for => "custom-select"} Ticket Type
-                        %select#custom-select.form-select{"aria-label" => "Default select example"}
-                          %option{:selected => "selected"} Open this select menu
-                          %option{:value => "1"} One
-                          %option{:value => "2"} Two
-                          %option{:value => "3"} Three
-                      %li 
-                        %button.btn.btn-warning.btn-black BOOK NOW
-              #nav-winter.tab-pane.fade{"aria-labelledby" => "nav-winter-tab", :role => "tabpanel"} 
-                .nav.nav-tabs{:role => "tablist"}                    
-                  %button.tabs-title.active{"aria-controls" => "winter-lodging", "aria-selected" => "true", "data-bs-target" => "#winter-lodging", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Lodging                    
-                  %button.tabs-title{"aria-controls" => "winter-ski", "aria-selected" => "false", "data-bs-target" => "#winter-ski", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Ski Lessons                    
-                  %button.tabs-title{"aria-controls" => "winter-lift", "aria-selected" => "false", "data-bs-target" => "#winter-lift", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Lift Tickets
-                  %button.tabs-title{"aria-controls" => "winter-rental", "aria-selected" => "true", "data-bs-target" => "#winter-rental", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Rental                    
-                  %button.tabs-title{"aria-controls" => "winter-hanazono", "aria-selected" => "false", "data-bs-target" => "#winter-hanazono", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Hanazono Powder Guides
-                  %button.tabs-title{"aria-controls" => "winter-adventure", "aria-selected" => "false", "data-bs-target" => "#winter-adventure", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Adventure Park 
-                  %button.tabs-title{"aria-controls" => "winter-family", "aria-selected" => "false", "data-bs-target" => "#winter-family", "data-bs-toggle" => "tab", :role => "tab", :type => "button"} Kidz & Family       
-                #myTabContent.tab-content
-                  #winter-lodging.tab-pane.fade.show.active{"aria-labelledby" => "winter-lodging-tab", :role => "tabpanel"} 
-                    %ul.tab-list
-                      %li 
-                        %label.form-label{:for => "custom-select"} Ticket Type
-                        %select#custom-select.form-select{"aria-label" => "Default select example"}
-                          %option{:selected => "selected"} Open this select menu
-                          %option{:value => "1"} One
-                          %option{:value => "2"} Two
-                          %option{:value => "3"} Three
-                      %li 
-                        %label.form-label{:for => "date"} Date
-                        %input#formFile.form-control{:type => "date"}/
-                      %li 
-                        %button.btn.btn-warning.btn-black BOOK NOW
-                      %li 
-                        %a.btn{:href => "#"} More Information
-                  #winter-ski.tab-pane.fade{"aria-labelledby" => "winter-ski-tab", :role => "tabpanel"} 
-                    %ul.tab-list
-                      %li 
-                        %a.btn.btn-lg{:href => "#"} More Information
-                  #winter-lift.tab-pane.fade{"aria-labelledby" => "winter-lift-tab", :role => "tabpanel"} 
-                    %ul.tab-list
-                      %li 
-                        %label.form-label{:for => "custom-select"} Ticket Type
-                        %select#custom-select.form-select{"aria-label" => "Default select example"}
-                          %option{:selected => "selected"} Open this select menu
-                          %option{:value => "1"} One
-                          %option{:value => "2"} Two
-                          %option{:value => "3"} Three
-                      %li 
-                        %label.form-label{:for => "date"} Date
-                        %input#formFile.form-control{:type => "date"}/
-                      %li 
-                        %button.btn.btn-warning.btn-black BOOK NOW
-                      %li 
-                        %a.btn{:href => "#"} More Information 
-                  #winter-rental.tab-pane.fade{"aria-labelledby" => "winter-rental-tab", :role => "tabpanel"} 
-                    %ul.tab-list                       
-                      %li
-                        %label.form-label{:for => "date"} Date
-                        %input#formFile.form-control{:type => "date"}/
-                      %li 
-                        %button.btn.btn-warning.btn-black BOOK NOW
-                      %li 
-                        %a.btn{:href => "#"} More Information
-                  #winter-hanazono.tab-pane.fade{"aria-labelledby" => "winter-hanazono-tab", :role => "tabpanel"} 
-                    %ul.tab-list
-                      %li 
-                        %label.form-label{:for => "custom-select"} Ticket Type
-                        %select#custom-select.form-select{"aria-label" => "Default select example"}
-                          %option{:selected => "selected"} Open this select menu
-                          %option{:value => "1"} One
-                          %option{:value => "2"} Two
-                          %option{:value => "3"} Three
-                      %li 
-                        %button.btn.btn-warning.btn-black BOOK NOW
-                  #winter-adventure.tab-pane.fade{"aria-labelledby" => "winter-adventure-tab", :role => "tabpanel"} 
-                    %ul.tab-list
-                      %li 
-                        %label.form-label{:for => "custom-select"} Ticket Type
-                        %select#custom-select.form-select{"aria-label" => "Default select example"}
-                          %option{:selected => "selected"} Open this select menu
-                          %option{:value => "1"} One
-                          %option{:value => "2"} Two
-                          %option{:value => "3"} Three
-                      %li 
-                        %button.btn.btn-warning.btn-black BOOK NOW
-                  #winter-family.tab-pane.fade{"aria-labelledby" => "winter-family-tab", :role => "tabpanel"} 
-                    %ul.tab-list
-                      %li 
-                        %label.form-label{:for => "custom-select"} Ticket Type
-                        %select#custom-select.form-select{"aria-label" => "Default select example"}
-                          %option{:selected => "selected"} Open this select menu
-                          %option{:value => "1"} One
-                          %option{:value => "2"} Two
-                          %option{:value => "3"} Three
-                      %li 
-                        %button.btn.btn-warning.btn-black BOOK NOW
-      .section
-        %h2.homepage.text-center Recent Post
-        .wp-block-recent-posts
-          .scroll-container 
-            .scroll-wrapper.row
-              .col-md-4
-                .card
+                %img.body-footer--image.small(src="https://hanazononiseko-staging-pr-83.herokuapp.com/assets/trip-advisor-fec83103f2ce37bd4ec3579f8604bcc2deab100f400f387e087cf608f267b81d.png" alt="")
+            .col-md-3
+              %h3 Navigation
+              %ul.simple.vertical
+                %li 
+                  %a(href="#") Summer Resort Overview
+                %li 
+                  %a(href="#") Summer Activities
+                %li 
+                  %a(href="#") Winter Resort Overview
+                %li 
+                  %a(href="#") Winter Rentals
+                %li 
+                  %a(href="#") Snowsports School
+                %li 
+                  %a(href="#") Winter Activities
+                %li 
+                  %a(href="#") News
+                %li 
+                  %a(href="#") Events
+                %li 
+                  %a(href="#") Special Offers
+            .col-md-3
+              %h3 Useful Links
+              %ul.simple.vertical
+                %li 
+                  %a(href="#") Contact Us
+                %li 
+                  %a(href="#") Lost and Found
+                %li 
+                  %a(href="#") Company
+                %li 
+                  %a(href="#") News Release
+                %li 
+                  %a(href="#") Employment
+                %li 
+                  %a(href="#") Development
+                %li 
+                  %a(href="#") Media Request
+                %li 
+                  %a(href="#") Download Center
+                %li 
+                  %a(href="#") Privacy Policy
+                %li 
+                  %a(href="#") Booking Terms & Conditions - Winter
+                %li 
+                  %a(href="#") Booking Terms & Conditions - Summer
+            .col-lg-3
+              %h3 Newsletter
+              %form.remote-form.clearfix{"accept-charset" => "UTF-8", :action => "https://hanazononiseko-staging-pr-83.herokuapp.com/newsletter_signup", "data-remote" => "true", "data-remote-form-event" => "newsletterSignup", "data-remote-form-failure-message" => "Sorry! Unfortunately there was a problem signing you up, please try again later.", "data-remote-form-success-message" => "Great! You've successful signed up for exciting news about Hanazono!", :method => "post"}
+                %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+                %input#newsletter_signup_email{:name => "newsletter_signup[email]", :placeholder => "Email Address", :required => "required", :type => "email"}/
+                %input#newsletter_signup_context{:name => "newsletter_signup[context]", :type => "hidden", :value => "en"}/
+                %button.btn.btn-primary Send
+            .col-12.d-block.d-md-none.mt-4
+              %ul.menu.horizontal.social
+                %li 
                   %a(href="#") 
-                    %img.card__post-image(src="../../images/random-image.jpg" alt="Random")/
-                    .card-body
-                      %h3.card-title Card title
-                      %p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
-                      %ul.list-group.list-group-horizontal.list-group-piped
-                        %li.list-group-item.text-muted March 25,2021
-                        %li.list-group-item.text-muted Uncategorised 
-              .col-md-4
-                .card
+                    %i.bi.bi-facebook
+                %li 
                   %a(href="#") 
-                    %img.card__post-image(src="../../images/random-image.jpg" alt="Random")/
-                    .card-body
-                      %h3.card-title Card title
-                      %p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
-                      %ul.list-group.list-group-horizontal.list-group-piped
-                        %li.list-group-item.text-muted March 25,2021
-                        %li.list-group-item.text-muted Uncategorised 
-              .col-md-4
-                .card
+                    %i.bi.bi-instagram
+                %li 
                   %a(href="#") 
-                    %img.card__post-image(src="../../images/random-image.jpg" alt="Random")/
-                    .card-body
-                      %h3.card-title Card title
-                      %p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
-                      %ul.list-group.list-group-horizontal.list-group-piped
-                        %li.list-group-item.text-muted March 25,2021
-                        %li.list-group-item.text-muted Uncategorised                
-        .cover.cover--left.mt-3
-          %img.cover__image(src="../../images/random-image.jpg" alt="")
-          .cover__body 
-            %h2 About the Resort
-            %p 
-              Hanazono Niseko is internationally renowned for its consistently high falls of light powder snow and its long ski season which runs from early December until April. Averaging around 15m+ of snow each season, Hanazono is famous for its wide-open powder bowls and tree runs. The resort is family-friendly with a large open area for the resort operated ski school and lots of activities such for both adults and children. The resort center "HANAZONO 308", offers all kinds of services, including a lift ticket sale, a high-quality gear rental, an arrangement of lessons, and a variety of activities. A cutting-edge slope-side restaurant “HANAZONO EDGE” complements the resort, with an exciting restaurant, café, and bar.    
-    .section--sponsors
-      .container
-        .swiper-container
-          .swiper-wrapper
-            .swiper-slide
-              %a{:href=>"https://k2snow.com/en-jp"}
-                %img(src="https://cdn.hanazononiseko.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdmdDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fede0fe20aaa0124486b21d12feb25c0a1329c7a/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJZ0Eya0NJQU09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--3ef3136a9e88c7f7795c61c54bc97a3c5575f2a1/k2-logo.png")
-            .swiper-slide
-              %a{:href=>"https://k2snow.com/en-jp"}
-                %img(src="https://cdn.hanazononiseko.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdmdDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fede0fe20aaa0124486b21d12feb25c0a1329c7a/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJZ0Eya0NJQU09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--3ef3136a9e88c7f7795c61c54bc97a3c5575f2a1/k2-logo.png")
-            .swiper-slide
-              %a{:href=>"https://k2snow.com/en-jp"}
-                %img(src="https://cdn.hanazononiseko.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdmdDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fede0fe20aaa0124486b21d12feb25c0a1329c7a/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJZ0Eya0NJQU09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--3ef3136a9e88c7f7795c61c54bc97a3c5575f2a1/k2-logo.png")
-            .swiper-slide
-              %a{:href=>"https://k2snow.com/en-jp"}
-                %img(src="https://cdn.hanazononiseko.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdmdDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fede0fe20aaa0124486b21d12feb25c0a1329c7a/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJZ0Eya0NJQU09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--3ef3136a9e88c7f7795c61c54bc97a3c5575f2a1/k2-logo.png")
-            .swiper-slide
-              %a{:href=>"https://k2snow.com/en-jp"}
-                %img(src="https://cdn.hanazononiseko.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdmdDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fede0fe20aaa0124486b21d12feb25c0a1329c7a/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJZ0Eya0NJQU09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--3ef3136a9e88c7f7795c61c54bc97a3c5575f2a1/k2-logo.png")
-            .swiper-slide
-              %a{:href=>"https://k2snow.com/en-jp"}
-                %img(src="https://cdn.hanazononiseko.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdmdDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fede0fe20aaa0124486b21d12feb25c0a1329c7a/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJZ0Eya0NJQU09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--3ef3136a9e88c7f7795c61c54bc97a3c5575f2a1/k2-logo.png")
-            .swiper-slide
-              %a{:href=>"https://k2snow.com/en-jp"}
-                %img(src="https://cdn.hanazononiseko.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdmdDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fede0fe20aaa0124486b21d12feb25c0a1329c7a/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJZ0Eya0NJQU09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--3ef3136a9e88c7f7795c61c54bc97a3c5575f2a1/k2-logo.png")  
-    %footer.lazyload.body-footer#contact-area
-      %section.footer.container
-        .row
-          .col-12 
-            .top-bar 
-              .top-bar-left 
-                .language-switch.language-switch__footer
-                  %select#switch_language{:name => "switch_language"}
-                    %option{:value => ""} English | 日本語 | 中文
-                    %option{"data-alternative-url" => "https://hanazononiseko-staging-pr-83.herokuapp.com/en/special-offers/returning-guest-discount2021", :value => "en"} English
-                    %option{"data-alternative-url" => "https://hanazononiseko-staging-pr-83.herokuapp.com/ja/special-offers/returning-guest-discount2021", :value => "ja"} 日本語
-                    %option{"data-alternative-url" => "https://hanazononiseko-staging-pr-83.herokuapp.com/zh/special-offers/returning-guest-discount2021", :value => "zh"} 中文
-              .top-bar-right.d-md-block.d-none
-                %ul.menu.horizontal.social
-                  %li 
-                    %a(href="#") 
-                      %i.bi.bi-facebook
-                  %li 
-                    %a(href="#") 
-                      %i.bi.bi-instagram
-                  %li 
-                    %a(href="#") 
-                      %i.bi.bi-twitter
-          .col-md-3 
-            %img.body-footer--image(src="../../images/hanazono-logo-square-5a053faa48efe111bfdaad5e2c137b2b4de46079992c19756634822b7fc8700f.svg" alt="Hanazono footer")/
-            %a(href="#") 
-              %img.body-footer--image.small(src="https://hanazononiseko-staging-pr-83.herokuapp.com/assets/trip-advisor-fec83103f2ce37bd4ec3579f8604bcc2deab100f400f387e087cf608f267b81d.png" alt="")
-          .col-md-3
-            %h3 Navigation
-            %ul.simple.vertical
-              %li 
-                %a(href="#") Summer Resort Overview
-              %li 
-                %a(href="#") Summer Activities
-              %li 
-                %a(href="#") Winter Resort Overview
-              %li 
-                %a(href="#") Winter Rentals
-              %li 
-                %a(href="#") Snowsports School
-              %li 
-                %a(href="#") Winter Activities
-              %li 
-                %a(href="#") News
-              %li 
-                %a(href="#") Events
-              %li 
-                %a(href="#") Special Offers
-          .col-md-3
-            %h3 Useful Links
-            %ul.simple.vertical
-              %li 
-                %a(href="#") Contact Us
-              %li 
-                %a(href="#") Lost and Found
-              %li 
-                %a(href="#") Company
-              %li 
-                %a(href="#") News Release
-              %li 
-                %a(href="#") Employment
-              %li 
-                %a(href="#") Development
-              %li 
-                %a(href="#") Media Request
-              %li 
-                %a(href="#") Download Center
-              %li 
-                %a(href="#") Privacy Policy
-              %li 
-                %a(href="#") Booking Terms & Conditions - Winter
-              %li 
-                %a(href="#") Booking Terms & Conditions - Summer
-          .col-lg-3
-            %h3 Newsletter
-            %form.remote-form.clearfix{"accept-charset" => "UTF-8", :action => "https://hanazononiseko-staging-pr-83.herokuapp.com/newsletter_signup", "data-remote" => "true", "data-remote-form-event" => "newsletterSignup", "data-remote-form-failure-message" => "Sorry! Unfortunately there was a problem signing you up, please try again later.", "data-remote-form-success-message" => "Great! You've successful signed up for exciting news about Hanazono!", :method => "post"}
-              %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-              %input#newsletter_signup_email{:name => "newsletter_signup[email]", :placeholder => "Email Address", :required => "required", :type => "email"}/
-              %input#newsletter_signup_context{:name => "newsletter_signup[context]", :type => "hidden", :value => "en"}/
-              %button.btn.btn-primary Send
-          .col-12.d-block.d-md-none.mt-4
-            %ul.menu.horizontal.social
-              %li 
-                %a(href="#") 
-                  %i.bi.bi-facebook
-              %li 
-                %a(href="#") 
-                  %i.bi.bi-instagram
-              %li 
-                %a(href="#") 
-                  %i.bi.bi-twitter
-    %p.copyright Copyright @ 2021 hanazononiseko.com All rights reserved.
+                    %i.bi.bi-twitter
+      %p.copyright Copyright @ 2021 hanazononiseko.com All rights reserved.
   %script{:src => "../../js/bootstrap.min.js"}
   %script{:src => "https://unpkg.com/swiper/swiper-bundle.min.js"}
   :javascript
@@ -489,3 +727,39 @@
         },
       }
     });
+    const triggerTabList = [].slice.call(document.querySelectorAll('.main-menu.nav button'))
+      triggerTabList.forEach(function (triggerEl) {
+      
+
+        triggerEl.addEventListener('mouseover', function (event) {
+          const panel = document.getElementById(triggerEl.dataset.target);
+          panel.classList.add("active")
+          triggerEl.classList.add('hover')
+        triggerEl.addEventListener('mouseout', function (event) {
+          if(event.relatedTarget != panel){
+            panel.classList.remove("active")
+            triggerEl.classList.remove('hover')
+          } 
+           panel.addEventListener('mouseout', function(event){
+             if(!panel.contains(event.relatedTarget)){
+                panel.classList.remove("active")
+                triggerEl.classList.remove('hover')
+
+             }
+            }) 
+          })
+        })
+        
+      })
+      const offCanvasButton = document.querySelector('.menu-icon')
+      const offCanvas = document.querySelector('.off-canvas')
+      const offCanvasClose = document.querySelector('.close-button')
+        offCanvasButton.addEventListener('click', () => {
+          offCanvas.classList.remove('is-close');
+          offCanvas.classList.add('is-open');
+
+        })
+        offCanvasClose.addEventListener('click', () => {
+          offCanvas.classList.add('is-close');
+          offCanvas.classList.remove('is-open');
+        })

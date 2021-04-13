@@ -10,8 +10,8 @@
     %title blocks
   %body
     .main-content.container      
-      .wp-block-columns.row
-        .wp-block-column.col-md-12 
+      .row
+        .col-md-12 
           %h2.mb-5 Hero Example
           .page-hero
             %a.btn.button--book-now{:href => "https://hanazononiseko-staging-pr-83.herokuapp.com/en/book"} Book Now
@@ -23,40 +23,40 @@
               %li.breadcrumb-item
                 %a{:href => "#"} Home
               %li.breadcrumb-item.active{"aria-current" => "page"} Library
-        .wp-block-column.col-md-12 
+        .col-md-12 
           %h3 Accordion Example
           .wp-block-integral-accordion#accordionExample.accordion
-          .accordion-item
-            %h2#headingOne.accordion-header
-              %button.accordion-button{"aria-controls" => "collapseOne", "aria-expanded" => "true", "data-bs-target" => "#collapseOne", "data-bs-toggle" => "collapse", :type => "button"}
-                Accordion Item #1
-            #collapseOne.accordion-collapse.collapse.show{"aria-labelledby" => "headingOne", "data-bs-parent" => "#accordionExample"}
-              .accordion-body
-                %strong This is the first item's accordion body.
-                It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
-                = succeed "," do
-                  %code .accordion-body
-          .accordion-item
-            %h2#headingTwo.accordion-header
-              %button.accordion-button.collapsed{"aria-controls" => "collapseTwo", "aria-expanded" => "false", "data-bs-target" => "#collapseTwo", "data-bs-toggle" => "collapse", :type => "button"}
-                Accordion Item #2
-            #collapseTwo.accordion-collapse.collapse{"aria-labelledby" => "headingTwo", "data-bs-parent" => "#accordionExample"}
-              .accordion-body
-                %strong This is the second item's accordion body.
-                It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
-                = succeed "," do
-                  %code .accordion-body
-          .accordion-item
-            %h2#headingThree.accordion-header
-              %button.accordion-button.collapsed{"aria-controls" => "collapseThree", "aria-expanded" => "false", "data-bs-target" => "#collapseThree", "data-bs-toggle" => "collapse", :type => "button"}
-                Accordion Item #3
-            #collapseThree.accordion-collapse.collapse{"aria-labelledby" => "headingThree", "data-bs-parent" => "#accordionExample"}
-              .accordion-body
-                %strong This is the third item's accordion body.
-                It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
-                = succeed "," do
-                  %code .accordion-body
-        .wp-block-column.col-md-12
+            .accordion-item
+              %h2#headingOne.accordion-header
+                %button.accordion-button{"aria-controls" => "collapseOne", "aria-expanded" => "true", "data-bs-target" => "#collapseOne", "data-bs-toggle" => "collapse", :type => "button"}
+                  Accordion Item #1
+              #collapseOne.accordion-collapse.collapse.show{"aria-labelledby" => "headingOne", "data-bs-parent" => "#accordionExample"}
+                .accordion-body
+                  %strong This is the first item's accordion body.
+                  It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+                  = succeed "," do
+                    %code .accordion-body
+            .accordion-item
+              %h2#headingTwo.accordion-header
+                %button.accordion-button.collapsed{"aria-controls" => "collapseTwo", "aria-expanded" => "false", "data-bs-target" => "#collapseTwo", "data-bs-toggle" => "collapse", :type => "button"}
+                  Accordion Item #2
+              #collapseTwo.accordion-collapse.collapse{"aria-labelledby" => "headingTwo", "data-bs-parent" => "#accordionExample"}
+                .accordion-body
+                  %strong This is the second item's accordion body.
+                  It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+                  = succeed "," do
+                    %code .accordion-body
+            .accordion-item
+              %h2#headingThree.accordion-header
+                %button.accordion-button.collapsed{"aria-controls" => "collapseThree", "aria-expanded" => "false", "data-bs-target" => "#collapseThree", "data-bs-toggle" => "collapse", :type => "button"}
+                  Accordion Item #3
+              #collapseThree.accordion-collapse.collapse{"aria-labelledby" => "headingThree", "data-bs-parent" => "#accordionExample"}
+                .accordion-body
+                  %strong This is the third item's accordion body.
+                  It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+                  = succeed "," do
+                    %code .accordion-body
+        .col-md-12
           %h3 Card Example
           .wp-block-integral-card.card
             %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
@@ -64,7 +64,7 @@
               %h5.card-title Card title
               %p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
               %a.btn.btn-primary{:href => "#"} Go somewhere
-        .wp-block-column.col-md-12
+        .col-md-12
           %h3 Alert Example
           .wp-block-integral-alert.alert.alert-primary{:role => "alert"}
             A simple primary alert—check it out!
@@ -74,7 +74,7 @@
             A simple warning alert—check it out!
           .wp-block-integral-alert.alert.alert-danger{:role => "alert"}
             A simple danger alert—check it out!
-        .wp-block-column.col-md-12.mt-5
+        .col-md-12.mt-5
           %h3 Button Examples
           .wp-block-buttons.text-center
             .wp-block-button.btn.btn-primary 
@@ -86,7 +86,7 @@
             .wp-block-button.btn.btn-secondary.btn-lg 
               %a.wp-block-button__link{:href=>"#"} This is a bigger button         
           
-        .wp-block-column.col-md-12.mt-5 
+        .col-md-12.mt-5 
           %h3 Cover Examples
           .wp-block-integral-cover.cover.cover--full.mt-5.mb-5 
             %img.cover__image(src="images/random-image.jpg" alt="")
@@ -106,7 +106,7 @@
             %h2 About the Resort
             %p 
               Hanazono Niseko is internationally renowned for its consistently high falls of light powder snow and its long ski season which runs from early December until April. Averaging around 15m+ of snow each season, Hanazono is famous for its wide-open powder bowls and tree runs. The resort is family-friendly with a large open area for the resort operated ski school and lots of activities such for both adults and children. The resort center "HANAZONO 308", offers all kinds of services, including a lift ticket sale, a high-quality gear rental, an arrangement of lessons, and a variety of activities. A cutting-edge slope-side restaurant “HANAZONO EDGE” complements the resort, with an exciting restaurant, café, and bar.    
-        .wp-block-column.col-md-12.mt-5
+        .col-md-12.mt-5
           %h3 Event Posts Block
           .wp-block-itengral-card.card.card__horizontal-post
             .row 
@@ -120,10 +120,10 @@
                   %ul.list-group.list-group-horizontal.list-group-piped
                     %li.list-group-item.text-muted March 25,2021
                     %li.list-group-item.text-muted Uncategorised 
-        .wp-block-column.col-md-12.mt-5
+        .col-md-12.mt-5
           %h3 Recent Posts Block
           .row
-            .wp-block-column.col-md-4 
+            .col-md-4 
               .wp-block-itengral-card.card
                 %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
                 .card-body
@@ -133,7 +133,7 @@
                     %ul.list-group.list-group-horizontal.list-group-piped
                       %li.list-group-item.text-muted March 25,2021
                       %li.list-group-item.text-muted Uncategorised 
-            .wp-block-column.col-md-4 
+            .col-md-4 
               .wp-block-itengral-card.card
                 %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
                 .card-body
@@ -143,7 +143,7 @@
                     %ul.list-group.list-group-horizontal.list-group-piped
                       %li.list-group-item.text-muted March 25,2021
                       %li.list-group-item.text-muted Uncategorised 
-            .wp-block-column.col-md-4 
+            .col-md-4 
               .wp-block-itengral-card.card
                 %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
                 .card-body
@@ -154,8 +154,8 @@
                       %li.list-group-item.text-muted March 25,2021
                       %li.list-group-item.text-muted Uncategorised 
           %h3.mt-5.mb-5 Special Offers blocks 
-          .wp-block-columns.row
-            .wp-block-column.col-md-4 
+          .row
+            .col-md-4 
               .wp-block-itengral-card.card
                 %a.card__offer-link{:href=>"#"}
                   %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
@@ -168,7 +168,7 @@
                     %p Expires Oct 31 
                   %p.card-text Integral CMS demo post. Integral is a rails content management system (CMS) which gives developers the ability to create a modern website with all the bells and whistles without the hassle.
                   
-            .wp-block-column.col-md-4 
+            .col-md-4 
               .wp-block-itengral-card.card
                 %a.card__offer-link{:href=>"#"}
                   %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
@@ -181,7 +181,7 @@
                     %p Expires Oct 31 
                   %p.card-text Integral CMS demo post. Integral is a rails content management system (CMS) which gives developers the ability to create a modern website with all the bells and whistles without the hassle.
                   
-            .wp-block-column.col-md-4 
+            .col-md-4 
               .wp-block-itengral-card.card
                 %a.card__offer-link{:href=>"#"}
                   %img.card-img-top{:alt => "...", :src => "images/random-image.jpg"}/
@@ -195,7 +195,7 @@
                   %p.card-text Integral CMS demo post. Integral is a rails content management system (CMS) which gives developers the ability to create a modern website with all the bells and whistles without the hassle.
                   
         
-        .wp-block-column.col-md-12.mt-5 
+        .col-md-12.mt-5 
           %h3 Review Example 
           .wp-block-itengral-card.card.card__review
             .card-body
@@ -207,7 +207,7 @@
                 %i.bi.bi-star-fill.text-secondary
                 %i.bi.bi-star-fill.text-secondary
               %p This is a review example
-        .wp-block-column.col-md-12.mt-5.mb-5
+        .col-md-12.mt-5.mb-5
           %h3 Book Now Block
           .book-now.bg-secondary 
             %h2.text-center.text-white BOOK NOW 
@@ -369,7 +369,7 @@
                             %option{:value => "3"} Three
                         %li 
                           %button.btn.btn-warning.btn-black BOOK NOW
-        .wp-block-column.col-md-12.mt-5.mb-5 
+        .col-md-12.mt-5.mb-5 
           %h2.text-center.mb-3 Contact block
           .wp-block-integral-form.contact-form
             %form.form.needs-validation(action=""){:novalidate => ""}
@@ -403,7 +403,7 @@
               .mb-3 
                 %button.btn.btn-outline-primary.btn-lg.w-100
                   SEND
-        .wp-block-column.col.md-12.mt-5.mb-5 
+        .col.md-12.mt-5.mb-5 
           %figure.wp-block-table.is-style-striped
             %table
               %thead
@@ -430,8 +430,8 @@
                   %td{:colspan => "2"} Larry the Bird
                   %td @twitter 
           %h3 Booking scheduled to open from May
-        .wp-block-column.col-md-12.mt-5.mb-5 
-          .wp-block-column.image-link
+        .col-md-12.mt-5.mb-5 
+          .image-link
             .resort-status
               .row 
                 .col-md-3.col-sm-4 

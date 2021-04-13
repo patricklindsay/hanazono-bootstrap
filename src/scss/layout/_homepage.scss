@@ -4,11 +4,13 @@
   height: 550px;
   // max-width: $global-width;
   margin: 0 auto;
-  .button.secondary {
-    position: absolute;
-    bottom: 0;
+  .btn {
+    position: absolute;    
     right: 0;
     margin-bottom: 0;
+    padding: .5rem 2rem;
+    font-size: .9rem;
+    text-transform: uppercase;
   }
   &-overlay {
     position: absolute;
@@ -26,6 +28,9 @@
   .btn{
     background: $primary;
     color: $white;
+    &:hover{
+      background: #897a59;
+    }
   }
 }
 
@@ -140,7 +145,7 @@ h2.homepage {
     height: 100%;
     background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 40%);
     &:hover span {
-        color: $primary;
+        color: $white;
     }
     span {
       position: absolute;

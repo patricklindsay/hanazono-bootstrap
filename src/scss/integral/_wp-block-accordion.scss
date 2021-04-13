@@ -1,0 +1,10 @@
+.wp-block-accordion{
+  h2{
+    margin: 0!important;
+  }
+  .accordion-button{
+    &:hover{
+      background: $secondary;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.season-switcher {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  flex-grow: 1;
+  &-title {
+    font-family: $headings-font-family;
+  }
+  .btn {
+    border: 1px solid $white;
+    background-color: transparent;
+    color: $white;
+    margin: 0;
+    font-size: .8rem;
+    text-transform: capitalize;
+    padding: .4rem 1.5rem;
+    &:hover {
+      background-color: $white;
+      color: #242e3d;
+    }
+    &.active{
+      background: $white;
+      color: #242e3d;
+    }
+  }
+}

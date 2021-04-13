@@ -9,6 +9,9 @@
     }
   }
   .menu{
+   & > li:not(:last-child)::after{
+     display: none;
+   }
     &.social{
       font-size: 1.5rem;
       @include media-breakpoint-down(sm){

@@ -1,0 +1,41 @@
+.season-dates {
+  display: flex;
+  margin: 1rem 0;
+  align-items: center;
+  @include media-breakpoint-down(sm){
+    display: block;
+    text-align: center;    
+}
+
+  &-title {
+    font-family: $headings-font-family;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-right: 2rem;
+    letter-spacing: 0.5px;
+    color: #565656;
+    @include media-breakpoint-down(sm){
+      margin-bottom: 1rem;  
+      margin-right: 0;       
+  }
+  }
+  &-body {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  &-divider {
+    margin: 0 1rem;
+    @include media-breakpoint-down(sm){
+      display: none;      
+  }
+  }
+  &-season {
+    @include media-breakpoint-down(sm){
+      display: block;      
+  }
+  }
+  &-season-title {
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+}

@@ -14228,6 +14228,11 @@ textarea {
   margin: 1.2rem 0;
   display: flex;
 }
+@media (max-width: 1023.98px) {
+  .wp-block-columns {
+    display: block;
+  }
+}
 
 .wp-block-column {
   flex: 1;
@@ -14320,6 +14325,28 @@ textarea {
   margin-bottom: 1.5rem;
   line-height: 1.6;
 }
+.wp-block-cover .cover__button {
+  color: #fefefe;
+  border: none;
+  font-size: 2rem;
+  padding: 1rem;
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  font-family: din-2014, sans-serif;
+  cursor: pointer;
+}
+.wp-block-cover .cover__button:after {
+  font-family: "bootstrap-icons";
+  content: "→";
+  position: absolute;
+  right: -2rem;
+  top: 15%;
+  animation: slide1 2s ease-in-out infinite;
+}
 @media (min-width: 640px) {
   .wp-block-cover.cover--right {
     padding: 3rem 4rem 3rem 0;
@@ -14350,13 +14377,22 @@ textarea {
   }
 }
 .wp-block-cover.cover--full {
-  padding: 5rem;
+  padding: 5rem 1rem;
+}
+@media (min-width: 640px) {
+  .wp-block-cover.cover--full {
+    padding: 5rem;
+  }
 }
 .wp-block-cover.cover--full .cover__image {
+  position: absolute;
+  object-fit: cover;
+  z-index: -1;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
+  filter: brightness(80%);
 }
 .wp-block-cover.cover--full .cover__body {
   width: 100%;
@@ -14365,6 +14401,14 @@ textarea {
   text-align: center;
 }
 
+@keyframes slide1 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, 0);
+  }
+}
 .wp-block-image {
   margin-bottom: 1rem;
 }
@@ -16554,8 +16598,8 @@ h2.homepage, .homepage.h2 {
 .section {
   margin: 4rem 0;
 }
-.section--sponsor {
-  background: #dee2e6;
+.section--sponsors {
+  background: #d8d8d8;
   padding: 2rem 0;
 }
 

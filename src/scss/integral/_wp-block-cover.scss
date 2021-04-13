@@ -83,6 +83,28 @@
       line-height: 1.6;
     }
   }
+  .cover__button{
+    color: #fefefe;
+    border: none;
+    font-size: 2rem;
+    padding: 1rem;
+    width: fit-content !important;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    font-family: din-2014, sans-serif;
+    cursor: pointer;
+    &:after{
+      font-family: "bootstrap-icons";
+      content: "\2192";
+      position: absolute;
+      right: -2rem;
+      top: 15%;
+      animation: slide1 2s ease-in-out infinite;
+  }
+
+    }
+  
   /*RIGHT IMAGE COVER*/
   &.cover--right {
     @include media-breakpoint-up(md){
@@ -114,13 +136,21 @@
   }
   /*FULL WIDTH COVER*/
   &.cover--full{
-    padding: 5*$spacer;
+    padding: 5rem 1rem;
+    @include media-breakpoint-up(md){
+      padding: 5*$spacer;
+
+    }
   }
   &.cover--full .cover__image{
+    position: absolute;
+    object-fit: cover;    
+    z-index: -1;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
+    filter: brightness(80%);
   }
   &.cover--full .cover__body{
     width: 100%;
@@ -131,3 +161,8 @@
   }
 }
 
+@keyframes slide1{
+  0%,100% {transform:translate(0, 0)}
+  
+  50%{transform:translate(10px, 0)}
+}

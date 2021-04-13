@@ -10,7 +10,241 @@
     %link{:rel => :stylesheet, :type => :"text/css", :href => "../../css/bootstrap-icons.css"}
     %link{:href => "https://unpkg.com/swiper/swiper-bundle.min.css", :rel => "stylesheet"}/
   %body
-    #inner-page.container
+    #offCanvas.off-canvas.position-right
+      %button.close-button{"aria-label" => "Close menu", "data-close" => "", :type => "button"}
+        %span{"aria-hidden" => "true"} ×
+      %button.search.search-button{"aria-controls" => "search-modal", "aria-haspopup" => "true", "data-toggle" => "search-modal", :tabindex => "0"}
+        %i.bi.bi-search 
+      %ul.menu.off-canvas-top-bar 
+        %li 
+          %a(href="#") 
+            %i.bi.bi-envelope
+        %li.language-switch
+          %select#switch_language{:name => "switch_language"}
+            %option English | 日本語 | 中文
+            %option{"data-alternative-url" => "https://hanazononiseko.com/en", :value => "en"} English
+            %option{"data-alternative-url" => "https://hanazononiseko.com/ja", :value => "ja"} 日本語
+            %option{"data-alternative-url" => "https://hanazononiseko.com/zh", :value => "zh"} 中文
+      #accordion.accordion
+        .accordion-item          
+          %button.accordion-button.collapsed{"aria-controls" => "discover", "aria-expanded" => "true", "data-bs-target" => "#discover", "data-bs-toggle" => "collapse", :type => "button"}
+            Discover
+          #discover.accordion-collapse.collapse{"aria-labelledby" => "headingOne", "data-bs-parent" => "#accordion"}
+            .accordion-body
+              %p.season-switcher-title Please select a season
+              .button-group.season-switcher
+                %button.btn.active{"data-action" => "season-switcher#switch", "data-controller" => "season-switcher", "data-seasonal-switch" => "summer"} Summer Menu
+                %button.btn{"data-action" => "season-switcher#switch", "data-controller" => "season-switcher", "data-seasonal-switch" => "winter"} Winter Menu
+                %div(data-seasonal-pane="winter")
+                  .row
+                    .col-md-3
+                      %h4 The Resort
+                      %ul.main-menu-list
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/resort"} Resort Overview
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/resort/restaurants"} Dinning & Cafe
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/rental-and-retail/retail"} Retail Store
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/rental-and-retail/rental"} Rentals
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/rental-and-retail/niseko-boot-lab"} Custom Boots & Insole Store
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/daycare"} Child Care
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/events"} Events
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/resort/access"} Access
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/safetymeasures"} Covid-19 Safety Plan Guidelines   
+                    .col-md-3
+                      %h4 Adventures
+                      %ul.main-menu-list
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/adventure-park"} Activity Overview
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/snowmobile-tours"} Snowmobile Tour
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/snow-rafting"} Snow Rafting Tour
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/tube-park"} Tube Park
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/snowshoe-tour"} Snowshoeing Tour
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/horseback-riding"} Horse Riding Tour
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/galaxy-of-kidz"} Indoor Kids Adventure
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/backcountry-guiding"} Backcountry Guiding Tour
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/resort/terrain-parks"} Terrain Parks
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/activities/weiss-cat-skiing"} Niseko Weiss CAT Tour
+                    .col-md-3
+                      %h4 Snowsports Lessons
+                      %ul.main-menu-list
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/ski-school"} Snowsports School Overview
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/ski-school/kids"} Kids Programs
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/ski-school/adults"} Adult Programs
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/ski-school/adults#private-ski-lesson"} Private Lessons
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/ski-school/diamond-pro"} Ski Concierge Service
+                    .col-md-3
+                      %h4 Event & News
+                      %ul.main-menu-list
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/blog"} News
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/winter/events"} Events
+                        %li
+                          %a{:href => "https://hanazononiseko.com/en/special-offers"} Special Offers
+        .accordion-item   
+          %button.accordion-button.collapsed{"aria-controls" => "mountain", "aria-expanded" => "false", "data-bs-target" => "#mountain", "data-bs-toggle" => "collapse", :type => "button"}
+            The Mountain
+          #mountain.accordion-collapse.collapse{"aria-labelledby" => "headingTwo", "data-bs-parent" => "#accordion"}
+            .accordion-body
+              %strong This is the second item's accordion body.
+              It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+              = succeed "," do
+                %code .accordion-body
+        .accordion-item          
+          %button.accordion-button.collapsed{"aria-controls" => "trip", "aria-expanded" => "false", "data-bs-target" => "#trip", "data-bs-toggle" => "collapse", :type => "button"}
+            Plan Your Trip
+          #trip.accordion-collapse.collapse{"aria-labelledby" => "headingThree", "data-bs-parent" => "#accordion"}
+            .accordion-body
+              %strong This is the third item's accordion body.
+              It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+              = succeed "," do
+                %code .accordion-body
+        .accordion-item          
+          %button.accordion-button.collapsed{"aria-controls" => "lodging", "aria-expanded" => "false", "data-bs-target" => "#lodging", "data-bs-toggle" => "collapse", :type => "button"}
+            Lodging
+          #lodging.accordion-collapse.collapse{"aria-labelledby" => "headingThree", "data-bs-parent" => "#accordion"}
+            .accordion-body
+              %strong This is the third item's accordion body.
+              It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+              = succeed "," do
+                %code .accordion-body
+    .main-nav
+      .row 
+        .top-bar 
+          .top-bar-left
+            .top-bar-title
+              %a(href="#") 
+                %img(src="../../images/logo-b185940850f8a747ac937d78672a44ad1b713689a4b9ce1a8fad46b7b5729667.svg" alt="")/ 
+          .top-bar-right
+            %ul.menu 
+              %li 
+                .d-lg-block.d-none
+                  %ul.main-menu.nav.nav-tabs{:role=>"tablist"}
+                    %li 
+                      %button(href="" data-bs-toggle="tab" data-target="discover-desktop" role="tab") Discover 
+                    %li 
+                      %button(href="" data-bs-toggle="tab" data-target="mountain-desktop" role="tab") The Mountain 
+                    %li 
+                      %button(href="" data-bs-toggle="tab" data-target="trip-desktop" role="tab") Plan Your Trip 
+                    %li 
+                      %button(href="" data-bs-toggle="tab" data-target="lodging-desktop" role="tab") Lodging 
+                    %li 
+                      %a(href="#") Contact Us 
+              %li.d-lg-none.menu-switch
+                %button.menu-icon{"aria-controls" => "offCanvas", "aria-expanded" => "false", "data-open" => "offCanvas"} 
+              %li.d-lg-flex.d-none.language-switch.language-switch__header
+                %select#switch_language{:name => "switch_language"}
+                  %option{"data-alternative-url" => "https://hanazononiseko.com/en", :selected => "selected", :value => "en"} English
+                  %option{"data-alternative-url" => "https://hanazononiseko.com/ja", :value => "ja"} 日本語
+                  %option{"data-alternative-url" => "https://hanazononiseko.com/zh", :value => "zh"} 中文
+              %li.d-lg-flex.d-none 
+                %a.search.search-btn(href="#") 
+                  %i.bi.bi-search  
+
+      #nav-tabContent.tab-content
+        #discover-desktop.tab-pane.main-menu-tab{"aria-labelledby" => "discover-tab", :role => "tabpanel"} 
+          %p.season-switcher-title Please select a season
+          .button-group.season-switcher
+            %button.btn.active{"data-action" => "season-switcher#switch", "data-controller" => "season-switcher", "data-seasonal-switch" => "summer"} Summer Menu
+            %button.btn{"data-action" => "season-switcher#switch", "data-controller" => "season-switcher", "data-seasonal-switch" => "winter"} Winter Menu
+          %div(data-seasonal-pane="winter")
+            .row
+              .col-md-3
+                %h4 The Resort
+                %ul.main-menu-list
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/resort"} Resort Overview
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/resort/restaurants"} Dinning & Cafe
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/rental-and-retail/retail"} Retail Store
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/rental-and-retail/rental"} Rentals
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/rental-and-retail/niseko-boot-lab"} Custom Boots & Insole Store
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/activities/daycare"} Child Care
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/events"} Events
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/resort/access"} Access
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/safetymeasures"} Covid-19 Safety Plan Guidelines   
+              .col-md-3
+                %h4 Adventures
+                %ul.main-menu-list
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/adventure-park"} Activity Overview
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/activities/snowmobile-tours"} Snowmobile Tour
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/activities/snow-rafting"} Snow Rafting Tour
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/activities/tube-park"} Tube Park
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/activities/snowshoe-tour"} Snowshoeing Tour
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/activities/horseback-riding"} Horse Riding Tour
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/activities/galaxy-of-kidz"} Indoor Kids Adventure
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/activities/backcountry-guiding"} Backcountry Guiding Tour
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/resort/terrain-parks"} Terrain Parks
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/activities/weiss-cat-skiing"} Niseko Weiss CAT Tour
+              .col-md-3
+                %h4 Snowsports Lessons
+                %ul.main-menu-list
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/ski-school"} Snowsports School Overview
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/ski-school/kids"} Kids Programs
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/ski-school/adults"} Adult Programs
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/ski-school/adults#private-ski-lesson"} Private Lessons
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/ski-school/diamond-pro"} Ski Concierge Service
+              .col-md-3
+                %h4 Event & News
+                %ul.main-menu-list
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/blog"} News
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/winter/events"} Events
+                  %li
+                    %a{:href => "https://hanazononiseko.com/en/special-offers"} Special Offers
+        
+        
+        
+        
+        #mountain-desktop.tab-pane.main-menu-tab{"aria-labelledby" => "mountain-tab", :role => "tabpanel"} Mountain
+        #trip-desktop.tab-pane.main-menu-tab{"aria-labelledby" => "trip-tab", :role => "tabpanel"} Plan Your trip
+        #lodging-desktop.tab-pane.main-menu-tab{"aria-labelledby" => "lodging-tab", :role => "tabpanel"} Lodging
+    #inner-page.container.main-content
       .page-hero
         %a.btn.button--book-now{:href => "https://hanazononiseko-staging-pr-83.herokuapp.com/en/book"} Book Now
         %h1 Save 30% every time you book another activity with us!
@@ -254,6 +488,7 @@
             %h2 About the Resort
             %p 
               Hanazono Niseko is internationally renowned for its consistently high falls of light powder snow and its long ski season which runs from early December until April. Averaging around 15m+ of snow each season, Hanazono is famous for its wide-open powder bowls and tree runs. The resort is family-friendly with a large open area for the resort operated ski school and lots of activities such for both adults and children. The resort center "HANAZONO 308", offers all kinds of services, including a lift ticket sale, a high-quality gear rental, an arrangement of lessons, and a variety of activities. A cutting-edge slope-side restaurant “HANAZONO EDGE” complements the resort, with an exciting restaurant, café, and bar.    
+            %a.cover__button{:target => "_self"} Cover Button  
         .wp-block-cover.cover--left.mt-3
           %img.cover__image(src="../../images/random-image.jpg" alt="")
           .cover__body 
@@ -405,5 +640,42 @@
     %p.copyright Copyright @ 2021 hanazononiseko.com All rights reserved.       
     %a.btn.button--book-now__mobile{:href => "https://hanazononiseko-staging-pr-83.herokuapp.com/en/book"} Book Now
     %script{:src => "../../js/bootstrap.min.js"}
+    :javascript
+      const triggerTabList = [].slice.call(document.querySelectorAll('.main-menu.nav button'))
+      triggerTabList.forEach(function (triggerEl) {
+      
+
+        triggerEl.addEventListener('mouseover', function (event) {
+          const panel = document.getElementById(triggerEl.dataset.target);
+          panel.classList.add("active")
+          triggerEl.classList.add('hover')
+        triggerEl.addEventListener('mouseout', function (event) {
+          if(event.relatedTarget != panel){
+            panel.classList.remove("active")
+            triggerEl.classList.remove('hover')
+          } 
+           panel.addEventListener('mouseout', function(event){
+             if(!panel.contains(event.relatedTarget)){
+                panel.classList.remove("active")
+                triggerEl.classList.remove('hover')
+
+             }
+            }) 
+          })
+        })
+        
+      })
+      const offCanvasButton = document.querySelector('.menu-icon')
+      const offCanvas = document.querySelector('.off-canvas')
+      const offCanvasClose = document.querySelector('.close-button')
+        offCanvasButton.addEventListener('click', () => {
+          offCanvas.classList.remove('is-close');
+          offCanvas.classList.add('is-open');
+
+        })
+        offCanvasClose.addEventListener('click', () => {
+          offCanvas.classList.add('is-close');
+          offCanvas.classList.remove('is-open');
+        })
 
 

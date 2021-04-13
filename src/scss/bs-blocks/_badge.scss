@@ -4,7 +4,7 @@ $badge-font-weight:                 $font-weight-bold;
 $badge-color:                       $white;
 $badge-padding-y:                   .35em;
 $badge-padding-x:                   .65em;
-$badge-border-radius:               $border-radius;
+$badge-border-radius:               0;
 //
 
 @import "../../../node_modules/bootstrap/scss/badge";

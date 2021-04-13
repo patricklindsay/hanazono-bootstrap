@@ -198,6 +198,12 @@ $list-group-item-padding-x:         0;
       }
     }
   }
+  a{
+    color: currentColor;
+    &:hover{
+      color: $primary;
+    }
+  }
   //Using margin to separate elements
   &-item{
     &:not(:last-child){

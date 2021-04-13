@@ -12725,7 +12725,7 @@ textarea.form-control-lg {
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  border-radius: 0.25rem;
+  border-radius: 0;
 }
 .badge:empty {
   display: none;
@@ -13810,6 +13810,12 @@ textarea {
   left: -10%;
   display: inline-block;
 }
+.list-group a {
+  color: currentColor;
+}
+.list-group a:hover {
+  color: #9f8f6b;
+}
 .list-group-item:not(:last-child) {
   margin-right: 1rem;
 }
@@ -14493,8 +14499,11 @@ textarea {
   color: #9f8f6b;
 }
 
-.wp-block-recent-post a {
+.wp-block-recent-post > a {
   color: inherit;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 .wp-block-recent-post .card-title {
   font-size: 1rem;

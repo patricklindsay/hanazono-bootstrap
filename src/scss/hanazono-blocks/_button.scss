@@ -1,3 +1,7 @@
+// Majority of this file should be within bs-blocks
+
+// If these are BS variables then move them to settings file
+
 // scss-docs-start btn-variables
 
 $btn-font-size-lg:            1.5rem;
@@ -138,6 +142,8 @@ $btn-border-radius-lg:        0;
 // Base styles
 //
 
+
+// We shouldn't need to be doing this as Bootstrap does it for us - we only need to do it for the Block Editor markup version
 .btn {
   display: inline-block;
   font-family: $btn-font-family;
@@ -245,6 +251,8 @@ $btn-border-radius-lg:        0;
 .btn-sm {
   @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
 }
+
+// Customization can stay here
 
 /*CUSTOM STYLES*/
 .btn{

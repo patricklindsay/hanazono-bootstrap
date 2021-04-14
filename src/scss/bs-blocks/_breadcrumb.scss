@@ -1,3 +1,5 @@
+// This isn't a block. Move the import to main.scss and move the customization to /scss/components/breadcrumb
+
 @import "../../../node_modules/bootstrap/scss/breadcrumb";
 .breadcrumb{
   margin-top: 20px;

@@ -1,3 +1,5 @@
+// Any BS variables should be within main settings file (abstracts/custom-variables)
+
 // scss-docs-start card-variables
 $card-spacer-x:                     0;
 $card-border-width:                 0;
@@ -5,8 +7,10 @@ $card-bg:                           transparent;
 $card-img-overlay-padding:          5*$spacer;
 // scss-docs-end card-variables
 
-
+// Move import to main.scss
 @import "../../../node_modules/bootstrap/scss/card";
+
+// Leave this as-is for now - we'll probably need to provide custom styles
 
 /*CUSTOM STYLES*/
 // .card-img{

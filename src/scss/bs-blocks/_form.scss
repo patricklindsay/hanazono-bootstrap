@@ -1,3 +1,5 @@
+// Move all this variable settings and imports to abstracts and main.scss
+
 /*========================FORM LABEL=============================*/
 // scss-docs-start form-label-variables
 $form-label-margin-bottom:              .35rem;
@@ -30,6 +32,8 @@ $form-select-focus-box-shadow:    none;
 // scss-docs-end form-select-variables
 @import "../../../node_modules/bootstrap/scss/forms/form-select";
 
+// Move any app specific customization (which isn't a block) to /components
+
 .form-select__blog{
   background: transparent;
   border: none;
@@ -50,6 +54,7 @@ $form-check-input-focus-box-shadow:       none;
 @import "../../../node_modules/bootstrap/scss/forms/validation";
 
 
+// Move this to hanazono-blocks/contact-form
 /*========================FORM CONTAINER========================*/
 .contact-form{
   width: 75%;
